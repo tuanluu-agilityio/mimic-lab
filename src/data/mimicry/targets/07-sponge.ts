@@ -1,0 +1,58 @@
+import { makeArms, makeBody, makeMovement, makeSkin } from '@/three/animation/restPose';
+import { makeSequence } from '@/three/animation/transition';
+import type { MimicryTarget } from '../types';
+
+export const sponge: MimicryTarget = {
+  id: 'sponge',
+  order: 7,
+  name: 'Sea sponge',
+  tagline: 'Sitting motionless and resembling a small sponge on the sand.',
+  evidenceLevel: 'B',
+  evidenceDescription:
+    'A field study in North Sulawesi reports that the octopus, when motionless, resembled small sponges, tube-worm tubes or colonial tunicates. Only the abstract was available for this project, so the posture itself is not described here from the source.',
+  reconstruction: 'partly-documented',
+  reconstructionNote:
+    'Being motionless is reported. The lumpy, upright shape and rough skin shown here are an interpretation of what “resembling a sponge” could look like.',
+  references: ['hanlon2008'],
+  pose: {
+    body: makeBody({ height: 0.36, mantlePitch: 1.2, mantleLength: 0.86, mantleWidth: 1.12, eyeRaise: 0.1, webSpread: 0.6 }),
+    arms: makeArms((i, side, pair) => ({
+      pitch0: -0.5,
+      pitch1: 0,
+      bend: side * (1.5 + pair * 0.25),
+      coil: side * (4.2 + (i % 3) * 0.5),
+      curl: 0.2,
+      length: 0.4 + pair * 0.03,
+      waveAmp: 0.004,
+      waveSpeed: 0.03,
+    })),
+    skin: makeSkin({
+      dark: [0.2, 0.085, 0.03],
+      light: [0.56, 0.36, 0.17],
+      bandContrast: 0.04,
+      mottle: 0.9,
+      pale: 0.1,
+      texture: 1,
+    }),
+    movement: makeMovement({ bobAmp: 0, swayAmp: 0, travel: 0 }),
+  },
+  involvedArms: [0, 1, 2, 3, 4, 5, 6, 7],
+  transitionSequence: makeSequence(8.5),
+  camera: { azimuth: 0.7, polar: 1.15, distance: 5, targetY: 0.4 },
+  educationalContent: {
+    mechanism:
+      'Here the resemblance comes from stillness. The arms are tucked in, the mantle is held up as an irregular lump, and the skin is uniform in colour and roughened by raised papillae. This is camouflage against background objects, not a display aimed at a predator.',
+    context: 'Reported for stationary animals on the open sand flat.',
+    comparison: [
+      { aspect: 'Silhouette', model: 'Irregular lumps or vases', octopus: 'A compact lump with arms tucked beneath' },
+      { aspect: 'Body posture', model: 'Fixed to the bottom', octopus: 'Sitting still' },
+      { aspect: 'Colour pattern', model: 'Uniform, dull', octopus: 'Banding switched off, uniform mottled skin' },
+      { aspect: 'Movement', model: 'None', octopus: 'None while the posture is held' },
+      { aspect: 'Anatomy', model: 'A simple animal with no organs, nerves or muscles', octopus: 'An alert animal that can leave at any moment' },
+    ],
+  },
+  limitations:
+    'This is stationary camouflage. It is not evidence that the octopus copies one particular sponge species.',
+  referenceModel: 'sponge',
+  referenceCaption: 'Sponge (illustrative model)',
+};

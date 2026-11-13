@@ -1,0 +1,25 @@
+.canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: block;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 900ms var(--ease);
+  background: var(--abyss);
+  cursor: grab;
+}
+
+.canvas[data-ready='true'] {
+  opacity: 1;
+}
+
+.canvas:active {
+  cursor: grabbing;
+}
+
+.canvas:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -4px;
+}

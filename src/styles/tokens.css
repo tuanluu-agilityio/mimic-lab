@@ -1,0 +1,48 @@
+:root {
+  /* Colour */
+  --abyss: #020a13;
+  --navy: #071b2c;
+  --navy-2: #0d2a40;
+  --teal: #1b6f78;
+  --cyan: #62e6e0;
+  --ivory: #f1ead9;
+  --ivory-dim: #a9b6bd;
+  --amber: #e6a756;
+  --rose: #e58a7b;
+  --line: rgba(241, 234, 217, 0.14);
+  --line-strong: rgba(241, 234, 217, 0.28);
+  --panel: rgba(5, 21, 35, 0.8);
+  --panel-solid: #06182a;
+
+  /* Type */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+  --font-text: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Layout */
+  --nav-h: 56px;
+  --panel-w: 408px;
+  --rail-w: 60px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --fast: 180ms;
+  --slow: 320ms;
+}
+
+@media (max-width: 1099px) {
+  :root {
+    --panel-w: 344px;
+    --rail-w: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --fast: 0ms;
+    --slow: 0ms;
+  }
+}
