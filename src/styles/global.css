@@ -118,3 +118,20 @@ i {
 .sci {
   font-style: italic;
 }
+
+.skip-link {
+  position: fixed;
+  z-index: 50;
+  top: 8px;
+  left: 8px;
+  padding: 10px 14px;
+  background: var(--cyan);
+  color: #03202a;
+  font-weight: 700;
+  border-radius: 6px;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}

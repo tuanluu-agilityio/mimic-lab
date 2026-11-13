@@ -1,0 +1,39 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fps {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ivory-dim);
+  min-width: 46px;
+  text-align: right;
+}
+
+.select {
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(7, 27, 44, 0.7);
+  font-size: 12.5px;
+  color: var(--ivory);
+}
+
+.select option {
+  background: var(--navy);
+}
+
+@media (max-width: 860px) {
+  .fps {
+    display: none;
+  }
+  .select {
+    width: 74px;
+    padding: 0 4px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+  }
+}

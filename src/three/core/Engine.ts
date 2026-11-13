@@ -184,6 +184,7 @@ export class Engine {
     this.step(1 / 60);
     this.renderer.compile(this.scene, this.rig.camera);
     await nextFrame();
+    this.refreshMaterials();
 
     useAppStore.setState({ effectiveQuality: this.quality });
     document.addEventListener('visibilitychange', this.onVisibility);
@@ -603,7 +604,7 @@ export class Engine {
       const cam = new THREE.PerspectiveCamera(32, width / height, 0.05, 100);
       const look = this.tmp.copy(THUMB_ORIGIN);
       look.y += model.focus.y;
-      const dist = 9.5 * model.focus.scale;
+      const dist = 6.2 * model.focus.scale;
       cam.position.set(look.x + dist * 0.62, look.y + dist * 0.42, look.z + dist * 0.66);
       cam.lookAt(look);
       const r = this.renderer;
@@ -713,11 +714,16 @@ export class Engine {
     this.octopus.setDetail(tier);
     this.organs.setDetail(tier.armSegments);
     this.env.setDetail(tier);
+    this.refreshMaterials();
+    useAppStore.setState({ effectiveQuality: level });
+  }
+
+  /** Force shader programs to be rebuilt against the current light and shadow configuration. */
+  private refreshMaterials(): void {
     this.scene.traverse((obj) => {
       const mat = (obj as THREE.Mesh).material as THREE.Material | undefined;
       if (mat && 'needsUpdate' in mat) mat.needsUpdate = true;
     });
-    useAppStore.setState({ effectiveQuality: level });
   }
 
   debug(): EngineDebug {

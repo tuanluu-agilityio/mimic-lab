@@ -1,0 +1,83 @@
+.layer {
+  position: fixed;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.spot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: -12px 0 0 -12px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+  will-change: transform;
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid rgba(98, 230, 224, 0.8);
+  background:
+    radial-gradient(circle, var(--cyan) 0 3px, transparent 3.5px),
+    rgba(3, 16, 28, 0.45);
+  transition:
+    transform var(--fast) var(--ease),
+    background-color var(--fast) var(--ease);
+}
+
+.label {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(3, 16, 28, 0.78);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--ivory);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity var(--fast) var(--ease),
+    transform var(--fast) var(--ease);
+  pointer-events: none;
+}
+
+.spot:hover .label,
+.spot:focus-visible .label,
+.spot[aria-pressed='true'] .label {
+  opacity: 1;
+  transform: none;
+}
+
+.spot:hover .dot {
+  transform: scale(1.15);
+}
+
+.spot[aria-pressed='true'] .dot {
+  border-color: var(--amber);
+  background:
+    radial-gradient(circle, var(--amber) 0 4px, transparent 4.5px),
+    rgba(3, 16, 28, 0.6);
+}
+
+.spot[aria-pressed='true'] .label {
+  border-color: rgba(230, 167, 86, 0.6);
+  color: var(--amber);
+}
+
+/* Touch screens have no hover: always show labels in the skin model, where there are only five. */
+@media (hover: none) {
+  .spot[data-anchor^='skin:'] .label {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,324 @@
+.viewport {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.main {
+  grid-row: 1;
+  grid-column: 1;
+  position: relative;
+  min-height: 0;
+}
+
+.reference {
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: end;
+  align-self: start;
+  margin: 14px 14px 0 0;
+  width: clamp(170px, 24%, 280px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The engine draws the reference animal into this rectangle of the canvas. */
+.referenceView {
+  aspect-ratio: 4 / 3;
+  box-shadow: inset 0 0 0 1px rgba(2, 10, 19, 0.4);
+}
+
+.reference figcaption {
+  padding: 8px 10px 9px;
+  background: rgba(3, 16, 28, 0.86);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.paneLabel {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.main .paneLabel {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 3px 8px;
+  background: rgba(3, 16, 28, 0.8);
+  border-radius: 4px;
+}
+
+.caption {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ivory-dim);
+}
+
+/* Comparison: the reference animal takes the left half, the octopus the right. */
+.viewport[data-comparison='true'] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.viewport[data-comparison='true'] .main {
+  grid-column: 2;
+}
+
+.viewport[data-comparison='true'] .reference {
+  grid-column: 1;
+  justify-self: stretch;
+  align-self: stretch;
+  width: auto;
+  margin: 14px 0 10px 4px;
+}
+
+.viewport[data-comparison='true'] .referenceView {
+  aspect-ratio: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.viewport[data-comparison='true'] .dock {
+  grid-column: 1 / -1;
+}
+
+.dock {
+  grid-row: 2;
+  min-width: 0;
+  padding: 0 4px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Playback ─────────────────────────────── */
+.playback {
+  pointer-events: auto;
+  padding: 10px 14px 10px;
+  background: rgba(5, 21, 35, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.phaseTrack {
+  position: relative;
+  height: 5px;
+}
+
+.phase {
+  position: absolute;
+  top: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line-strong);
+  box-shadow: 0 0 0 1px rgba(5, 21, 35, 0.9);
+}
+
+.phase[data-active='true'] {
+  background: var(--amber);
+}
+
+.scrub {
+  display: block;
+  height: 22px;
+}
+
+.playRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.phaseLabel {
+  flex: 1;
+  min-width: 120px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+}
+
+.speeds {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── Filmstrip ────────────────────────────── */
+.strip {
+  pointer-events: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(84px, 1fr);
+  gap: 6px;
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: none;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 5px 5px 7px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(5, 21, 35, 0.74);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  text-align: left;
+  transition:
+    border-color var(--fast) var(--ease),
+    transform var(--fast) var(--ease);
+}
+
+.card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.card[aria-pressed='true'] {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px var(--cyan);
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--navy-2), var(--navy));
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.num {
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ivory);
+  text-shadow: 0 1px 4px rgba(2, 10, 19, 0.95);
+}
+
+.cardName {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ivory);
+  flex: 1;
+}
+
+/* ── Panel ────────────────────────────────── */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.table th,
+.table td {
+  padding: 8px 8px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.table tbody th {
+  font-weight: 600;
+  color: var(--ivory);
+  width: 24%;
+}
+
+.table td {
+  color: #d5d9d6;
+}
+
+@media (max-width: 699px) {
+  .reference {
+    width: 132px;
+    margin: 50px 8px 0 0;
+  }
+  .caption {
+    display: none;
+  }
+  .viewport[data-comparison='true'] .reference {
+    margin: 50px 0 6px 6px;
+  }
+  .main .paneLabel {
+    top: 50px;
+  }
+  .dock {
+    padding: 0 6px 6px;
+    gap: 5px;
+  }
+  .strip {
+    grid-auto-columns: 104px;
+  }
+  .thumb {
+    display: none;
+  }
+  .card {
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 8px;
+  }
+  .playback {
+    padding: 6px 10px;
+  }
+  .speeds {
+    display: none;
+  }
+}
