@@ -16,7 +16,7 @@ A night dive over open sand. The animal is always on screen; the interface is in
 | Caution, uncertainty, current phase | amber `#e6a756` |
 | Lowest evidence grade | rose `#e58a7b` |
 
-Typefaces: Fraunces (display), Manrope (text), IBM Plex Mono (labels, data). All self-hosted.
+Typefaces: Fraunces (display), Manrope (text), IBM Plex Mono (labels, data); these cover Vietnamese. Japanese uses Noto Serif JP (display) and Noto Sans JP (text, labels), loaded only when Japanese is selected. All self-hosted.
 
 Amber is reserved for uncertainty and for "about this model" notes, so a visitor learns that amber means "read this with care".
 
@@ -26,6 +26,10 @@ Amber is reserved for uncertainty and for "about this model" notes, so a visitor
 - Desktop: tool rail (camera) on the left, free viewer area, docked panel on the right. The engine centres the animal in the free area.
 - Phone (under 700 px): viewer on top, panel as a bottom sheet; rails and mode bars become horizontal strips.
 - Panels: heading and tabs stay put, only the body scrolls.
+
+## Language switcher
+
+`EN | VI | 日本語`, a small pill group at the right end of the navigation bar, after the quality selector. Each language is written in its own script; the active one is filled cyan. No flags: a language is not a country. On phones the bar has two rows, with brand, quality and language above the five section links.
 
 ## Evidence chip
 

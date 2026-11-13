@@ -1,13 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '@/stores/appStore';
-import type { QualitySetting } from '@/types/app';
+import { QUALITY_LEVELS, type QualitySetting } from '@/types/app';
 import styles from './QualityControl.module.css';
-
-const OPTIONS: { value: QualitySetting; label: string }[] = [
-  { value: 'auto', label: 'Auto' },
-  { value: 'high', label: 'High' },
-  { value: 'medium', label: 'Medium' },
-  { value: 'low', label: 'Low' },
-];
 
 /** Rendering quality selector. "Auto" follows the measured frame rate. */
 export function QualityControl() {
@@ -15,12 +9,14 @@ export function QualityControl() {
   const effective = useAppStore((s) => s.effectiveQuality);
   const fps = useAppStore((s) => s.fps);
   const status = useAppStore((s) => s.engineStatus);
+  const { t } = useTranslation();
   if (status !== 'ready') return null;
+  const level = t(`quality.levels.${effective}`);
   return (
-    <label className={styles.wrap} title={`Rendering quality. Currently ${effective}, about ${fps} frames per second.`}>
-      <span className="visually-hidden">Rendering quality</span>
+    <label className={styles.wrap} title={t('quality.title', { level, fps })}>
+      <span className="visually-hidden">{t('quality.label')}</span>
       <span className={styles.fps} aria-hidden="true">
-        {fps > 0 ? `${fps} fps` : ''}
+        {fps > 0 ? t('quality.fps', { fps }) : ''}
       </span>
       <select
         className={styles.select}
@@ -28,9 +24,10 @@ export function QualityControl() {
         data-testid="quality"
         onChange={(e) => useAppStore.getState().setQuality(e.target.value as QualitySetting)}
       >
-        {OPTIONS.map((o) => (
-          <option key={o.value} value={o.value}>
-            {o.value === 'auto' ? `Auto (${effective})` : o.label}
+        <option value="auto">{t('quality.auto', { level })}</option>
+        {QUALITY_LEVELS.map((value) => (
+          <option key={value} value={value}>
+            {t(`quality.options.${value}`)}
           </option>
         ))}
       </select>

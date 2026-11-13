@@ -1,11 +1,13 @@
 import { useEffect, useState, type CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
 import { EvidenceChip } from '@/components/EvidenceChip';
 import { Refs } from '@/components/Refs';
 import { StageFrame } from '@/components/StageFrame';
 import ui from '@/components/ui.module.css';
-import { getTarget, MIMICRY_CAVEATS, MIMICRY_TARGETS, RECONSTRUCTION_LABELS, type MimicryTarget } from '@/data/mimicry';
+import { COMPARISON_ASPECTS, getTarget, MIMICRY_CAVEATS, MIMICRY_TARGETS, type MimicryTarget } from '@/data/mimicry';
 import { CameraControls } from '@/features/camera/CameraControls';
 import { useEngine } from '@/hooks/useEngine';
+import { useContent } from '@/i18n/content';
 import { useAppStore } from '@/stores/appStore';
 import styles from './MimicryStage.module.css';
 
@@ -41,23 +43,25 @@ function useThumbnails(): Record<string, string> {
 function Filmstrip() {
   const selected = useAppStore((s) => s.mimicryTarget);
   const thumbs = useThumbnails();
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
+  const content = useContent();
   return (
-    <ul className={styles.strip} aria-label="Ten identities">
-      {MIMICRY_TARGETS.map((t) => (
-        <li key={t.id}>
+    <ul className={styles.strip} aria-label={t('sectionLabel')}>
+      {MIMICRY_TARGETS.map((target) => (
+        <li key={target.id}>
           <button
             type="button"
             className={styles.card}
-            aria-pressed={selected === t.id}
-            data-testid={`target-${t.id}`}
-            onClick={() => useAppStore.getState().selectTarget(selected === t.id ? null : t.id)}
+            aria-pressed={selected === target.id}
+            data-testid={`target-${target.id}`}
+            onClick={() => useAppStore.getState().selectTarget(selected === target.id ? null : target.id)}
           >
             <span className={styles.thumb}>
-              {thumbs[t.id] && <img src={thumbs[t.id]} alt="" loading="lazy" />}
-              <span className={styles.num}>{pad(t.order)}</span>
+              {thumbs[target.id] && <img src={thumbs[target.id]} alt="" loading="lazy" />}
+              <span className={styles.num}>{pad(target.order)}</span>
             </span>
-            <span className={styles.cardName}>{t.name}</span>
-            <EvidenceChip level={t.evidenceLevel} compact />
+            <span className={styles.cardName}>{content.target(target.id).name}</span>
+            <EvidenceChip level={target.evidenceLevel} compact />
           </button>
         </li>
       ))}
@@ -70,8 +74,10 @@ function PlaybackBar({ target }: { target: MimicryTarget }) {
   const act = useAppStore.getState();
   const phases = target.transitionSequence.phases;
   const done = playback.progress >= 0.999;
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
+  const phaseLabel = t(`phases.${playback.phaseId}`);
   return (
-    <div className={styles.playback} role="group" aria-label="Transformation playback" data-testid="playback">
+    <div className={styles.playback} role="group" aria-label={t('playback.group')} data-testid="playback">
       <div className={styles.phaseTrack} aria-hidden="true">
         {phases.map((p) => (
           <span
@@ -90,8 +96,8 @@ function PlaybackBar({ target }: { target: MimicryTarget }) {
         max={1}
         step={0.001}
         value={playback.progress}
-        aria-label="Transformation progress"
-        aria-valuetext={`${Math.round(playback.progress * 100)}%, ${playback.phaseLabel}`}
+        aria-label={t('playback.progress')}
+        aria-valuetext={t('playback.valueText', { percent: Math.round(playback.progress * 100), phase: phaseLabel })}
         data-testid="scrub"
         onChange={(e) => {
           act.setPlaying(false);
@@ -105,15 +111,15 @@ function PlaybackBar({ target }: { target: MimicryTarget }) {
           data-testid="play-toggle"
           onClick={() => (done ? act.replay() : act.setPlaying(!playback.playing))}
         >
-          {done ? 'Replay' : playback.playing ? 'Pause' : 'Play'}
+          {done ? t('common:playback.replay') : playback.playing ? t('common:playback.pause') : t('common:playback.play')}
         </button>
         <button type="button" className={ui.btnSmall} data-testid="replay" onClick={() => act.replay()}>
-          Restart
+          {t('common:playback.restart')}
         </button>
         <span className={styles.phaseLabel} aria-live="polite" data-testid="phase-label">
-          {playback.phaseLabel}
+          {phaseLabel}
         </span>
-        <span className={styles.speeds} role="group" aria-label="Playback speed">
+        <span className={styles.speeds} role="group" aria-label={t('common:playback.speed')}>
           {[0.5, 1, 2].map((v) => (
             <button key={v} type="button" className={ui.btnSmall} aria-pressed={playback.speed === v} data-testid={`speed-${v}`} onClick={() => act.setSpeed(v)}>
               {v}×
@@ -126,36 +132,32 @@ function PlaybackBar({ target }: { target: MimicryTarget }) {
 }
 
 function Overview() {
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
+  const content = useContent();
   return (
     <>
-      <p className={ui.lead}>
-        Ten resemblances are commonly attributed to the mimic octopus. They are not equally well supported. Each one
-        below carries an evidence grade, and each animation says how much of it follows published descriptions.
-      </p>
-      <p className={ui.text}>
-        Choose an identity from the strip under the model. The octopus stays an octopus throughout: watch which arms
-        move, how the body and skin change, and what is left over.
-      </p>
+      <p className={ui.lead}>{t('overview.lead')}</p>
+      <p className={ui.text}>{t('overview.text')}</p>
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>Evidence grades</span>
+        <span className={ui.fieldLabel}>{t('overview.grades')}</span>
         <ul className={styles.legend}>
           {(['A', 'B', 'C'] as const).map((level) => (
             <li key={level}>
               <EvidenceChip level={level} />
               <span className={ui.small}>
-                {MIMICRY_TARGETS.filter((t) => t.evidenceLevel === level)
-                  .map((t) => t.name)
-                  .join(', ')}
+                {MIMICRY_TARGETS.filter((x) => x.evidenceLevel === level)
+                  .map((x) => content.target(x.id).name)
+                  .join(t('common:listSeparator'))}
               </span>
             </li>
           ))}
         </ul>
       </div>
       <div className={ui.callout} data-testid="caveats">
-        <span className={ui.calloutLabel}>What is not known</span>
+        <span className={ui.calloutLabel}>{t('overview.unknown')}</span>
         <ul className={ui.bullets}>
           {MIMICRY_CAVEATS.map((c) => (
-            <li key={c.text}>{c.text}</li>
+            <li key={c.id}>{t(`caveats.${c.id}`)}</li>
           ))}
         </ul>
         <Refs ids={[...new Set(MIMICRY_CAVEATS.flatMap((c) => c.references))]} />
@@ -169,71 +171,74 @@ function Detail({ target }: { target: MimicryTarget }) {
   const showBuried = useAppStore((s) => s.showBuried);
   const act = useAppStore.getState();
   const hasBuried = target.pose.arms.some((a) => a.bury > 0.05);
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
+  const text = useContent().target(target.id);
   return (
     <article className={styles.detail} data-testid="target-detail" aria-live="polite">
       <div className={ui.row}>
         <EvidenceChip level={target.evidenceLevel} />
-        <span className={target.reconstruction === 'documented' ? ui.tag : ui.tagAmber}>{RECONSTRUCTION_LABELS[target.reconstruction]}</span>
+        <span className={target.reconstruction === 'documented' ? ui.tag : ui.tagAmber}>{t(`scientific:reconstruction.${target.reconstruction}`)}</span>
       </div>
       <div>
         <h3 className={ui.subtitle}>
-          {pad(target.order)} · {target.name}
+          {pad(target.order)} · {text.name}
         </h3>
         {target.scientificName && (
           <p className={ui.small}>
-            Proposed model: <i>{target.scientificName}</i>
+            {t('detail.proposedModel')} <i lang="la">{target.scientificName}</i>
+            {text.modelNote && ` ${text.modelNote}`}
           </p>
         )}
       </div>
-      <p className={ui.lead}>{target.tagline}</p>
+      <p className={ui.lead}>{text.tagline}</p>
 
       <div className={ui.row}>
         <button type="button" className={ui.btnSmall} aria-pressed={comparison} data-testid="compare" onClick={() => act.setComparison(!comparison)}>
-          Compare side by side
+          {t('detail.compare')}
         </button>
         {hasBuried && (
           <button type="button" className={ui.btnSmall} aria-pressed={showBuried} data-testid="reveal" onClick={() => act.setShowBuried(!showBuried)}>
-            Reveal hidden arms
+            {t('detail.reveal')}
           </button>
         )}
         <button type="button" className={ui.btnSmall} data-testid="rest" onClick={() => act.selectTarget(null)}>
-          Return to rest
+          {t('detail.rest')}
         </button>
       </div>
 
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>Evidence</span>
-        <p className={ui.text}>{target.evidenceDescription}</p>
+        <span className={ui.fieldLabel}>{t('detail.evidence')}</span>
+        <p className={ui.text}>{text.evidenceDescription}</p>
       </div>
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>How the resemblance is made</span>
-        <p className={ui.text}>{target.educationalContent.mechanism}</p>
+        <span className={ui.fieldLabel}>{t('detail.how')}</span>
+        <p className={ui.text}>{text.mechanism}</p>
       </div>
-      {target.educationalContent.context && (
+      {text.context && (
         <div className={ui.field}>
-          <span className={ui.fieldLabel}>Where it has been seen</span>
-          <p className={ui.text}>{target.educationalContent.context}</p>
+          <span className={ui.fieldLabel}>{t('detail.where')}</span>
+          <p className={ui.text}>{text.context}</p>
         </div>
       )}
 
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>Model animal and octopus compared</span>
+        <span className={ui.fieldLabel}>{t('detail.compared')}</span>
         <table className={styles.table} data-testid="comparison-table">
           <thead>
             <tr>
               <th scope="col">
-                <span className="visually-hidden">Aspect</span>
+                <span className="visually-hidden">{t('detail.aspect')}</span>
               </th>
-              <th scope="col">{target.name}</th>
-              <th scope="col">Octopus</th>
+              <th scope="col">{text.name}</th>
+              <th scope="col">{t('detail.octopus')}</th>
             </tr>
           </thead>
           <tbody>
-            {target.educationalContent.comparison.map((row) => (
-              <tr key={row.aspect}>
-                <th scope="row">{row.aspect}</th>
-                <td>{row.model}</td>
-                <td>{row.octopus}</td>
+            {COMPARISON_ASPECTS.map((aspect) => (
+              <tr key={aspect}>
+                <th scope="row">{t(`aspects.${aspect}`)}</th>
+                <td>{text.comparison[aspect].model}</td>
+                <td>{text.comparison[aspect].octopus}</td>
               </tr>
             ))}
           </tbody>
@@ -241,9 +246,9 @@ function Detail({ target }: { target: MimicryTarget }) {
       </div>
 
       <div className={ui.callout}>
-        <span className={ui.calloutLabel}>About this animation</span>
-        <p className={ui.small}>{target.reconstructionNote}</p>
-        <p className={ui.small}>{target.limitations}</p>
+        <span className={ui.calloutLabel}>{t('detail.aboutAnimation')}</span>
+        <p className={ui.small}>{text.reconstructionNote}</p>
+        <p className={ui.small}>{text.limitations}</p>
       </div>
       <Refs ids={target.references} />
     </article>
@@ -252,11 +257,12 @@ function Detail({ target }: { target: MimicryTarget }) {
 
 function Panel() {
   const target = useAppStore((s) => getTarget(s.mimicryTarget));
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
   return (
     <>
       <div className={ui.panelHeader}>
-        <p className={ui.eyebrow}>03 · Ten identities</p>
-        <h2 className={ui.title}>What it is said to imitate</h2>
+        <p className={ui.eyebrow}>{t('eyebrow')}</p>
+        <h2 className={ui.title}>{t('title')}</h2>
       </div>
       <div className={ui.panelBody}>{target ? <Detail target={target} /> : <Overview />}</div>
     </>
@@ -268,17 +274,20 @@ function Viewport() {
   const comparison = useAppStore((s) => s.comparison && s.mimicryTarget !== null);
   const ready = useAppStore((s) => s.engineStatus === 'ready');
   const none: CSSProperties = { pointerEvents: 'none' };
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
+  const content = useContent();
+  const text = target && content.target(target.id);
   return (
     <div className={styles.viewport} data-comparison={comparison} style={none}>
       <div className={styles.main} data-viewport="main" style={none}>
-        {comparison && <span className={styles.paneLabel}>Mimic octopus</span>}
+        {comparison && <span className={styles.paneLabel}>{t('viewport.mimicOctopus')}</span>}
       </div>
-      {target && ready && (
+      {target && text && ready && (
         <figure className={styles.reference} style={none} data-testid="reference">
           <div className={styles.referenceView} data-viewport="reference" />
           <figcaption>
-            <span className={styles.paneLabel}>{comparison ? target.name : 'Reference model'}</span>
-            <span className={styles.caption}>{target.referenceCaption}</span>
+            <span className={styles.paneLabel}>{comparison ? text.name : t('viewport.referenceModel')}</span>
+            <span className={styles.caption}>{text.referenceCaption}</span>
           </figcaption>
         </figure>
       )}
@@ -291,10 +300,11 @@ function Viewport() {
 }
 
 export function MimicryStage() {
+  const { t } = useTranslation(['mimicry', 'common', 'scientific']);
   return (
     <StageFrame
       stage="mimicry"
-      label="Ten identities"
+      label={t('sectionLabel')}
       rail={<CameraControls />}
       viewport={<Viewport />}
       panel={<Panel />}

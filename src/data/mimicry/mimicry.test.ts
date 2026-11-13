@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { LOCOMOTION_MODES } from '@/data/mechanisms/locomotion';
 import { hasReference } from '@/data/references';
+import type { TargetText } from '@/i18n/content';
+import en from '@/i18n/locales/en';
 import { armBase, computeArmCurve, createArmCurve } from '@/three/animation/armCurve';
 import { isValidPose } from '@/three/animation/pose';
 import { PoseController } from '@/three/animation/PoseController';
@@ -8,7 +10,10 @@ import { ARM_HOME_YAW } from '@/three/animation/restPose';
 import { validateSequence } from '@/three/animation/transition';
 import { ARM_COUNT } from '@/three/animation/types';
 import { REFERENCE_MODEL_IDS } from '@/types/app';
-import { MIMICRY_TARGETS } from './index';
+import { COMPARISON_ASPECTS, MIMICRY_TARGETS } from './index';
+
+// Text is checked against the English source; `src/i18n/i18n.test.ts` holds the other locales to it.
+const TEXT: Record<string, TargetText> = en.mimicry.targets;
 
 describe('mimicry catalogue', () => {
   it('has exactly ten targets numbered 1 to 10 with unique ids', () => {
@@ -26,9 +31,10 @@ describe('mimicry catalogue', () => {
 
   it.each(MIMICRY_TARGETS.map((t) => [t.id, t] as const))('%s is complete and valid', (_id, t) => {
     expect(['A', 'B', 'C']).toContain(t.evidenceLevel);
-    expect(t.name.length).toBeGreaterThan(2);
-    for (const text of [t.tagline, t.evidenceDescription, t.reconstructionNote, t.limitations, t.educationalContent.mechanism]) {
-      expect(text.length).toBeGreaterThan(10);
+    const text = TEXT[t.id];
+    expect(text.name.length).toBeGreaterThan(2);
+    for (const value of [text.tagline, text.evidenceDescription, text.reconstructionNote, text.limitations, text.mechanism]) {
+      expect(value.length).toBeGreaterThan(10);
     }
     expect(t.references.length).toBeGreaterThan(0);
     for (const r of t.references) expect(hasReference(r), `unknown reference ${r}`).toBe(true);
@@ -38,17 +44,14 @@ describe('mimicry catalogue', () => {
     for (const a of t.involvedArms) expect(a >= 0 && a < ARM_COUNT && Number.isInteger(a)).toBe(true);
     expect(validateSequence(t.transitionSequence)).toEqual([]);
     expect(REFERENCE_MODEL_IDS).toContain(t.referenceModel);
-    expect(t.educationalContent.comparison.map((c) => c.aspect)).toEqual([
-      'Silhouette',
-      'Body posture',
-      'Colour pattern',
-      'Movement',
-      'Anatomy',
-    ]);
+    for (const aspect of COMPARISON_ASPECTS) {
+      expect(text.comparison[aspect].model.length, aspect).toBeGreaterThan(2);
+      expect(text.comparison[aspect].octopus.length, aspect).toBeGreaterThan(2);
+    }
     // Arms are shortened or buried, never removed.
     for (const arm of t.pose.arms) expect(arm.length).toBeGreaterThanOrEqual(0.25);
     // Copy must not claim a literal transformation.
-    const copy = JSON.stringify([t.tagline, t.evidenceDescription, t.educationalContent, t.limitations]).toLowerCase();
+    const copy = JSON.stringify([text.tagline, text.evidenceDescription, text.mechanism, text.context, text.comparison, text.limitations]).toLowerCase();
     expect(copy).not.toMatch(/transforms? into|becomes? a |turns? into/);
   });
 });

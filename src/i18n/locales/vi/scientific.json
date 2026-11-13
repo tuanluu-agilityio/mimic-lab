@@ -1,0 +1,112 @@
+{
+  "sectionLabel": "Nguồn tài liệu và giới hạn",
+  "eyebrow": "04 · Nguồn tài liệu và giới hạn",
+  "title": "Chúng ta chắc chắn đến đâu?",
+  "lead": "Hành vi của loài này lần đầu được báo cáo trong tài liệu khoa học vào năm 2001, và loài được đặt tên chính thức vào năm 2005. Nó sống trên nền cát và bùn trống trải, khó tìm, và được nghiên cứu ít hơn nhiều so với danh tiếng của nó. Trang này cố gắng tách bạch những gì đã được ghi nhận với những gì chỉ được lặp lại.",
+  "evidence": {
+    "heading": "Các mức bằng chứng",
+    "srGrade": "Mức bằng chứng {{level}}: {{description}}",
+    "levels": {
+      "A": {
+        "word": "Đã ghi nhận",
+        "description": "Được quan sát trực tiếp và mô tả trong tài liệu có bình duyệt, có ghi lại tư thế và chuyển động."
+      },
+      "B": {
+        "word": "Còn dè dặt",
+        "description": "Được báo cáo trong tài liệu khoa học, nhưng kèm những dè dặt: ít lần quan sát, tác giả dùng lời lẽ thận trọng, hoặc ít chi tiết mô tả."
+      },
+      "C": {
+        "word": "Chưa chắc chắn",
+        "description": "Nhận định phổ thông hoặc mang tính giai thoại. Trong quá trình nghiên cứu cho dự án này, không tìm thấy mô tả nào có bình duyệt."
+      }
+    },
+    "table": {
+      "number": "STT",
+      "identity": "Danh tính",
+      "grade": "Mức",
+      "animation": "Hoạt hình",
+      "basis": "Cơ sở"
+    }
+  },
+  "reconstruction": {
+    "documented": "Hoạt hình dựa theo các mô tả đã công bố",
+    "partly-documented": "Hoạt hình được phục dựng một phần",
+    "conceptual": "Phục dựng mang tính ý niệm"
+  },
+  "limitations": {
+    "heading": "Mô hình 3D là gì, và không phải là gì",
+    "items": {
+      "procedural": {
+        "title": "Con bạch tuộc được dựng bằng thuật toán và mang tính sơ đồ",
+        "text": "Cơ thể, các tay, màng gian tay và giác hút được mã lệnh sinh ra từ những đường cong và biên dạng đơn giản. Tỉ lệ dựa theo các số đo đã công bố ở những chỗ có số đo (tay dài ít nhất 6,5 lần chiều dài màng áo), nhưng đây không phải bản quét hay bản điêu khắc từ một con vật thật."
+      },
+      "internal": {
+        "title": "Giải phẫu bên trong được khái quát hóa",
+        "text": "Các cơ quan bên trong của bạch tuộc bắt chước hầu như chưa được mô tả. Hình dạng và vị trí các cơ quan được đơn giản hóa từ sơ đồ cơ thể chung của bạch tuộc, chủ yếu từ bạch tuộc thường, Octopus vulgaris."
+      },
+      "inkSac": {
+        "title": "Túi mực chưa được xác nhận ở loài này",
+        "text": "Phần lớn bạch tuộc nước nông có túi mực, nhưng không nguồn nào được đọc cho dự án này nói rõ Thaumoctopus mimicus có túi mực hay không. Nó được thể hiện như một phần của sơ đồ cơ thể chung và được ghi chú là chưa xác nhận."
+      },
+      "diagrams": {
+        "title": "Da và thần kinh là sơ đồ",
+        "text": "Khối da không đúng tỉ lệ và các lớp của nó lấy từ những động vật chân đầu khác. Các tín hiệu thần kinh phát sáng cho thấy thứ tự các bộ phận tham gia, không phải tốc độ dẫn truyền thực."
+      },
+      "curves": {
+        "title": "Tay được điều khiển bằng đường cong, không phải bằng cơ",
+        "text": "Hình dạng tay được tạo ra bởi một đường cong toán học với vài tham số. Chúng minh họa những gì một cấu trúc cơ thủy tĩnh (muscular hydrostat) có thể làm; chúng không phải là mô phỏng cơ."
+      },
+      "timing": {
+        "title": "Nhịp độ hoạt hình chỉ để minh họa",
+        "text": "Các màn biến đổi được làm chậm và chia thành từng giai đoạn (tay, cơ thể, da, chuyển động) để dễ theo dõi. Một con vật thật thay đổi tất cả những thứ này cùng lúc và nhanh hơn nhiều. Chưa có tốc độ bơi nào được công bố."
+      },
+      "referenceAnimals": {
+        "title": "Các con vật đối chiếu được đơn giản hóa",
+        "text": "Mười con vật dùng để so sánh là những mô hình ít chi tiết, chỉ dựng để thể hiện hình bóng và hoa văn. Chúng không đại diện cho loài cụ thể nào, trừ khi có nêu tên."
+      },
+      "colours": {
+        "title": "Màu sắc chỉ gần đúng",
+        "text": "Màu được chỉnh bằng mắt theo các mô tả đã công bố (các khoang nâu và trắng), không phải được đo. Bạch tuộc được cho là mù màu, và hoa văn này hiện ra thế nào trong mắt kẻ săn mồi thì chưa ai biết."
+      }
+    }
+  },
+  "references": {
+    "heading": "Tài liệu tham khảo",
+    "note": "Mỗi mục ghi rõ phần nào của nguồn đã thực sự được đọc khi chuẩn bị trang này. Một số bài báo then chốt chỉ đọc được phần tóm tắt; những phát biểu dựa trên chúng được diễn đạt tương ứng.",
+    "readAs": "Đã đọc: {{access}}",
+    "kinds": {
+      "peer-reviewed": "Bài báo có bình duyệt",
+      "book": "Sách",
+      "museum": "Trang của bảo tàng và tổ chức",
+      "database": "Cơ sở dữ liệu"
+    },
+    "access": {
+      "full text": "toàn văn",
+      "abstract": "tóm tắt",
+      "bibliographic record": "thông tin thư mục",
+      "standard reference, not re-read": "tài liệu tham khảo chuẩn, không đọc lại"
+    }
+  },
+  "credits": {
+    "heading": "Ghi công và giấy phép",
+    "items": {
+      "models": {
+        "name": "Mô hình 3D, shader, sơ đồ và hoạt hình",
+        "detail": "Được tạo bằng thuật toán trong mã nguồn cho dự án này. Không sử dụng mô hình, kết cấu, ảnh chụp hay âm thanh của bên thứ ba."
+      },
+      "three": {
+        "name": "Three.js",
+        "detail": "Thư viện kết xuất WebGL. Giấy phép MIT."
+      },
+      "tooling": {
+        "name": "React, Zustand, Vite, i18next",
+        "detail": "Công cụ cho giao diện, trạng thái, bản dịch và đóng gói. Giấy phép MIT."
+      },
+      "fonts": {
+        "name": "Fraunces, Manrope, IBM Plex Mono, Noto Sans JP, Noto Serif JP",
+        "detail": "Các kiểu chữ, tự lưu trữ qua Fontsource. SIL Open Font License 1.1."
+      }
+    },
+    "disclaimer": "Mimic Lab là một sản phẩm trực quan hóa phục vụ giáo dục. Nó không thay thế cho các tài liệu sơ cấp được liệt kê ở trên."
+  }
+}

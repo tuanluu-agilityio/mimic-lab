@@ -9,6 +9,8 @@ A single-page educational site about the mimic octopus, *Thaumoctopus mimicus*, 
 - **Ten identities** — ten reported resemblances, each with an evidence grade (A/B/C), a staged transformation, a reference animal and a side-by-side comparison.
 - **Sources and limitations** — the bibliography, how each source was read, and what the model is not.
 
+The site is available in **English, Vietnamese and Japanese**, switchable in place from the navigation bar.
+
 The site runs entirely in the browser. It needs no API keys, no LLM service and no network access after load.
 
 ## Run it
@@ -32,7 +34,7 @@ npm run dev        # http://localhost:5173
 
 ## Stack
 
-React 19, TypeScript, Vite, Three.js (used directly, without a React renderer), Zustand, CSS Modules, Vitest, Playwright. Fonts are self-hosted through Fontsource.
+React 19, TypeScript, Vite, Three.js (used directly, without a React renderer), Zustand, i18next, CSS Modules, Vitest, Playwright. Fonts are self-hosted through Fontsource.
 
 ## Where things are
 
@@ -43,7 +45,8 @@ src/
     core/         Engine, CameraRig, director (app state → what to show), quality tiers
     models/       procedural octopus, organs, skin block, reference animals
     materials/    patched standard materials and shaders
-  data/           all educational content: anatomy, mechanisms, mimicry targets, references
+  data/           structure of the educational content: ids, evidence grades, references, poses
+  i18n/           languages: setup, typed content access, locales/{en,vi,ja}/*.json (all text)
   stores/         single Zustand store shared by UI and engine
   features/       one folder per stage (intro, anatomy, mechanisms, mimicry, sources) + viewer, camera
   components/     shared UI pieces
@@ -55,10 +58,14 @@ Start with `docs/technical/architecture.md`. If you are an AI coding agent, read
 
 ## Scientific integrity
 
-- Every statement in `src/data/` cites entries in `src/data/references/`. Tests fail if a citation id does not exist.
+- Every content object in `src/data/` cites entries in `src/data/references/`; its text is in `src/i18n/locales/`. Tests fail if a citation id does not exist.
 - Each mimicry target has an evidence grade and a note on how much of its animation follows published descriptions. Only the flatfish and the sea-snake display are grade A. The stingray and snake eel are grade C: no peer-reviewed description was found, and their animations are labelled conceptual.
 - Several key papers could only be read as abstracts. `docs/research/scientific-references.md` records how each source was accessed, and the Sources section of the site shows it to visitors.
 - The 3D model is procedural and schematic. Internal anatomy is generalised from other octopus species. Whether this species has an ink sac is unconfirmed; the site says so.
+
+## Languages
+
+English is the source text. Vietnamese and Japanese were translated for this project with a fixed glossary (`docs/i18n/translation-glossary.md`) and automated completeness checks, but have not been reviewed by a native-speaking biologist. How it works and how to add text: `docs/i18n/`.
 
 ## Licences
 

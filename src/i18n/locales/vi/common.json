@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "MIMIC LAB — Bạch tuộc bắt chước Thaumoctopus mimicus",
+    "description": "MIMIC LAB — khám phá 3D tương tác về bạch tuộc bắt chước Thaumoctopus mimicus: giải phẫu, cơ chế sinh học và mười hành vi bắt chước, xếp hạng theo bằng chứng khoa học.",
+    "ogTitle": "MIMIC LAB — Một sinh vật. Mười danh tính. Vô vàn khả năng."
+  },
+  "skipToContent": "Chuyển đến nội dung",
+  "sources": "Nguồn",
+  "listSeparator": ", ",
+  "aboutModel": "Về mô hình này",
+  "dragHint": "Kéo để xoay · Ctrl + cuộn để thu phóng",
+  "canvasLabel": "Mô hình 3D tương tác của bạch tuộc bắt chước. Kéo để xoay; phím mũi tên để xoay, phím cộng và trừ để thu phóng.",
+  "loading": {
+    "label": "Đang tải cảnh 3D",
+    "error": "Không thể khởi động cảnh 3D trên thiết bị này. Phần nội dung bằng chữ vẫn có ở bên dưới.",
+    "steps": {
+      "prepare": "Đang chuẩn bị phòng thí nghiệm",
+      "engine": "Đang tải bộ máy 3D",
+      "environment": "Đang làm đầy bể: đáy biển, nước và ánh sáng",
+      "octopus": "Đang tạo màng áo và tám tay",
+      "organs": "Đang đặt các cơ quan và dây thần kinh",
+      "skin": "Đang gieo các thể sắc tố",
+      "shaders": "Đang biên dịch shader"
+    }
+  },
+  "fallback": {
+    "label": "Không hiển thị được 3D",
+    "text": "Trình duyệt hoặc thiết bị này không khởi động được WebGL nên mô hình tương tác không được hiển thị. Mọi lời giải thích, mức bằng chứng và nguồn tài liệu của trang vẫn có đầy đủ ở các phần bên dưới."
+  },
+  "quality": {
+    "label": "Chất lượng hiển thị",
+    "title": "Chất lượng hiển thị. Hiện đang ở mức {{level}}, khoảng {{fps}} khung hình mỗi giây.",
+    "fps": "{{fps}} fps",
+    "auto": "Tự động ({{level}})",
+    "options": {
+      "high": "Cao",
+      "medium": "Vừa",
+      "low": "Thấp"
+    },
+    "levels": {
+      "high": "cao",
+      "medium": "vừa",
+      "low": "thấp"
+    }
+  },
+  "camera": {
+    "group": "Camera",
+    "front": "Nhìn từ phía trước",
+    "side": "Nhìn từ bên cạnh",
+    "top": "Nhìn từ trên xuống",
+    "rear": "Nhìn từ phía sau",
+    "bottom": "Nhìn từ dưới lên",
+    "zoomIn": "Phóng to",
+    "zoomOut": "Thu nhỏ",
+    "reset": "Đặt lại camera",
+    "short": {
+      "front": "Tr",
+      "side": "B",
+      "top": "Tn",
+      "rear": "S",
+      "bottom": "D"
+    }
+  },
+  "playback": {
+    "play": "Phát",
+    "pause": "Tạm dừng",
+    "replay": "Phát lại",
+    "restart": "Bắt đầu lại",
+    "previous": "← Trước",
+    "next": "Tiếp →",
+    "speed": "Tốc độ phát"
+  }
+}

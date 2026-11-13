@@ -35,22 +35,13 @@ export function getTarget(id: string | null | undefined): MimicryTarget | undefi
   return id ? BY_ID.get(id) : undefined;
 }
 
-/** Caveats about the mimicry hypothesis as a whole, shown alongside the ten identities. */
-export const MIMICRY_CAVEATS: { text: string; references: string[] }[] = [
-  {
-    text: 'The scientists who first described these behaviours said they were confident about only three: the flatfish, the lionfish and the sea snake. Only the flatfish has been confirmed and counted by an independent team.',
-    references: ['norman2001', 'hanlon2008'],
-  },
-  {
-    text: 'No experiment has yet tested whether predators are actually fooled. “Mimicry” here means a resemblance whose protective function is proposed, not proven.',
-    references: ['huffard2010'],
-  },
-  {
-    text: 'It is not known whether the mimic octopus is itself distasteful or toxic. Its bold banding could also work as disruptive camouflage or as an honest warning signal.',
-    references: ['huffard2010'],
-  },
-  {
-    text: 'Counts of “more than fifteen” imitated species come from popular media. They are not supported by published descriptions.',
-    references: ['hanlon2008'],
-  },
-];
+/**
+ * Caveats about the mimicry hypothesis as a whole, shown alongside the ten identities.
+ * Text lives in `src/i18n/locales/<locale>/mimicry.json` under `caveats.<id>`.
+ */
+export const MIMICRY_CAVEATS = [
+  { id: 'confidence', references: ['norman2001', 'hanlon2008'] },
+  { id: 'untested', references: ['huffard2010'] },
+  { id: 'toxicity', references: ['huffard2010'] },
+  { id: 'counts', references: ['hanlon2008'] },
+] as const;

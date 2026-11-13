@@ -1,39 +1,32 @@
+import { useTranslation } from 'react-i18next';
 import { Refs } from '@/components/Refs';
 import { Slider } from '@/components/Slider';
 import { StageFrame } from '@/components/StageFrame';
 import ui from '@/components/ui.module.css';
-import { ANATOMY_STRUCTURES, BASIS_LABELS, getStructure, SYSTEM_LABELS } from '@/data/anatomy/structures';
-import { SKIN_LAYERS_INFO, SKIN_MODEL_NOTE } from '@/data/skin/layers';
+import { ANATOMY_STRUCTURES, getStructure } from '@/data/anatomy/structures';
+import { SKIN_LAYERS_INFO } from '@/data/skin/layers';
 import { CameraControls } from '@/features/camera/CameraControls';
+import { useContent } from '@/i18n/content';
 import { useAppStore } from '@/stores/appStore';
-import type { SkinLayer, ViewMode } from '@/types/app';
+import { VIEW_MODES, type SkinLayer } from '@/types/app';
 import styles from './AnatomyStage.module.css';
-
-const MODES: { id: ViewMode; label: string; hint: string }[] = [
-  { id: 'normal', label: 'Normal', hint: 'The animal as it appears from outside.' },
-  { id: 'xray', label: 'X-ray', hint: 'The skin turns translucent so the organs show through.' },
-  { id: 'exploded', label: 'Exploded', hint: 'Organs are drawn apart from the body along a slider.' },
-  { id: 'section', label: 'Section', hint: 'A cutting plane slices through the body.' },
-  { id: 'isolated', label: 'Isolate', hint: 'Only the selected structure stays solid.' },
-  { id: 'neural', label: 'Nerves', hint: 'Brain, optic lobes and the eight arm nerve cords.' },
-  { id: 'skin', label: 'Skin', hint: 'A magnified, schematic block of skin.' },
-];
 
 function ModeBar() {
   const mode = useAppStore((s) => s.viewMode);
+  const { t } = useTranslation(['anatomy', 'common']);
   return (
-    <div className={styles.modeBar} role="group" aria-label="Visualisation mode">
-      {MODES.map((m) => (
+    <div className={styles.modeBar} role="group" aria-label={t('modeGroup')}>
+      {VIEW_MODES.map((id) => (
         <button
-          key={m.id}
+          key={id}
           type="button"
           className={ui.btnSmall}
-          aria-pressed={mode === m.id}
-          title={m.hint}
-          data-testid={`mode-${m.id}`}
-          onClick={() => useAppStore.getState().setViewMode(m.id)}
+          aria-pressed={mode === id}
+          title={t(`modes.${id}.hint`)}
+          data-testid={`mode-${id}`}
+          onClick={() => useAppStore.getState().setViewMode(id)}
         >
-          {m.label}
+          {t(`modes.${id}.label`)}
         </button>
       ))}
     </div>
@@ -43,11 +36,13 @@ function ModeBar() {
 function StructureList() {
   const selected = useAppStore((s) => s.selectedStructure);
   const select = useAppStore.getState().selectStructure;
+  const { t } = useTranslation(['anatomy', 'common']);
+  const content = useContent();
   return (
     <>
       {(['external', 'internal'] as const).map((group) => (
         <div className={ui.field} key={group}>
-          <span className={ui.fieldLabel}>{group === 'external' ? 'External structures' : 'Internal structures'}</span>
+          <span className={ui.fieldLabel}>{t(`groups.${group}`)}</span>
           <div className={ui.segmented}>
             {ANATOMY_STRUCTURES.filter((s) => s.group === group).map((s) => (
               <button
@@ -58,7 +53,7 @@ function StructureList() {
                 data-testid={`structure-${s.id}`}
                 onClick={() => select(selected === s.id ? null : s.id)}
               >
-                {s.name}
+                {content.structure(s.id).name}
               </button>
             ))}
           </div>
@@ -70,37 +65,39 @@ function StructureList() {
 
 function StructureCard() {
   const structure = useAppStore((s) => getStructure(s.selectedStructure));
+  const { t } = useTranslation(['anatomy', 'common']);
+  const content = useContent();
   if (!structure) {
     return (
       <p className={ui.small} data-testid="structure-empty">
-        Select a structure from the lists above, or click a marker on the model, to read what it is, what it does and
-        how it connects to the rest of the body.
+        {t('empty')}
       </p>
     );
   }
+  const text = content.structure(structure.id);
   return (
     <article className={styles.card} data-testid="structure-card" aria-live="polite">
       <div className={ui.row}>
-        <span className={ui.tagCyan}>{SYSTEM_LABELS[structure.system]}</span>
-        <span className={structure.basis === 'species' ? ui.tag : ui.tagAmber}>{BASIS_LABELS[structure.basis]}</span>
+        <span className={ui.tagCyan}>{t(`systems.${structure.system}`)}</span>
+        <span className={structure.basis === 'species' ? ui.tag : ui.tagAmber}>{t(`basis.${structure.basis}`)}</span>
       </div>
-      <h3 className={ui.subtitle}>{structure.name}</h3>
-      <p className={ui.lead}>{structure.summary}</p>
+      <h3 className={ui.subtitle}>{text.name}</h3>
+      <p className={ui.lead}>{text.summary}</p>
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>Function</span>
-        <p className={ui.text}>{structure.func}</p>
+        <span className={ui.fieldLabel}>{t('fields.function')}</span>
+        <p className={ui.text}>{text.func}</p>
       </div>
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>Connections</span>
-        <p className={ui.text}>{structure.relations}</p>
+        <span className={ui.fieldLabel}>{t('fields.connections')}</span>
+        <p className={ui.text}>{text.relations}</p>
       </div>
       <details className={ui.more}>
-        <summary>More detail</summary>
-        <p className={ui.text}>{structure.deeper}</p>
+        <summary>{t('fields.more')}</summary>
+        <p className={ui.text}>{text.deeper}</p>
       </details>
       <div className={ui.callout}>
-        <span className={ui.calloutLabel}>About this model</span>
-        <p className={ui.small}>{structure.approximation}</p>
+        <span className={ui.calloutLabel}>{t('common:aboutModel')}</span>
+        <p className={ui.small}>{text.approximation}</p>
       </div>
       <Refs ids={structure.references} />
     </article>
@@ -111,14 +108,17 @@ function SkinControls() {
   const layer = useAppStore((s) => s.skinLayer);
   const activation = useAppStore((s) => s.skinActivation);
   const act = useAppStore.getState();
+  const { t } = useTranslation(['anatomy', 'common']);
+  const content = useContent();
   const info = SKIN_LAYERS_INFO.find((l) => l.id === layer);
+  const text = info && content.skinLayer(info.id);
   return (
     <>
       <div className={ui.field}>
-        <span className={ui.fieldLabel}>Skin layer</span>
+        <span className={ui.fieldLabel}>{t('skinLayer')}</span>
         <div className={ui.segmented}>
           <button type="button" className={ui.btnSmall} aria-pressed={layer === 'all'} data-testid="skin-all" onClick={() => act.setSkinLayer('all')}>
-            All layers
+            {t('allLayers')}
           </button>
           {SKIN_LAYERS_INFO.map((l) => (
             <button
@@ -129,39 +129,35 @@ function SkinControls() {
               data-testid={`skin-${l.id}`}
               onClick={() => act.setSkinLayer(l.id as SkinLayer)}
             >
-              {l.name}
+              {content.skinLayer(l.id).name}
             </button>
           ))}
         </div>
       </div>
       <Slider
-        label="Nerve signal to chromatophores"
+        label={t('sliders.nerveSignal')}
         value={activation}
         onChange={act.setSkinActivation}
         testId="skin-activation"
-        format={(v) => (v < 0.2 ? 'relaxed · pale' : v > 0.75 ? 'contracted · dark' : `${Math.round(v * 100)}%`)}
+        format={(v) => (v < 0.2 ? t('sliders.relaxed') : v > 0.75 ? t('sliders.contracted') : `${Math.round(v * 100)}%`)}
       />
-      {info ? (
+      {info && text ? (
         <article className={styles.card} data-testid="skin-card">
-          <h3 className={ui.subtitle}>{info.name}</h3>
-          <p className={ui.lead}>{info.summary}</p>
-          <p className={ui.text}>{info.detail}</p>
+          <h3 className={ui.subtitle}>{text.name}</h3>
+          <p className={ui.lead}>{text.summary}</p>
+          <p className={ui.text}>{text.detail}</p>
           <div className={ui.field}>
-            <span className={ui.fieldLabel}>Control</span>
-            <p className={ui.text}>{info.control}</p>
+            <span className={ui.fieldLabel}>{t('fields.control')}</span>
+            <p className={ui.text}>{text.control}</p>
           </div>
           <Refs ids={info.references} />
         </article>
       ) : (
-        <p className={ui.text}>
-          Octopus skin is a stack of layers. Colour comes from pigment organs near the surface that the brain opens and
-          closes through nerves and muscles, working over reflective layers beneath. Move the slider to send a nerve
-          signal, or pick a layer to see it alone.
-        </p>
+        <p className={ui.text}>{t('skinIntro')}</p>
       )}
       <div className={ui.callout}>
-        <span className={ui.calloutLabel}>About this model</span>
-        <p className={ui.small}>{SKIN_MODEL_NOTE}</p>
+        <span className={ui.calloutLabel}>{t('common:aboutModel')}</span>
+        <p className={ui.small}>{t('skinModelNote')}</p>
       </div>
     </>
   );
@@ -173,29 +169,36 @@ function Panel() {
   const section = useAppStore((s) => s.sectionOffset);
   const hasSelection = useAppStore((s) => s.selectedStructure !== null);
   const act = useAppStore.getState();
+  const { t } = useTranslation(['anatomy', 'common']);
   return (
     <>
       <div className={ui.panelHeader}>
-        <p className={ui.eyebrow}>01 · Anatomy explorer</p>
-        <h2 className={ui.title}>The body of a mimic</h2>
+        <p className={ui.eyebrow}>{t('eyebrow')}</p>
+        <h2 className={ui.title}>{t('title')}</h2>
       </div>
       <div className={ui.panelBody}>
-        {mode === 'exploded' && <Slider label="Separation" value={explode} onChange={act.setExplodeProgress} testId="explode" />}
+        {mode === 'exploded' && <Slider label={t('sliders.separation')} value={explode} onChange={act.setExplodeProgress} testId="explode" />}
         {mode === 'section' && (
           <Slider
-            label="Cutting plane"
+            label={t('sliders.cuttingPlane')}
             value={section}
             min={-1}
             max={1}
             onChange={act.setSectionOffset}
             testId="section"
-            format={(v) => (Math.abs(v) < 0.05 ? 'midline' : v < 0 ? `left ${Math.round(-v * 100)}%` : `right ${Math.round(v * 100)}%`)}
+            format={(v) =>
+              Math.abs(v) < 0.05
+                ? t('sliders.midline')
+                : v < 0
+                  ? t('sliders.left', { percent: Math.round(-v * 100) })
+                  : t('sliders.right', { percent: Math.round(v * 100) })
+            }
           />
         )}
         {mode === 'isolated' && !hasSelection && (
           <div className={ui.calloutCyan}>
-            <span className={ui.calloutLabel}>Isolate</span>
-            <p className={ui.small}>Choose a structure below. Everything else will fade so it can be seen alone.</p>
+            <span className={ui.calloutLabel}>{t('isolate.label')}</span>
+            <p className={ui.small}>{t('isolate.text')}</p>
           </div>
         )}
         {mode === 'skin' ? (
@@ -213,15 +216,16 @@ function Panel() {
 }
 
 export function AnatomyStage() {
+  const { t } = useTranslation(['anatomy', 'common']);
   return (
     <StageFrame
       stage="anatomy"
-      label="Anatomy explorer"
+      label={t('sectionLabel')}
       rail={<CameraControls below />}
       viewport={
         <>
           <ModeBar />
-          <p className={`${ui.hint} ${styles.hint}`}>Drag to rotate · Ctrl + scroll to zoom</p>
+          <p className={`${ui.hint} ${styles.hint}`}>{t('common:dragHint')}</p>
         </>
       }
       panel={<Panel />}

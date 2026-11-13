@@ -2,7 +2,9 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './e2e',
-  timeout: 90_000,
+  // Generous: the suite renders WebGL in software (SwiftShader), where one frame can take 100 ms.
+  timeout: 240_000,
+  expect: { timeout: 15_000 },
   fullyParallel: false,
   workers: 1,
   retries: 0,

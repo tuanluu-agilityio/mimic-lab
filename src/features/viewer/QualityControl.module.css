@@ -37,3 +37,11 @@
     text-overflow: ellipsis;
   }
 }
+
+/* Phones have a row of their own for these controls, so the value need not be cut short. */
+@media (max-width: 600px) {
+  .select {
+    width: auto;
+    max-width: 124px;
+  }
+}

@@ -13,8 +13,8 @@ Browser tests need Chromium once: `npx playwright install chromium`.
 | Layer | Tool | Files | What it covers |
 | --- | --- | --- | --- |
 | Types | `tsc --noEmit` (strict) | whole project | |
-| Unit | Vitest | `src/three/animation/animation.test.ts`, `src/three/core/quality.test.ts`, `src/stores/appStore.test.ts`, `src/data/mimicry/mimicry.test.ts`, `src/data/content.test.ts` | pose maths, arm curve, transitions, controller, quality stepping, store rules, content schema and citation integrity, continuity of all ten transitions |
-| Browser | Playwright, Chromium with software WebGL | `e2e/app.spec.ts` | the built site, desktop 1440×900 and Pixel 7 |
+| Unit | Vitest | `src/three/animation/animation.test.ts`, `src/three/core/quality.test.ts`, `src/stores/appStore.test.ts`, `src/data/mimicry/mimicry.test.ts`, `src/data/content.test.ts`, `src/i18n/i18n.test.ts` | pose maths, arm curve, transitions, controller, quality stepping, store rules, content schema and citation integrity, continuity of all ten transitions, translation completeness (see `docs/i18n/localization-testing.md`) |
+| Browser | Playwright, Chromium with software WebGL | `e2e/app.spec.ts` (English acceptance suite), `e2e/i18n.spec.ts` (L1–L9, three languages) | the built site, desktop 1440×900 and Pixel 7 |
 | Visual | screenshots via `scripts/shot.mjs`, reviewed by eye | not stored in the repo | layout and rendering |
 
 ## Acceptance criteria (functional-spec §9)
@@ -41,9 +41,17 @@ An extra browser test covers the mechanism lab (tabs, six-step nervous demo, ski
 13 November 2026, Windows 11, Node 24.20, Chromium (Playwright 1.65) with SwiftShader.
 
 - `tsc --noEmit`: clean
-- Vitest: 5 files, 79 tests, all passed
+- Vitest: 6 files, 107 tests, all passed
 - `vite build`: succeeded
-- Playwright: 11 tests (10 desktop, 1 mobile), all passed, 4.8 minutes
+- Playwright: 23 tests (20 desktop, 3 mobile), all passed, 11.4 minutes
+
+Time limits are generous on purpose (240 s per test, 15 s per assertion). With the earlier 90 s / 5 s limits, two full runs on a busy machine each had four time-outs in different tests; each of those tests passed when run alone. The suite is sensitive to CPU load because WebGL is rendered in software.
+
+## Localisation
+
+Tests L1–L9 and the unit checks are described in `docs/i18n/localization-testing.md`. Screenshots in Vietnamese and Japanese were inspected for the intro, anatomy, mechanism lab and Ten Identities at 1440×900, and for a subset at phone and tablet size (Vietnamese: intro and mechanisms on a phone, mechanisms on a tablet; Japanese: Ten Identities on a phone).
+
+Found and fixed: the scene intermittently rendered black in development only, because React StrictMode created two renderers on one canvas (`Viewer.tsx` now queues engine starts); Vietnamese nav links and mechanism tabs overflowed on phones and in the docked tablet panel.
 
 ## Visual review
 
@@ -64,4 +72,6 @@ Found and fixed during review:
 - **Screen readers.** Roles, labels and live regions are in place and keyboard operation was exercised, but no screen-reader session was carried out, and there is no automated accessibility audit.
 - **Six of the ten final poses** (stingray, snake eel, sponge, tunicate, tube-worm tube, anemone) were verified by the automated checks but their finished poses were not individually inspected in screenshots after the last changes.
 - **Hotspot occlusion.** Markers are not hidden when their structure is behind the body.
+- **Translation review.** Vietnamese and Japanese were not reviewed by a native-speaking biologist; several terms are descriptive coinages (marked † in `docs/i18n/translation-glossary.md`).
+- **Localised screens not inspected by eye:** the Sources stage in Vietnamese and Japanese, and the Japanese tablet layout (both are covered by the automated overflow checks). On phones, Japanese identity card names can break mid-word.
 - **Scientific review.** Content was written from the literature listed in `docs/research/`, several items of which were read only as abstracts. No specialist has reviewed it.

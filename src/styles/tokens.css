@@ -15,9 +15,14 @@
   --panel-solid: #06182a;
 
   /* Type */
-  --font-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
-  --font-text: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  /*
+   * Latin and Vietnamese come from the first family in each stack (all three ship a Vietnamese
+   * subset). Japanese falls through to Noto Sans/Serif JP, which load only with the Japanese
+   * locale (src/i18n/fonts-ja.ts), then to the system's Japanese fonts.
+   */
+  --font-display: 'Fraunces Variable', 'Noto Serif JP Variable', 'Hiragino Mincho ProN', 'Yu Mincho', 'Iowan Old Style', Georgia, serif;
+  --font-text: 'Manrope Variable', 'Noto Sans JP Variable', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', Meiryo, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Noto Sans JP Variable', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
   /* Layout */
   --nav-h: 56px;
@@ -37,6 +42,13 @@
   :root {
     --panel-w: 344px;
     --rail-w: 52px;
+  }
+}
+
+/* Phones use a two-row navigation bar (see Nav.module.css). */
+@media (max-width: 600px) {
+  :root {
+    --nav-h: 84px;
   }
 }
 

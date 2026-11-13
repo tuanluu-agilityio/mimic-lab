@@ -3,6 +3,7 @@ import { subscribeWithSelector } from 'zustand/middleware';
 import type {
   ArmControl,
   CameraPresetName,
+  LoadStep,
   MechanismId,
   MimicryChannelToggles,
   QualityLevel,
@@ -11,6 +12,7 @@ import type {
   Stage,
   ViewMode,
 } from '@/types/app';
+import type { PhaseId } from '@/three/animation/types';
 
 /** Anatomy structure ids that live inside the body; picking one from Normal view switches to X-Ray. */
 export const INTERNAL_STRUCTURE_IDS = new Set([
@@ -47,7 +49,7 @@ export interface AppState {
 
   // Mimicry
   mimicryTarget: string | null;
-  playback: { playing: boolean; speed: number; progress: number; phaseId: string; phaseLabel: string };
+  playback: { playing: boolean; speed: number; progress: number; phaseId: PhaseId };
   /** Incremented to ask the engine to replay; seek carries a value. */
   replayNonce: number;
   seekRequest: { value: number; nonce: number };
@@ -64,7 +66,8 @@ export interface AppState {
   fps: number;
   engineStatus: 'loading' | 'ready' | 'unsupported' | 'error';
   loadProgress: number;
-  loadLabel: string;
+  /** Key of `common:loading.steps`. */
+  loadStep: LoadStep;
   reducedMotion: boolean;
 
   setStage(stage: Stage): void;
@@ -111,7 +114,7 @@ export const useAppStore = create<AppState>()(
     mimicryChannels: { arms: true, body: true, skin: true, movement: true },
 
     mimicryTarget: null,
-    playback: { playing: true, speed: 1, progress: 0, phaseId: 'rest', phaseLabel: 'Resting octopus' },
+    playback: { playing: true, speed: 1, progress: 0, phaseId: 'rest' },
     replayNonce: 0,
     seekRequest: { value: 0, nonce: 0 },
     comparison: false,
@@ -125,7 +128,7 @@ export const useAppStore = create<AppState>()(
     fps: 0,
     engineStatus: 'loading',
     loadProgress: 0,
-    loadLabel: 'Preparing the laboratory',
+    loadStep: 'prepare',
     reducedMotion: false,
 
     setStage: (stage) => {
@@ -155,7 +158,7 @@ export const useAppStore = create<AppState>()(
       set({
         mimicryTarget: id,
         comparison: id ? get().comparison : false,
-        playback: { ...get().playback, playing: true, progress: 0, phaseId: 'rest', phaseLabel: 'Resting octopus' },
+        playback: { ...get().playback, playing: true, progress: 0, phaseId: 'rest' },
       }),
     setPlaying: (playing) => set({ playback: { ...get().playback, playing } }),
     setSpeed: (speed) => set({ playback: { ...get().playback, speed } }),

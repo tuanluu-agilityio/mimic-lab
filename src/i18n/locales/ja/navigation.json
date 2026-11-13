@@ -1,0 +1,29 @@
+{
+  "sections": "セクション",
+  "brand": "Mimic Lab",
+  "links": {
+    "intro": {
+      "label": "はじめに",
+      "short": "紹介"
+    },
+    "anatomy": {
+      "label": "体のつくり",
+      "short": "解剖"
+    },
+    "mechanisms": {
+      "label": "しくみ実験室",
+      "short": "しくみ"
+    },
+    "mimicry": {
+      "label": "10の姿",
+      "short": "擬態"
+    },
+    "sources": {
+      "label": "出典",
+      "short": "出典"
+    }
+  },
+  "language": {
+    "label": "言語"
+  }
+}

@@ -9,14 +9,16 @@ import { LoadingOverlay } from '@/features/viewer/LoadingOverlay';
 import { Viewer } from '@/features/viewer/Viewer';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useStageObserver } from '@/hooks/useStageObserver';
+import { useTranslation } from 'react-i18next';
 
 export function App() {
   useStageObserver();
   useReducedMotion();
+  const { t } = useTranslation();
   return (
     <>
       <a className="skip-link" href="#stage-anatomy">
-        Skip to content
+        {t('skipToContent')}
       </a>
       <Viewer />
       <Hotspots />

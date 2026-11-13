@@ -23,11 +23,15 @@ There is one `<canvas>`, fixed behind the page. The page is one scrolling route 
 
 The animal is one persistent object driven every frame by a pose controller, custom shader uniforms and a second scissored viewport. An imperative engine with a small, explicit surface was simpler to reason about, test (`engine.debug()`) and dispose than a declarative scene graph, and it keeps per-frame work out of React entirely. React only renders the interface.
 
+## Languages
+
+Text is not part of the diagram above on purpose: it is a third, independent input. `src/i18n/` (i18next) holds the active locale and all strings; components read them with `t()` and `useContent()`. The store and the engine carry ids only, so changing language re-renders text and nothing else. Details: `docs/i18n/localization-architecture.md`.
+
 ## The store
 
 `src/stores/appStore.ts` holds all state shared between UI and engine: current stage, anatomy view mode and selection, mechanism and step, arm-rig values, mimicry target and playback, camera requests, quality. Requests that are events rather than state (camera preset, zoom, replay, seek) carry a `nonce` so repeating the same request still fires.
 
-The engine writes back only: `playback.progress/phase`, `fps`, `effectiveQuality`, `engineStatus`, `loadProgress`.
+The engine writes back only: `playback.progress/phaseId`, `fps`, `effectiveQuality`, `engineStatus`, `loadProgress`, `loadStep`. `phaseId` and `loadStep` are ids that the interface translates.
 
 ## The director
 
@@ -76,4 +80,5 @@ Keyboard-operable controls, visible focus, `aria-pressed`/`aria-selected`/`role=
 
 - Hotspots are not occlusion-tested; a marker can show for a structure on the far side.
 - Automated tests run on a software renderer at roughly 10–15 fps, so frame-rate behaviour on real GPUs is checked by hand only.
+- Only one engine may be created on the canvas at a time. `Viewer.tsx` queues starts, because React StrictMode mounts effects twice in development and two renderers on one WebGL context intermittently rendered black.
 - Shader programs are rebuilt once after the first compile (`refreshMaterials`), because programs compiled before the shadow map existed rendered black when the engine started below the top quality tier. The underlying cause was not investigated further.

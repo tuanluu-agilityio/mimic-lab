@@ -1,0 +1,377 @@
+{
+  "sectionLabel": "Mười danh tính",
+  "eyebrow": "03 · Mười danh tính",
+  "title": "Người ta cho rằng nó bắt chước những gì",
+  "overview": {
+    "lead": "Mười vẻ giống thường được gán cho bạch tuộc bắt chước. Chúng không được chứng minh vững chắc như nhau. Mỗi vẻ giống dưới đây mang một mức bằng chứng, và mỗi hoạt hình đều nói rõ bao nhiêu phần trong đó dựa theo các mô tả đã công bố.",
+    "text": "Hãy chọn một danh tính trên dải thẻ bên dưới mô hình. Từ đầu đến cuối con bạch tuộc vẫn là bạch tuộc: hãy quan sát những tay nào chuyển động, cơ thể và da thay đổi ra sao, và những gì còn lại không khớp.",
+    "grades": "Các mức bằng chứng",
+    "unknown": "Những điều chưa biết"
+  },
+  "caveats": {
+    "confidence": "Các nhà khoa học đầu tiên mô tả những hành vi này cho biết họ chỉ tự tin về ba hành vi: cá bơn, cá mao tiên và rắn biển. Chỉ riêng hành vi cá bơn đã được một nhóm độc lập xác nhận và đếm số lần.",
+    "untested": "Chưa có thí nghiệm nào kiểm tra xem kẻ săn mồi có thực sự bị đánh lừa hay không. “Bắt chước” ở đây nghĩa là một vẻ giống mà chức năng bảo vệ của nó mới được đề xuất, chưa được chứng minh.",
+    "toxicity": "Chưa biết bản thân bạch tuộc bắt chước có vị khó ăn hay có độc hay không. Các khoang màu nổi bật của nó cũng có thể đóng vai trò ngụy trang phá vỡ đường nét hoặc là một tín hiệu cảnh báo trung thực.",
+    "counts": "Con số “hơn mười lăm” loài bị bắt chước xuất phát từ truyền thông đại chúng. Chúng không được các mô tả đã công bố ủng hộ."
+  },
+  "detail": {
+    "proposedModel": "Hình mẫu được đề xuất:",
+    "compare": "So sánh cạnh nhau",
+    "reveal": "Hiện các tay bị giấu",
+    "rest": "Trở về trạng thái nghỉ",
+    "evidence": "Bằng chứng",
+    "how": "Vẻ giống được tạo ra như thế nào",
+    "where": "Đã được thấy ở đâu",
+    "compared": "So sánh con vật hình mẫu với bạch tuộc",
+    "aspect": "Khía cạnh",
+    "octopus": "Bạch tuộc",
+    "aboutAnimation": "Về hoạt hình này"
+  },
+  "viewport": {
+    "mimicOctopus": "Bạch tuộc bắt chước",
+    "referenceModel": "Mô hình đối chiếu"
+  },
+  "playback": {
+    "group": "Điều khiển phát màn biến đổi",
+    "progress": "Tiến trình biến đổi",
+    "valueText": "{{percent}}%, {{phase}}"
+  },
+  "phases": {
+    "rest": "Bạch tuộc đang nghỉ",
+    "prepare": "Chuẩn bị",
+    "arms": "Sắp xếp lại các tay",
+    "body": "Tư thế cơ thể",
+    "skin": "Màu sắc và hoa văn",
+    "movement": "Chuyển động",
+    "final": "Tư thế cuối cùng"
+  },
+  "aspects": {
+    "silhouette": "Hình bóng",
+    "posture": "Tư thế cơ thể",
+    "colour": "Hoa văn màu",
+    "movement": "Chuyển động",
+    "anatomy": "Giải phẫu"
+  },
+  "targets": {
+    "flatfish": {
+      "name": "Cá bơn",
+      "modelNote": "và các loài cá bơn khác",
+      "tagline": "Các tay thu lại thành một hình nêm như chiếc lá, bơi với cơ thể gợn sóng.",
+      "evidenceDescription": "Hành vi được ghi nhận đầy đủ nhất. Được mô tả trong báo cáo gốc năm 2001 và về sau được một nhóm độc lập ghi lại hàng trăm lần ở Bắc Sulawesi. Loài cá bơn nào là hình mẫu thì chưa ngã ngũ: báo cáo đầu tiên đề xuất một loài cá bơn sọc (Zebrias), các tác giả sau này đề xuất một nhóm cá bơn rộng hơn.",
+      "reconstructionNote": "Các tay chụm lại thành hình nêm dẹt như chiếc lá, màng áo kéo theo sau đầu, mắt nhô cao, bơi bằng phản lực kèm uốn lượn và màu khoang đều đã được mô tả. Vị trí chính xác của từng tay, nhịp uốn lượn và tốc độ thì chưa được công bố; các giá trị đó là ước lượng.",
+      "mechanism": "Cả tám tay được quét về phía sau và giữ sát cạnh nhau để cơ thể thuôn lại như một chiếc lá. Màng áo dẹt xuống và kéo theo sau đầu, mắt nhô cao, và nước phun ra từ phễu đẩy con vật tiến về phía trước sát mặt cát trong khi toàn bộ đường nét cơ thể gợn sóng.",
+      "context": "Được thấy khi con bạch tuộc băng qua bãi cát trống, nơi nó không có chỗ ẩn nấp.",
+      "comparison": {
+        "silhouette": {
+          "model": "Hình bầu dục dẹt, thuôn dần về phía đuôi",
+          "octopus": "Các tay ép sát nhau tạo thành một đường nét dẹt, thuôn tương tự"
+        },
+        "posture": {
+          "model": "Nằm và bơi nghiêng một bên, cả hai mắt ở mặt trên",
+          "octopus": "Màng áo dẹt xuống, cả hai mắt nhô cao trên đường nét cơ thể"
+        },
+        "colour": {
+          "model": "Các khoang sẫm và nhạt (ở các loài cá bơn sọc)",
+          "octopus": "Các khoang nâu và trắng kem do thể sắc tố tạo ra"
+        },
+        "movement": {
+          "model": "Uốn lượn vây và thân dọc theo đáy",
+          "octopus": "Phản lực kết hợp với uốn lượn của hình nêm tay"
+        },
+        "anatomy": {
+          "model": "Một loài cá xương: có bộ xương, vây, mang nằm sau đầu",
+          "octopus": "Một động vật thân mềm không xương: tám tay và một màng áo, không có vây"
+        }
+      },
+      "limitations": "Chưa có thí nghiệm nào kiểm tra xem kẻ săn mồi có bị đánh lừa hay không. Loài cá bơn hình mẫu mới chỉ được mô tả là có khả năng có độc, còn cá bơn thuộc chi Bothus thì không độc, nên lợi ích của vẻ giống này vẫn là một câu hỏi bỏ ngỏ.",
+      "referenceCaption": "Cá bơn sọc (mô hình minh họa)"
+    },
+    "lionfish": {
+      "name": "Cá mao tiên",
+      "tagline": "Bơi phía trên đáy với các tay có khoang xòe ra và kéo theo sau.",
+      "evidenceDescription": "Một trong ba hành vi mà những người phát hiện cho biết họ tự tin, được thấy ở bốn cá thể. Tuy nhiên, họ không có hình ảnh rõ ràng nào về nó, và chưa có nghiên cứu nào sau đó định lượng hành vi này.",
+      "reconstructionNote": "Việc bơi ngay phía trên đáy biển với các tay có khoang xòe ra và kéo theo sau đã được mô tả. Độ xòe chính xác của các tay, vị trí màng áo và điều gì kích hoạt màn phô diễn thì chưa, nên cách sắp xếp tỏa tròn thể hiện ở đây là một cách diễn giải.",
+      "mechanism": "Con vật nhấc mình khỏi mặt cát và bơi chậm với các tay xòe tách nhau thay vì bó lại. Khi đó mỗi tay có khoang trông như một tia vằn riêng biệt, giống những gai vây dài có nọc độc của cá mao tiên.",
+      "context": "Được báo cáo khi đang bơi trong vùng nước trống ngay phía trên đáy.",
+      "comparison": {
+        "silhouette": {
+          "model": "Thân được bao quanh bởi những tia vây dài, tách rời",
+          "octopus": "Đầu và màng áo được bao quanh bởi tám tay xòe rộng"
+        },
+        "posture": {
+          "model": "Lơ lửng với các vây xòe căng",
+          "octopus": "Lơ lửng với các tay xòe ra và kéo theo sau"
+        },
+        "colour": {
+          "model": "Các khoang nâu đỏ và trắng trên thân và tia vây",
+          "octopus": "Các khoang nâu và trắng dọc theo mọi tay"
+        },
+        "movement": {
+          "model": "Bơi chậm, lững lờ",
+          "octopus": "Bơi chậm có phản lực hỗ trợ"
+        },
+        "anatomy": {
+          "model": "Các gai có nọc độc, được xương nâng đỡ",
+          "octopus": "Các tay mềm, dẻo, không có gai và không truyền nọc độc theo cách này"
+        }
+      },
+      "limitations": "Dựa trên một số ít lần nhìn thấy, không có ảnh chụp rõ ràng. Bạch tuộc có tám tay, ít hơn nhiều so với số tia vây của cá mao tiên, nên vẻ giống này chỉ là ở ấn tượng tổng thể.",
+      "referenceCaption": "Cá mao tiên (mô hình minh họa)"
+    },
+    "sea-snake": {
+      "name": "Rắn biển khoang",
+      "tagline": "Sáu tay chui xuống hang, hai tay có khoang duỗi ra theo hai hướng ngược nhau.",
+      "evidenceDescription": "Bản thân màn phô diễn được ghi lại kỹ: bốn lần kèm ảnh chụp và video trong báo cáo gốc, mỗi lần đều sau khi bị cá thia giữ lãnh thổ tấn công. Việc nó bắt chước rắn biển là cách diễn giải của các tác giả; một bài báo về sau gọi điều đó là “được cho là” và “độ giống thấp”.",
+      "reconstructionNote": "Sáu tay luồn vào một cái hang và hai tay có khoang duỗi ra theo hai hướng ngược nhau, cong và uốn lượn, đã được mô tả. Hai tay nào được dùng, vị trí của màng áo và màn phô diễn kéo dài bao lâu thì chưa được công bố.",
+      "mechanism": "Con bạch tuộc lùi vào một cái hang và đưa sáu tay xuống lỗ. Hai tay còn lại bên ngoài được duỗi theo hai hướng ngược nhau, chuyển sang những khoang đen và nhạt sắc nét, rồi vẫy thành những đường cong chậm rãi. Gộp lại, chúng trông như một con vật dài có khoang đang nằm trên cát.",
+      "context": "Được ghi nhận như một phản ứng trước các đợt tấn công của cá thia, loài vốn bị rắn biển săn bắt.",
+      "comparison": {
+        "silhouette": {
+          "model": "Một thân dài, mảnh",
+          "octopus": "Hai tay nối đầu nhau tạo ra một đường dài tương tự"
+        },
+        "posture": {
+          "model": "Nằm hoặc bơi lộ hoàn toàn",
+          "octopus": "Phần lớn cơ thể ẩn trong hang"
+        },
+        "colour": {
+          "model": "Các khoang đen và nhạt",
+          "octopus": "Các khoang tương phản mạnh trên hai tay lộ ra"
+        },
+        "movement": {
+          "model": "Bơi uốn lượn",
+          "octopus": "Hai tay uốn lượn chậm rãi"
+        },
+        "anatomy": {
+          "model": "Một loài bò sát có xương sống, đầu ở một đầu và đuôi dẹt hình mái chèo",
+          "octopus": "Hai đầu tay thuôn nhọn và không có đầu ở đầu mút nào"
+        }
+      },
+      "limitations": "Việc cá thia có thực sự rút lui hay không không được báo cáo, và chức năng của màn phô diễn chưa được kiểm tra bằng thực nghiệm.",
+      "referenceCaption": "Rắn cạp nia biển (mô hình minh họa)"
+    },
+    "stingray": {
+      "name": "Cá đuối gai độc",
+      "tagline": "Một nhận định được lặp lại rộng rãi nhưng không có mô tả khoa học nào đứng sau.",
+      "evidenceDescription": "Cá đuối gai độc xuất hiện trong nhiều danh sách phổ thông về những con vật mà bạch tuộc bắt chước mô phỏng. Quá trình nghiên cứu cho dự án này không tìm thấy bài báo có bình duyệt nào mô tả một màn phô diễn như vậy.",
+      "reconstructionNote": "Không có gì ở tư thế này được lấy từ tài liệu khoa học. Hoạt hình chỉ cho thấy cơ thể bạch tuộc có thể tạo ra một đường nét giống cá đuối như thế nào, để minh họa điều mà nhận định phổ thông ấy hàm ý.",
+      "mechanism": "Trong hình minh họa này, sáu tay được gập ra hai bên và giữ với màng gian tay xòe rộng để gợi ra hai cánh, còn cặp tay cuối kéo theo sau như một cái đuôi. Đây là một thí nghiệm tưởng tượng về hình dạng cơ thể, không phải ghi nhận về hành vi.",
+      "comparison": {
+        "silhouette": {
+          "model": "Đĩa dẹt với một cái đuôi mảnh",
+          "octopus": "Các tay và màng xòe sang hai bên có thể gợi ra một hình đĩa"
+        },
+        "posture": {
+          "model": "Thân và vây ngực hợp nhất thành một đĩa",
+          "octopus": "Các tay riêng rẽ được giữ sát nhau"
+        },
+        "colour": {
+          "model": "Mặt trên trơn màu hoặc có đốm",
+          "octopus": "Da xỉn màu, không có khoang trong hình minh họa này"
+        },
+        "movement": {
+          "model": "Các đợt sóng chạy dọc mép vây",
+          "octopus": "Các gợn sóng tay mang tính minh họa; chưa được quan sát"
+        },
+        "anatomy": {
+          "model": "Một loài cá sụn có gai đuôi",
+          "octopus": "Một động vật thân mềm không có bộ xương hay gai"
+        }
+      },
+      "limitations": "Hãy coi đây là điều chưa được kiểm chứng. Nếu bạn tìm thấy một mô tả có bình duyệt về việc loài này bắt chước cá đuối, mức bằng chứng cần được xem xét lại.",
+      "referenceCaption": "Cá đuối gai độc (mô hình minh họa)"
+    },
+    "snake-eel": {
+      "name": "Cá chình rắn",
+      "tagline": "Được liệt kê trong các bài viết phổ thông; không tìm thấy mô tả khoa học nào.",
+      "evidenceDescription": "Cá chình rắn được nêu tên trong các danh sách phổ thông về những “màn nhại” của bạch tuộc bắt chước. Quá trình nghiên cứu cho dự án này không tìm thấy mô tả có bình duyệt nào về hành vi này.",
+      "reconstructionNote": "Không có gì ở tư thế này được lấy từ tài liệu khoa học. Hoạt hình cho thấy một cách mà bạch tuộc có thể phô ra một đường nét duy nhất, dài và hẹp.",
+      "mechanism": "Trong hình minh họa này, cả tám tay được gom thành một bó phía sau con vật và vẫy từ bên này sang bên kia, với màng áo thu hẹp lại. Đây là một thí nghiệm tưởng tượng về hình dạng cơ thể, không phải ghi nhận về hành vi.",
+      "comparison": {
+        "silhouette": {
+          "model": "Một thân dài, mảnh với đầu nhọn",
+          "octopus": "Một bó tay có thể tạo ra đường nét dài, mảnh"
+        },
+        "posture": {
+          "model": "Thường vùi mình, chỉ để lộ đầu",
+          "octopus": "Màng áo thu hẹp, các tay bó lại"
+        },
+        "colour": {
+          "model": "Thay đổi tùy loài: trơn màu, có đốm hoặc có khoang",
+          "octopus": "Nhạt màu với các khoang mờ trong hình minh họa này"
+        },
+        "movement": {
+          "model": "Uốn lượn từ bên này sang bên kia",
+          "octopus": "Tay uốn lượn mang tính minh họa; chưa được quan sát"
+        },
+        "anatomy": {
+          "model": "Một loài cá xương có xương sống",
+          "octopus": "Tám tay riêng rẽ, nhìn thấy được ở cự ly gần"
+        }
+      },
+      "limitations": "Hãy coi đây là điều chưa được kiểm chứng. Màn phô diễn kiểu rắn biển đã được ghi nhận (danh tính 03) là một hành vi khác và không nên nhầm lẫn với nhận định này.",
+      "referenceCaption": "Cá chình rắn (mô hình minh họa)"
+    },
+    "jellyfish": {
+      "name": "Sứa",
+      "tagline": "Được thấy một lần: chìm chậm trong nước với các tay xòe đều.",
+      "evidenceDescription": "Một sự việc duy nhất trong báo cáo gốc. Các tác giả chỉ viết rằng con bạch tuộc “có thể” đóng giả sứa và không tính nó vào những hành vi mà họ tự tin.",
+      "reconstructionNote": "Việc bơi lên vài mét tới mặt nước rồi chìm chậm xuống với các tay xòe đều và uốn lượn đã được mô tả. Nhịp co bóp của màng áo, màu sắc và yếu tố kích hoạt thì chưa, và được bổ sung ở đây.",
+      "mechanism": "Con bạch tuộc rời đáy, rồi thả mình chìm xuống với các tay xòe đều quanh cơ thể và kéo theo sau, nên đường nét là một khối tròn phía trên một vòng những sợi rủ xuống.",
+      "context": "Được báo cáo một lần, trong vùng nước trống phía trên bãi cát.",
+      "comparison": {
+        "silhouette": {
+          "model": "Một chiếc chuông với các xúc tu rủ xuống bên dưới",
+          "octopus": "Màng áo ở trên, các tay xòe ra và rủ xuống"
+        },
+        "posture": {
+          "model": "Đối xứng tỏa tròn",
+          "octopus": "Các tay cách đều nhau quanh đầu"
+        },
+        "colour": {
+          "model": "Thường trong mờ",
+          "octopus": "Da đục; màu sắc trong sự việc đó không được báo cáo"
+        },
+        "movement": {
+          "model": "Chuông co bóp nhịp nhàng",
+          "octopus": "Chìm chậm với các tay uốn lượn"
+        },
+        "anatomy": {
+          "model": "Không có não, không có mắt như mắt bạch tuộc, cũng không có tay bằng cơ",
+          "octopus": "Một động vật thân mềm phức tạp với não và mắt lớn"
+        }
+      },
+      "limitations": "Một lần quan sát với lời lẽ thận trọng. Đó có thể chỉ đơn giản là một cách đi xuống trong nước.",
+      "referenceCaption": "Sứa (mô hình minh họa)"
+    },
+    "sponge": {
+      "name": "Bọt biển",
+      "tagline": "Ngồi bất động và trông giống một con bọt biển nhỏ trên cát.",
+      "evidenceDescription": "Một nghiên cứu thực địa ở Bắc Sulawesi báo cáo rằng con bạch tuộc, khi bất động, trông giống những con bọt biển nhỏ, ống của giun ống hoặc hải tiêu tập đoàn. Dự án này chỉ tiếp cận được phần tóm tắt, nên bản thân tư thế không được mô tả ở đây từ nguồn gốc.",
+      "reconstructionNote": "Việc bất động đã được báo cáo. Hình dạng lổn nhổn, dựng đứng và lớp da sần sùi thể hiện ở đây là một cách diễn giải về việc “trông giống bọt biển” có thể ra sao.",
+      "mechanism": "Ở đây vẻ giống đến từ sự bất động. Các tay được thu gọn vào, màng áo được dựng lên như một khối lổn nhổn không đều, và da có màu đồng nhất, sần lên nhờ các gai da (papillae) dựng dậy. Đây là ngụy trang lẫn vào các vật thể nền, không phải màn phô diễn nhắm vào kẻ săn mồi.",
+      "context": "Được báo cáo ở những con vật đứng yên trên bãi cát trống.",
+      "comparison": {
+        "silhouette": {
+          "model": "Những khối lổn nhổn không đều hoặc hình bình",
+          "octopus": "Một khối gọn với các tay thu bên dưới"
+        },
+        "posture": {
+          "model": "Bám cố định vào đáy",
+          "octopus": "Ngồi yên"
+        },
+        "colour": {
+          "model": "Đồng nhất, xỉn",
+          "octopus": "Các khoang màu tắt đi, da lốm đốm đồng nhất"
+        },
+        "movement": {
+          "model": "Không có",
+          "octopus": "Không có trong lúc giữ tư thế"
+        },
+        "anatomy": {
+          "model": "Một động vật đơn giản không có cơ quan, thần kinh hay cơ",
+          "octopus": "Một con vật tỉnh táo, có thể rời đi bất cứ lúc nào"
+        }
+      },
+      "limitations": "Đây là ngụy trang tại chỗ. Nó không phải bằng chứng cho thấy bạch tuộc sao chép một loài bọt biển cụ thể nào.",
+      "referenceCaption": "Bọt biển (mô hình minh họa)"
+    },
+    "tunicate": {
+      "name": "Hải tiêu tập đoàn",
+      "tagline": "Bất động và thu gọn, trông giống một cụm hải tiêu.",
+      "evidenceDescription": "Cũng nghiên cứu thực địa nhắc đến bọt biển ấy báo cáo rằng những con vật bất động trông giống hải tiêu tập đoàn. Dự án này chỉ tiếp cận được phần tóm tắt; nó không cho chi tiết nào về tư thế.",
+      "reconstructionNote": "Việc bất động đã được báo cáo. Cụm u nần tạo bởi các vòng tay giơ lên thể hiện ở đây là một cách diễn giải, không phải một tư thế đã được mô tả.",
+      "mechanism": "Con vật ngồi yên với các tay thu vào. Trong hình minh họa này, các tay được uốn vòng lên trên để đường nét thành một cụm u tròn, và da nhạt màu, loang lổ. Cũng như với bọt biển, đây là ngụy trang nhờ giống một vật thể nền.",
+      "context": "Được báo cáo ở những con vật đứng yên trên bãi cát trống.",
+      "comparison": {
+        "silhouette": {
+          "model": "Một cụm cá thể con (zooid) nhỏ, tròn",
+          "octopus": "Một cụm gọn gồm các tay cuộn tròn và màng áo"
+        },
+        "posture": {
+          "model": "Bám cố định vào đáy",
+          "octopus": "Ngồi yên"
+        },
+        "colour": {
+          "model": "Thường nhạt màu hoặc trong mờ với viền có màu",
+          "octopus": "Da nhạt màu, loang lổ"
+        },
+        "movement": {
+          "model": "Không thấy chuyển động",
+          "octopus": "Không có trong lúc giữ tư thế"
+        },
+        "anatomy": {
+          "model": "Nhiều con vật nhỏ ăn lọc chung một nền",
+          "octopus": "Một con vật duy nhất"
+        }
+      },
+      "limitations": "Tư thế này là cách diễn giải từ một báo cáo chỉ dài một câu. Phần tóm tắt không nêu tên loài hình mẫu nào.",
+      "referenceCaption": "Hải tiêu tập đoàn (mô hình minh họa)"
+    },
+    "tube-worm": {
+      "name": "Ống giun",
+      "tagline": "Bất động, trông giống chiếc ống tưởng như trống rỗng của một con giun nhiều tơ.",
+      "evidenceDescription": "Nghiên cứu thực địa ở Bắc Sulawesi nói rằng những con vật bất động trông giống “ống của giun ống”. Hãy lưu ý cách dùng từ: là cái ống, không phải con giun với chùm tua dạng lông chim. Dự án này chỉ tiếp cận được phần tóm tắt.",
+      "reconstructionNote": "Việc bất động và trông giống cái ống đã được báo cáo. Những tay nào được dùng và phần còn lại của cơ thể được giấu ra sao thì không được mô tả; hoạt hình này giơ hai tay lên từ một cái hang như một cách sắp xếp khả dĩ.",
+      "mechanism": "Khi cơ thể nằm dưới hang, một phần của con vật còn ở trên mặt cát và giữ yên có thể bị lầm là một trong vô số ống giun mọc trên bãi cát. Da xỉn màu và không có khoang.",
+      "context": "Được báo cáo ở những con vật đứng yên trên bãi cát trống.",
+      "comparison": {
+        "silhouette": {
+          "model": "Một cái ống hẹp dựng đứng",
+          "octopus": "Các tay chụm lại dựng đứng tạo thành một cột hẹp"
+        },
+        "posture": {
+          "model": "Con giun ẩn trong ống của nó",
+          "octopus": "Cơ thể ẩn trong hang"
+        },
+        "colour": {
+          "model": "Nâu xám xỉn, màu cát",
+          "octopus": "Da xỉn màu, không có khoang"
+        },
+        "movement": {
+          "model": "Không có",
+          "octopus": "Hầu như không có"
+        },
+        "anatomy": {
+          "model": "Một cái ống do một con giun đốt tiết ra và xây nên",
+          "octopus": "Những chiếc tay sống, bằng cơ"
+        }
+      },
+      "limitations": "Nguồn tài liệu mô tả vẻ giống với những cái ống khi bất động. Nó không mô tả việc bạch tuộc bắt chước chùm tua của giun chổi lông.",
+      "referenceCaption": "Ống của giun nhiều tơ (mô hình minh họa)"
+    },
+    "anemone": {
+      "name": "Hải quỳ",
+      "modelNote": "(được gợi ý)",
+      "tagline": "Ngồi trên một ụ cát với mọi tay giơ lên theo hình dích dắc.",
+      "evidenceDescription": "Báo cáo gốc mô tả tư thế này nhưng chỉ nói rằng “có khả năng” nó bắt chước một loài hải quỳ cát thuộc chi Megalactis. Các tác giả không liệt kê nó trong số những hành vi mà họ tự tin.",
+      "reconstructionNote": "Việc ngồi trên một ụ cát với tất cả các tay giơ lên, mỗi tay gập theo hình dích dắc, đã được mô tả. Chuyển động, màu sắc, điều gì kích hoạt và nó được thấy thường xuyên đến đâu thì không được báo cáo.",
+      "mechanism": "Con bạch tuộc ngồi trên một ụ cát thấp và nâng cả tám tay lên, giữ mỗi tay theo hình dích dắc. Nhìn từ xa, những chiếc tay giơ cao, gấp khúc trông giống các xúc tu dài phân nhánh của một loài hải quỳ sống trên cát.",
+      "context": "Được báo cáo ở một con vật ngồi trên ụ cát.",
+      "comparison": {
+        "silhouette": {
+          "model": "Một vòng xúc tu dài quanh một đĩa trung tâm",
+          "octopus": "Tám tay giơ lên quanh đầu"
+        },
+        "posture": {
+          "model": "Thân trụ vùi trong cát",
+          "octopus": "Ngồi trên một ụ cát, màng áo hạ thấp"
+        },
+        "colour": {
+          "model": "Xúc tu có khoang hoặc lốm đốm",
+          "octopus": "Các tay có khoang; màu sắc trong màn phô diễn không được báo cáo"
+        },
+        "movement": {
+          "model": "Đung đưa chậm",
+          "octopus": "Không được báo cáo; ở đây thể hiện gần như bất động"
+        },
+        "anatomy": {
+          "model": "Xúc tu có tế bào châm, không có não, sống cố định một chỗ",
+          "octopus": "Các tay bằng cơ có giác hút và không có tế bào châm"
+        }
+      },
+      "limitations": "Việc đồng nhất với hải quỳ là gợi ý của các tác giả, được diễn đạt như một khả năng. Số lần quan sát không được nêu.",
+      "referenceCaption": "Hải quỳ cát (mô hình minh họa)"
+    }
+  }
+}

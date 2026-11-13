@@ -1,0 +1,236 @@
+{
+  "sectionLabel": "Phòng thí nghiệm cơ chế",
+  "eyebrow": "02 · Phòng thí nghiệm cơ chế",
+  "title": "Cơ thể làm điều đó như thế nào",
+  "tabs": "Các cơ chế",
+  "short": {
+    "nervous": "Thần kinh",
+    "skin": "Da",
+    "arms": "Tay",
+    "locomotion": "Di chuyển",
+    "mimicry": "Bắt chước"
+  },
+  "stepOf": "Bước {{current}} trên {{total}} · {{title}}",
+  "keyPoints": "Điểm chính",
+  "misconception": "Ngộ nhận thường gặp",
+  "basis": "Cơ sở.",
+  "armRig": {
+    "arm": "Tay",
+    "group": "Tay cần di chuyển",
+    "names": [
+      "Tay trái 1",
+      "Tay phải 1",
+      "Tay trái 2",
+      "Tay phải 2",
+      "Tay trái 3",
+      "Tay phải 3",
+      "Tay trái 4",
+      "Tay phải 4"
+    ],
+    "numbering": "Các tay được đánh số theo cặp tính từ phía trước: L1 và R1 là cặp trước nhất.",
+    "extend": "Duỗi dài",
+    "lift": "Nâng lên",
+    "sweep": "Quét ngang",
+    "curl": "Cuộn đầu tay",
+    "reset": "Đặt lại tay này"
+  },
+  "locomotion": {
+    "group": "Kiểu di chuyển",
+    "basis": {
+      "species": "Đã được mô tả ở loài này",
+      "octopod-general": "Khái quát từ các loài bạch tuộc khác"
+    },
+    "modes": {
+      "crawl": {
+        "name": "Bò",
+        "summary": "Cách di chuyển thường ngày. Các tay vươn ra, giác hút bám vào đáy, rồi tay co ngắn lại để kéo cơ thể theo. Tay nào cũng có thể dẫn đầu, nên con vật có thể xuất phát theo bất kỳ hướng nào mà không cần xoay mình. Khi kiếm ăn, các đầu tay thăm dò vào những lỗ trong cát."
+      },
+      "jet": {
+        "name": "Bơi phản lực",
+        "summary": "Màng áo hút đầy nước rồi co lại, ép nước ra ngoài qua phễu. Con vật lao đi theo hướng ngược lại, thường là màng áo đi trước còn các tay kéo theo sau. Vì phễu có thể xoay hướng, cùng một tia nước ấy cũng có thể đẩy con vật theo những hướng khác. Cách này nhanh nhưng tốn sức: mỗi lần màng áo co cũng làm gián đoạn dòng máu chảy qua mang."
+      },
+      "flatfish-swim": {
+        "name": "Bơi kiểu cá bơn",
+        "summary": "Kiểu bơi làm nên tên tuổi của loài này. Các tay được thu lại thành một hình nêm dẹt như chiếc lá, màng áo kéo theo sau đầu, và con vật phóng phản lực về phía trước ngay sát mặt cát trong khi cơ thể uốn lượn. Các tài liệu đã công bố mô tả tư thế này nhưng không đưa ra tốc độ đo được."
+      }
+    }
+  },
+  "channels": {
+    "arms": {
+      "label": "Cách sắp xếp tay",
+      "note": "Cả tám tay quét về phía sau thành một hình nêm dẹt."
+    },
+    "body": {
+      "label": "Tư thế cơ thể",
+      "note": "Màng áo dẹt xuống và kéo theo sau, mắt nhô cao."
+    },
+    "skin": {
+      "label": "Hoa văn da",
+      "note": "Các khoang mờ đi thành nền lốm đốm nhạt màu cát."
+    },
+    "movement": {
+      "label": "Chuyển động",
+      "note": "Lướt ngay sát mặt cát với cơ thể uốn lượn."
+    },
+    "allOn": "Cả bốn thành phần đều bật: kết hợp lại, chúng tạo nên vẻ giống cá bơn.",
+    "allOff": "Mọi thành phần đều tắt: một con bạch tuộc bình thường đang nghỉ.",
+    "some_other": "Đang bật {{count}} trên 4 thành phần. Vẻ giống chưa trọn vẹn: không một thành phần riêng lẻ nào tự tạo ra được nó."
+  },
+  "diagrams": {
+    "neuron": {
+      "title": "Nơ-ron của bạch tuộc nằm ở đâu",
+      "desc": "Một thanh chia làm hai phần. Trong khoảng 500 triệu nơ-ron, khoảng hai phần ba nằm trong tám dây thần kinh tay và khoảng một phần ba nằm trong não trung ương và các thùy thị giác.",
+      "arms": "Tám dây thần kinh tay",
+      "brain": "Não + thùy thị giác",
+      "twoThirds": "khoảng 2/3",
+      "oneThird": "khoảng 1/3",
+      "total": "Tổng cộng khoảng 500 triệu nơ-ron",
+      "source": "Ước tính cho bạch tuộc thường, Octopus vulgaris",
+      "caption": "Khoảng hai phần ba số nơ-ron nằm ở các tay và một phần ba nằm ở não và các thùy thị giác. Số liệu là của bạch tuộc thường; chưa có số liệu nào cho bạch tuộc bắt chước."
+    },
+    "chromatophore": {
+      "title": "Thể sắc tố khi giãn và khi mở rộng",
+      "desc": "Bên trái: các cơ tỏa tia giãn, túi sắc tố là một chấm nhỏ. Bên phải: các cơ đã co lại và kéo túi ra thành một đĩa dẹt rộng, nên sắc tố hiện rõ.",
+      "fires": "thần kinh phát xung",
+      "relaxed": "Cơ giãn · nhạt",
+      "contracted": "Cơ co · sẫm",
+      "caption": "Màu cam: túi sắc tố đàn hồi. Các vạch xanh lơ: cơ tỏa tia. Khi cơ co, túi bị kéo căng thành một đĩa. Sơ đồ, không đúng tỉ lệ."
+    },
+    "arm": {
+      "title": "Mặt cắt ngang một tay bạch tuộc",
+      "desc": "Từ tâm ra ngoài: dây thần kinh trục, lõi cơ ngang, các bó cơ dọc, những lớp cơ chéo mỏng, và da. Một giác hút gắn ở mặt dưới, phía miệng.",
+      "nerve": "Dây thần kinh trục",
+      "transverse": "Cơ ngang",
+      "longitudinal": "Cơ dọc",
+      "oblique": "Cơ chéo, da",
+      "sucker": "Giác hút",
+      "caption": "Không hề có xương: các cơ chạy theo ba hướng tác động đối kháng lẫn nhau. Sơ đồ, khái quát từ các loài bạch tuộc khác."
+    }
+  },
+  "items": {
+    "nervous": {
+      "title": "Hệ thần kinh phân tán",
+      "lead": "Bạch tuộc có một bộ não trung ương lớn, đồng thời phần lớn tế bào thần kinh của nó lại nằm ngoài bộ não ấy, ở các tay. Việc điều khiển được chia sẻ giữa hai nơi.",
+      "steps": {
+        "stimulus": {
+          "title": "Nhìn thấy một vật",
+          "text": "Ánh sáng từ một chuyển động gần đó đi tới võng mạc. Mắt là phương tiện chính để con vật theo dõi môi trường xung quanh."
+        },
+        "optic": {
+          "title": "Thùy thị giác",
+          "text": "Tín hiệu truyền tới thùy thị giác nằm sau mỗi mắt, nơi khung cảnh được phân tích. Hai thùy này cộng lại chứa nhiều tế bào thần kinh hơn phần còn lại của não."
+        },
+        "brain": {
+          "title": "Não trung ương",
+          "text": "Não trung ương kết hợp những gì nhìn thấy với thông tin xúc giác, hóa học và với trí nhớ, rồi lựa chọn một phản ứng."
+        },
+        "commands": {
+          "title": "Mệnh lệnh phát đi",
+          "text": "Các mệnh lệnh cấp cao truyền xuống tám dây thần kinh tay và tới các cơ của những cơ quan tạo màu trên da. Chúng chỉ định cần làm gì, chứ không chỉ định từng lần co cơ."
+        },
+        "local": {
+          "title": "Mạch thần kinh ở tay tiếp quản",
+          "text": "Các mạch thần kinh trong mỗi dây thần kinh tay biến mệnh lệnh thành hoạt động cơ phối hợp dọc theo tay. Ở đây, con vật thu các tay vào, nâng mắt lên và làm sẫm các khoang màu."
+        },
+        "feedback": {
+          "title": "Thông tin quay về",
+          "text": "Tín hiệu xúc giác và vị giác từ các giác hút truyền ngược lên theo các dây thần kinh. Não có thể dùng thông tin này, cùng với thị giác, để dẫn hướng từng tay riêng lẻ."
+        }
+      },
+      "points": [
+        "Ở bạch tuộc thường, tổng cộng có khoảng 500 triệu nơ-ron; khoảng hai phần ba nằm ở các tay.",
+        "Một tay bị tách rời vẫn có thể thực hiện một động tác vươn rập khuôn khi dây thần kinh của nó được kích thích.",
+        "Tuy vậy, não vẫn có thể điều khiển một tay riêng lẻ tới mục tiêu chỉ bằng thị giác.",
+        "Tám dây thần kinh nối với nhau quanh miệng, nên các tay cũng có thể phối hợp với những tay bên cạnh."
+      ],
+      "caution": {
+        "claim": "“Mỗi tay có một bộ não riêng.”",
+        "correction": "Mỗi tay có một dây thần kinh với các mạch tại chỗ, có thể tạo ra những cử động cơ bản mà không cần chỉ dẫn từng khoảnh khắc. Não vẫn quyết định cử động khi nào, về đâu, và vẫn nhận thông tin phản hồi. Các tay bán độc lập, không phải là những bộ não riêng biệt."
+      },
+      "basisNote": "Mọi số liệu và thí nghiệm đều từ bạch tuộc thường, Octopus vulgaris. Chưa có gì được đo đạc ở bạch tuộc bắt chước."
+    },
+    "skin": {
+      "title": "Đổi màu da linh hoạt",
+      "lead": "Các khoang màu của bạch tuộc bắt chước không phải được sơn sẵn lên da. Chúng được tạo ra, từng khoảnh khắc một, bởi hàng nghìn cơ quan tạo màu vận hành bằng cơ, nằm trên các lớp tế bào phản xạ ánh sáng.",
+      "steps": {
+        "rest": {
+          "title": "Da khi nghỉ",
+          "text": "Khi các cơ tỏa tia giãn, túi sắc tố của mỗi thể sắc tố (chromatophore) chỉ là một chấm tí hon. Các tế bào phản xạ trắng (leucophore) bên dưới lộ ra và da trông nhạt màu."
+        },
+        "signal": {
+          "title": "Kích hoạt thần kinh",
+          "text": "Các dây thần kinh vận động từ não phát xung. Mỗi thể sắc tố được nối trực tiếp, không qua trạm trung chuyển nào, và đó là lý do phản ứng nhanh đến vậy."
+        },
+        "expand": {
+          "title": "Thể sắc tố mở rộng",
+          "text": "Các cơ tỏa tia co lại và kéo mỗi túi đàn hồi ra thành một đĩa mỏng, rộng gấp nhiều lần so với lúc nghỉ."
+        },
+        "pigment": {
+          "title": "Sắc tố hiện rõ",
+          "text": "Khi được trải mỏng, sắc tố che phủ các lớp phản xạ bên dưới. Ở nơi một nhóm thể sắc tố sẫm màu cùng mở rộng, một mảng sẫm xuất hiện."
+        },
+        "pattern": {
+          "title": "Hoa văn tạo thành",
+          "text": "Việc mở rộng thể sắc tố ở một số vùng mà không mở ở những vùng khác tạo nên các khoang nâu và trắng kem nổi bật của con vật. Khi cơ giãn ra, hoa văn lại mờ đi."
+        }
+      },
+      "points": [
+        "Thể sắc tố (chromatophore) là cơ quan: gồm một túi sắc tố, các cơ tỏa tia và dây thần kinh.",
+        "Tế bào ánh kim (iridophore) phản xạ ánh sáng từ các phiến xếp chồng, tạo ra màu cấu trúc.",
+        "Tế bào phản xạ trắng (leucophore) tán xạ ánh sáng và tạo nên lớp nền trắng.",
+        "Hoa văn của loài này có thể thay đổi; nó được hệ thần kinh bật lên và tắt đi."
+      ],
+      "caution": {
+        "claim": "“Việc đổi màu diễn ra chậm, giống như sắc tố lan dần trong da.”",
+        "correction": "Thể sắc tố của động vật chân đầu được mở ra bằng cơ, dưới sự điều khiển trực tiếp của thần kinh, nên hoa văn có thể thay đổi trong chưa đầy một giây. Không cần đến bước nào chậm chạp do hoóc-môn hay do sắc tố di chuyển."
+      },
+      "basisNote": "Cấu trúc da được khái quát từ các động vật chân đầu khác. Hoa văn khoang có thể thay đổi đã được ghi nhận ở loài này."
+    },
+    "arms": {
+      "title": "Chuyển động của tay",
+      "lead": "Tay bạch tuộc không có xương và không có khớp. Nó có thể uốn ở bất kỳ điểm nào, theo bất kỳ hướng nào, và có thể dài ra, ngắn lại, cứng lên hoặc xoắn vặn. Hãy chọn một tay và tự mình điều khiển nó.",
+      "steps": {},
+      "points": [
+        "Một cấu trúc cơ thủy tĩnh (muscular hydrostat): cơ gần như không nén được, nên khi tay thon lại thì nó buộc phải dài ra, và ngược lại.",
+        "Cơ ngang bóp tay lại và làm nó duỗi dài. Cơ dọc làm tay ngắn lại, hoặc làm tay uốn cong khi chỉ một bên co.",
+        "Các cơ chéo quấn theo cả hai chiều làm tay xoắn vặn.",
+        "Mỗi giác hút áp kín bằng vành và bám chặt nhờ giảm áp suất trong khoang.",
+        "Các tay có thể duỗi ra, gập lại, cuộn tròn, xòe rộng, hoặc giấu dưới cơ thể hay trong cát."
+      ],
+      "caution": {
+        "claim": "“Tay và xúc tu là một.”",
+        "correction": "Bạch tuộc có tám tay, với giác hút dọc suốt chiều dài. Xúc tu, có ở mực ống và mực nang, là một cặp chi khác, có thể phóng dài, với giác hút chủ yếu ở phần đầu mút."
+      },
+      "basisNote": "Cơ học của tay được khái quát từ các loài bạch tuộc khác. Tay trong mô hình được điều khiển bằng một đường cong, không phải bằng cơ được mô phỏng."
+    },
+    "locomotion": {
+      "title": "Di chuyển",
+      "lead": "Cùng một cơ thể ấy di chuyển theo nhiều cách khá khác nhau. Hãy chọn một cách và cho nó chậm lại.",
+      "steps": {},
+      "points": [
+        "Bò bằng tay là kiểu di chuyển thường ngày và được dùng khi kiếm ăn.",
+        "Phóng phản lực là kiểu di chuyển nhanh, dùng để chạy trốn hoặc băng qua khoảng trống.",
+        "Bơi kiểu cá bơn, kiểu bơi làm nên tên tuổi của loài này, kết hợp phản lực với một hình nêm tay dẹt, uốn lượn.",
+        "Đi bằng hai tay đã được mô tả ở những loài bạch tuộc khác nhưng chưa được ghi nhận ở loài này, nên không được thể hiện."
+      ],
+      "basisNote": "Bơi kiểu cá bơn đã được mô tả ở loài này. Cơ chế bò và phản lực được khái quát từ các loài bạch tuộc khác. Tốc độ trong hoạt hình chỉ mang tính minh họa; chưa có tốc độ nào được công bố."
+    },
+    "mimicry": {
+      "title": "Bắt chước thích nghi",
+      "lead": "Con bạch tuộc không biến thành một con vật khác. Mỗi vẻ giống được lắp ghép từ những việc mà bất kỳ con bạch tuộc nào cũng làm được: sắp đặt các tay, thay đổi hình dạng cơ thể, đổi da và di chuyển theo một cách nhất định. Hãy bật và tắt từng thành phần.",
+      "steps": {},
+      "points": [
+        "Cách sắp xếp tay: chụm lại, xòe ra, giơ lên hoặc giấu đi.",
+        "Tư thế cơ thể: màng áo dẹt xuống, nâng lên hoặc thu giấu đi; mắt nhô cao.",
+        "Da: bật hoặc tắt các khoang màu, kết cấu trơn hoặc sần.",
+        "Chuyển động: uốn lượn, trôi lững lờ hoặc bất động.",
+        "Bối cảnh: màn phô diễn kiểu rắn biển được thấy sau khi bị cá thia tấn công, điều này gợi ý rằng phản ứng có thể tùy thuộc vào mối đe dọa."
+      ],
+      "caution": {
+        "claim": "“Nó biến hình thành hơn mười lăm loài.”",
+        "correction": "Từ đầu đến cuối nó vẫn là một con bạch tuộc, với tám tay và không có bộ xương. Các nhà khoa học mô tả nó chỉ tự tin về ba vẻ giống, và chưa có thí nghiệm nào cho thấy kẻ săn mồi bị đánh lừa."
+      },
+      "basisNote": "Ví dụ được thể hiện là bơi kiểu cá bơn, hành vi được ghi nhận đầy đủ nhất."
+    }
+  }
+}

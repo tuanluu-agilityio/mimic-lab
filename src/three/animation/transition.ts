@@ -7,13 +7,13 @@ import type { ChannelWeights, TransitionPhase, TransitionSequence } from './type
 export const DEFAULT_SEQUENCE: TransitionSequence = {
   duration: 9,
   phases: [
-    { id: 'rest', label: 'Resting octopus', start: 0, end: 0.06 },
-    { id: 'prepare', label: 'Preparation', start: 0.06, end: 0.2, channel: 'prep' },
-    { id: 'arms', label: 'Arm repositioning', start: 0.18, end: 0.54, channel: 'arms' },
-    { id: 'body', label: 'Body posture', start: 0.4, end: 0.7, channel: 'body' },
-    { id: 'skin', label: 'Colour and pattern', start: 0.58, end: 0.85, channel: 'skin' },
-    { id: 'movement', label: 'Movement', start: 0.76, end: 0.95, channel: 'movement' },
-    { id: 'final', label: 'Final posture', start: 0.95, end: 1 },
+    { id: 'rest', start: 0, end: 0.06 },
+    { id: 'prepare', start: 0.06, end: 0.2, channel: 'prep' },
+    { id: 'arms', start: 0.18, end: 0.54, channel: 'arms' },
+    { id: 'body', start: 0.4, end: 0.7, channel: 'body' },
+    { id: 'skin', start: 0.58, end: 0.85, channel: 'skin' },
+    { id: 'movement', start: 0.76, end: 0.95, channel: 'movement' },
+    { id: 'final', start: 0.95, end: 1 },
   ],
 };
 
@@ -21,14 +21,14 @@ export const DEFAULT_SEQUENCE: TransitionSequence = {
 export const QUICK_SEQUENCE: TransitionSequence = {
   duration: 3.2,
   phases: [
-    { id: 'arms', label: 'Arm repositioning', start: 0, end: 0.85, channel: 'arms' },
-    { id: 'body', label: 'Body posture', start: 0.1, end: 0.9, channel: 'body' },
-    { id: 'skin', label: 'Colour and pattern', start: 0.15, end: 0.9, channel: 'skin' },
-    { id: 'movement', label: 'Movement', start: 0.2, end: 1, channel: 'movement' },
+    { id: 'arms', start: 0, end: 0.85, channel: 'arms' },
+    { id: 'body', start: 0.1, end: 0.9, channel: 'body' },
+    { id: 'skin', start: 0.15, end: 0.9, channel: 'skin' },
+    { id: 'movement', start: 0.2, end: 1, channel: 'movement' },
   ],
 };
 
-/** Build a sequence with custom timing while keeping the standard phase order and labels. */
+/** Build a sequence with custom timing while keeping the standard phase order. */
 export function makeSequence(
   duration: number,
   overrides: Partial<Record<TransitionPhase['id'], [number, number]>> = {},

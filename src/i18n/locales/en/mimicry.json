@@ -1,0 +1,377 @@
+{
+  "sectionLabel": "Ten identities",
+  "eyebrow": "03 · Ten identities",
+  "title": "What it is said to imitate",
+  "overview": {
+    "lead": "Ten resemblances are commonly attributed to the mimic octopus. They are not equally well supported. Each one below carries an evidence grade, and each animation says how much of it follows published descriptions.",
+    "text": "Choose an identity from the strip under the model. The octopus stays an octopus throughout: watch which arms move, how the body and skin change, and what is left over.",
+    "grades": "Evidence grades",
+    "unknown": "What is not known"
+  },
+  "caveats": {
+    "confidence": "The scientists who first described these behaviours said they were confident about only three: the flatfish, the lionfish and the sea snake. Only the flatfish has been confirmed and counted by an independent team.",
+    "untested": "No experiment has yet tested whether predators are actually fooled. “Mimicry” here means a resemblance whose protective function is proposed, not proven.",
+    "toxicity": "It is not known whether the mimic octopus is itself distasteful or toxic. Its bold banding could also work as disruptive camouflage or as an honest warning signal.",
+    "counts": "Counts of “more than fifteen” imitated species come from popular media. They are not supported by published descriptions."
+  },
+  "detail": {
+    "proposedModel": "Proposed model:",
+    "compare": "Compare side by side",
+    "reveal": "Reveal hidden arms",
+    "rest": "Return to rest",
+    "evidence": "Evidence",
+    "how": "How the resemblance is made",
+    "where": "Where it has been seen",
+    "compared": "Model animal and octopus compared",
+    "aspect": "Aspect",
+    "octopus": "Octopus",
+    "aboutAnimation": "About this animation"
+  },
+  "viewport": {
+    "mimicOctopus": "Mimic octopus",
+    "referenceModel": "Reference model"
+  },
+  "playback": {
+    "group": "Transformation playback",
+    "progress": "Transformation progress",
+    "valueText": "{{percent}}%, {{phase}}"
+  },
+  "phases": {
+    "rest": "Resting octopus",
+    "prepare": "Preparation",
+    "arms": "Arm repositioning",
+    "body": "Body posture",
+    "skin": "Colour and pattern",
+    "movement": "Movement",
+    "final": "Final posture"
+  },
+  "aspects": {
+    "silhouette": "Silhouette",
+    "posture": "Body posture",
+    "colour": "Colour pattern",
+    "movement": "Movement",
+    "anatomy": "Anatomy"
+  },
+  "targets": {
+    "flatfish": {
+      "name": "Flatfish",
+      "modelNote": "and other soles and flounders",
+      "tagline": "Arms drawn into a leaf-shaped wedge, swimming with a rippling body.",
+      "evidenceDescription": "The best documented behaviour. Described in the original 2001 report and later recorded hundreds of times by an independent team in North Sulawesi. Which flatfish is the model is not settled: the first report proposed a banded sole (Zebrias), later authors a wider set of soles and flounders.",
+      "reconstructionNote": "Arms held together in a flattened, leaf-shaped wedge, mantle trailing the head, eyes raised, jet-propelled swimming with undulation and banded colour are all described. The exact position of each arm, the undulation rate and the speed are not published; those values are estimates.",
+      "mechanism": "All eight arms are swept back and held side by side so that the body tapers like a leaf. The mantle is flattened and trails behind the head, the eyes are raised, and water jetted from the funnel pushes the animal forward close to the sand while the whole outline ripples.",
+      "context": "Seen when the octopus crosses open sand, where it has no shelter.",
+      "comparison": {
+        "silhouette": {
+          "model": "Flat oval tapering to a tail",
+          "octopus": "Arms pressed together form a similar flat, tapering outline"
+        },
+        "posture": {
+          "model": "Lies and swims on its side, both eyes on top",
+          "octopus": "Mantle flattened, both eyes raised above the outline"
+        },
+        "colour": {
+          "model": "Dark and pale bands (in banded soles)",
+          "octopus": "Brown and cream bands produced by chromatophores"
+        },
+        "movement": {
+          "model": "Undulates fins and body along the bottom",
+          "octopus": "Jet propulsion plus undulation of the arm wedge"
+        },
+        "anatomy": {
+          "model": "A bony fish: skeleton, fins, gills behind the head",
+          "octopus": "A boneless mollusc: eight arms and a mantle, no fins"
+        }
+      },
+      "limitations": "No experiment has tested whether predators are deceived. The model sole is only described as potentially toxic, and flounders of the genus Bothus are not toxic, so the benefit of the resemblance is still an open question.",
+      "referenceCaption": "Banded sole (illustrative model)"
+    },
+    "lionfish": {
+      "name": "Lionfish",
+      "tagline": "Swimming above the bottom with banded arms spread and trailing.",
+      "evidenceDescription": "One of the three behaviours the discoverers said they were confident about, seen in four individuals. However, they had no clear image of it, and no later study has quantified it.",
+      "reconstructionNote": "Swimming just above the sea floor with banded arms spread and trailing is described. The exact fan of the arms, the mantle position and what triggers the display are not, so the radial arrangement shown here is an interpretation.",
+      "mechanism": "The animal lifts off the sand and swims slowly with its arms spread apart instead of bundled. Each banded arm then reads as a separate striped ray, like the long venomous fin spines of a lionfish.",
+      "context": "Reported while swimming in open water just above the bottom.",
+      "comparison": {
+        "silhouette": {
+          "model": "Body surrounded by long, separate fin rays",
+          "octopus": "Head and mantle surrounded by eight spread arms"
+        },
+        "posture": {
+          "model": "Hovers with fins flared",
+          "octopus": "Hovers with arms spread and trailing"
+        },
+        "colour": {
+          "model": "Red-brown and white bands on body and rays",
+          "octopus": "Brown and white bands along every arm"
+        },
+        "movement": {
+          "model": "Slow, drifting swimming",
+          "octopus": "Slow jet-assisted swimming"
+        },
+        "anatomy": {
+          "model": "Venomous spines supported by bone",
+          "octopus": "Soft, flexible arms with no spines and no venom delivered this way"
+        }
+      },
+      "limitations": "Based on a small number of sightings without a clear photograph. An octopus has eight arms, far fewer than the number of rays on a lionfish, so the resemblance is one of overall impression.",
+      "referenceCaption": "Lionfish (illustrative model)"
+    },
+    "sea-snake": {
+      "name": "Banded sea snake",
+      "tagline": "Six arms down a burrow, two banded arms stretched out in opposite directions.",
+      "evidenceDescription": "The display itself is well recorded: four events with photograph and video in the original report, each after an attack by territorial damselfish. That it imitates a sea snake is the authors’ interpretation; a later paper calls it “believed” and “low-fidelity”.",
+      "reconstructionNote": "Six arms threaded into a burrow and two banded arms extended in opposite directions, curled and undulating, are described. Which two arms are used, the position of the mantle and how long the display lasts are not published.",
+      "mechanism": "The octopus backs into a burrow and feeds six arms down the hole. The two arms left outside are stretched in opposite directions and turned to crisp black and pale bands, then waved in slow curves. Together they read as one long banded animal lying on the sand.",
+      "context": "Recorded as a response to attacks by damselfish, which are themselves hunted by sea snakes.",
+      "comparison": {
+        "silhouette": {
+          "model": "One long, slender body",
+          "octopus": "Two arms end to end give a similar long line"
+        },
+        "posture": {
+          "model": "Lies or swims fully exposed",
+          "octopus": "Most of the animal is hidden in a burrow"
+        },
+        "colour": {
+          "model": "Black and pale bands",
+          "octopus": "High-contrast bands on the two exposed arms"
+        },
+        "movement": {
+          "model": "Sinuous swimming",
+          "octopus": "Slow undulation of the two arms"
+        },
+        "anatomy": {
+          "model": "A reptile with a backbone, a head at one end and a paddle tail",
+          "octopus": "Two tapering arm tips and no head at either end"
+        }
+      },
+      "limitations": "Whether the damselfish actually retreated was not reported, and the function of the display has not been tested experimentally.",
+      "referenceCaption": "Banded sea krait (illustrative model)"
+    },
+    "stingray": {
+      "name": "Stingray",
+      "tagline": "A widely repeated claim with no scientific description behind it.",
+      "evidenceDescription": "Stingrays appear in many popular lists of animals the mimic octopus imitates. Research for this project found no peer-reviewed paper that describes such a display.",
+      "reconstructionNote": "Nothing about this posture is taken from the scientific literature. The animation only shows how an octopus body could produce a ray-like outline, to illustrate what the popular claim would involve.",
+      "mechanism": "In this illustration six arms are folded out sideways and held with the web spread to suggest two wings, while the last pair trails as a tail. This is a thought experiment about body shape, not a record of behaviour.",
+      "comparison": {
+        "silhouette": {
+          "model": "Flat disc with a thin tail",
+          "octopus": "Arms and web spread sideways could suggest a disc"
+        },
+        "posture": {
+          "model": "Body and pectoral fins fused into one disc",
+          "octopus": "Separate arms held together"
+        },
+        "colour": {
+          "model": "Plain or spotted upper side",
+          "octopus": "Drab, unbanded skin in this illustration"
+        },
+        "movement": {
+          "model": "Waves travel along the fin margins",
+          "octopus": "Illustrative arm ripples; not observed"
+        },
+        "anatomy": {
+          "model": "A cartilaginous fish with a tail spine",
+          "octopus": "A mollusc with no skeleton or spine"
+        }
+      },
+      "limitations": "Treat this as unverified. If you find a peer-reviewed description of ray mimicry in this species, the evidence grade should be revised.",
+      "referenceCaption": "Stingray (illustrative model)"
+    },
+    "snake-eel": {
+      "name": "Snake eel",
+      "tagline": "Listed in popular accounts; no scientific description was found.",
+      "evidenceDescription": "Snake eels are named in popular lists of mimic octopus “impressions”. Research for this project found no peer-reviewed description of the behaviour.",
+      "reconstructionNote": "Nothing about this posture is taken from the scientific literature. The animation shows one way an octopus could present a single long, narrow outline.",
+      "mechanism": "In this illustration all eight arms are gathered into one bundle behind the animal and waved from side to side, with the mantle narrowed. This is a thought experiment about body shape, not a record of behaviour.",
+      "comparison": {
+        "silhouette": {
+          "model": "One long, thin body with a pointed head",
+          "octopus": "A bundle of arms could give a long, thin outline"
+        },
+        "posture": {
+          "model": "Often buried with only the head showing",
+          "octopus": "Mantle narrowed, arms bundled"
+        },
+        "colour": {
+          "model": "Varies by species: plain, spotted or banded",
+          "octopus": "Pale with soft bands in this illustration"
+        },
+        "movement": {
+          "model": "Side-to-side undulation",
+          "octopus": "Illustrative arm undulation; not observed"
+        },
+        "anatomy": {
+          "model": "A bony fish with a backbone",
+          "octopus": "Eight separate arms, visible at close range"
+        }
+      },
+      "limitations": "Treat this as unverified. The documented sea-snake display (identity 03) is a different behaviour and should not be confused with this claim.",
+      "referenceCaption": "Snake eel (illustrative model)"
+    },
+    "jellyfish": {
+      "name": "Jellyfish",
+      "tagline": "Seen once: a slow sink through the water with arms spread evenly.",
+      "evidenceDescription": "A single incident in the original report. The authors wrote only that the octopus “may” impersonate a jellyfish and did not count it among the behaviours they were confident about.",
+      "reconstructionNote": "Rising several metres to the surface and then sinking slowly with arms spread evenly and undulating is described. Mantle pulsing, colour and the trigger are not, and are filled in here.",
+      "mechanism": "The octopus leaves the bottom, then lets itself sink with the arms spread evenly around the body and trailing, so the outline is a rounded mass above a ring of hanging strands.",
+      "context": "Reported once, in open water above the sand flat.",
+      "comparison": {
+        "silhouette": {
+          "model": "A bell with tentacles hanging below",
+          "octopus": "Mantle above, arms spread and hanging"
+        },
+        "posture": {
+          "model": "Radially symmetric",
+          "octopus": "Arms spaced evenly around the head"
+        },
+        "colour": {
+          "model": "Often translucent",
+          "octopus": "Opaque skin; colour during the event was not reported"
+        },
+        "movement": {
+          "model": "Rhythmic pulsing of the bell",
+          "octopus": "Slow sinking with undulating arms"
+        },
+        "anatomy": {
+          "model": "No brain, eyes like an octopus’s, or muscular arms",
+          "octopus": "A complex mollusc with a large brain and eyes"
+        }
+      },
+      "limitations": "One observation with cautious wording. It may simply be a way of descending through the water.",
+      "referenceCaption": "Jellyfish (illustrative model)"
+    },
+    "sponge": {
+      "name": "Sea sponge",
+      "tagline": "Sitting motionless and resembling a small sponge on the sand.",
+      "evidenceDescription": "A field study in North Sulawesi reports that the octopus, when motionless, resembled small sponges, tube-worm tubes or colonial tunicates. Only the abstract was available for this project, so the posture itself is not described here from the source.",
+      "reconstructionNote": "Being motionless is reported. The lumpy, upright shape and rough skin shown here are an interpretation of what “resembling a sponge” could look like.",
+      "mechanism": "Here the resemblance comes from stillness. The arms are tucked in, the mantle is held up as an irregular lump, and the skin is uniform in colour and roughened by raised papillae. This is camouflage against background objects, not a display aimed at a predator.",
+      "context": "Reported for stationary animals on the open sand flat.",
+      "comparison": {
+        "silhouette": {
+          "model": "Irregular lumps or vases",
+          "octopus": "A compact lump with arms tucked beneath"
+        },
+        "posture": {
+          "model": "Fixed to the bottom",
+          "octopus": "Sitting still"
+        },
+        "colour": {
+          "model": "Uniform, dull",
+          "octopus": "Banding switched off, uniform mottled skin"
+        },
+        "movement": {
+          "model": "None",
+          "octopus": "None while the posture is held"
+        },
+        "anatomy": {
+          "model": "A simple animal with no organs, nerves or muscles",
+          "octopus": "An alert animal that can leave at any moment"
+        }
+      },
+      "limitations": "This is stationary camouflage. It is not evidence that the octopus copies one particular sponge species.",
+      "referenceCaption": "Sponge (illustrative model)"
+    },
+    "tunicate": {
+      "name": "Colonial tunicate",
+      "tagline": "Motionless and compact, resembling a cluster of sea squirts.",
+      "evidenceDescription": "The same field study that mentions sponges reports that motionless animals resembled colonial tunicates. Only the abstract was available for this project; it gives no detail of the posture.",
+      "reconstructionNote": "Being motionless is reported. The knobbly cluster of raised arm loops shown here is an interpretation, not a described posture.",
+      "mechanism": "The animal sits still with the arms drawn in. In this illustration the arms are looped upward so the outline is a cluster of rounded knobs, and the skin is pale and blotchy. As with the sponge, this is camouflage by resemblance to a background object.",
+      "context": "Reported for stationary animals on the open sand flat.",
+      "comparison": {
+        "silhouette": {
+          "model": "A cluster of small rounded zooids",
+          "octopus": "A compact cluster of curled arms and mantle"
+        },
+        "posture": {
+          "model": "Fixed to the bottom",
+          "octopus": "Sitting still"
+        },
+        "colour": {
+          "model": "Often pale or translucent with coloured rims",
+          "octopus": "Pale, blotchy skin"
+        },
+        "movement": {
+          "model": "None visible",
+          "octopus": "None while the posture is held"
+        },
+        "anatomy": {
+          "model": "Many small filter-feeding animals sharing a base",
+          "octopus": "A single animal"
+        }
+      },
+      "limitations": "The posture is an interpretation of a one-sentence report. No model species is named in the abstract.",
+      "referenceCaption": "Colonial tunicate (illustrative model)"
+    },
+    "tube-worm": {
+      "name": "Tube-worm tube",
+      "tagline": "Motionless, resembling the empty-looking tube of a polychaete worm.",
+      "evidenceDescription": "The field study from North Sulawesi says motionless animals resembled “tube-worm tubes”. Note the wording: the tube, not the worm with its feathery crown. Only the abstract was available for this project.",
+      "reconstructionNote": "Being motionless and tube-like is reported. Which arms are used and how the rest of the body is hidden are not described; this animation raises two arms from a burrow as one possible arrangement.",
+      "mechanism": "With the body down a burrow, a part of the animal that stays above the sand and keeps still can pass for one of the many worm tubes that stand on a sand flat. The skin is dull and unbanded.",
+      "context": "Reported for stationary animals on the open sand flat.",
+      "comparison": {
+        "silhouette": {
+          "model": "A narrow upright tube",
+          "octopus": "Arms held together upright form a narrow column"
+        },
+        "posture": {
+          "model": "Worm hidden inside its tube",
+          "octopus": "Body hidden in a burrow"
+        },
+        "colour": {
+          "model": "Dull grey-brown, sandy",
+          "octopus": "Dull, unbanded skin"
+        },
+        "movement": {
+          "model": "None",
+          "octopus": "Almost none"
+        },
+        "anatomy": {
+          "model": "A secreted tube built by a segmented worm",
+          "octopus": "Living, muscular arms"
+        }
+      },
+      "limitations": "The source describes a resemblance to tubes when motionless. It does not describe the octopus imitating a feather-duster crown.",
+      "referenceCaption": "Polychaete worm tubes (illustrative model)"
+    },
+    "anemone": {
+      "name": "Sea anemone",
+      "modelNote": "(suggested)",
+      "tagline": "Sitting on a mound with every arm raised in a zigzag.",
+      "evidenceDescription": "The original report describes the posture but only says “it is possible” that it imitates a sand anemone of the genus Megalactis. The authors did not list it among the behaviours they were confident about.",
+      "reconstructionNote": "Sitting on a sand mound with all arms raised, each bent in a zigzag, is described. Movement, colour, what triggers it and how often it was seen are not reported.",
+      "mechanism": "The octopus sits on a low mound of sand and lifts all eight arms, holding each one in a zigzag. From a distance the raised, kinked arms resemble the long branched tentacles of a sand-dwelling anemone.",
+      "context": "Reported for an animal sitting on a sand mound.",
+      "comparison": {
+        "silhouette": {
+          "model": "A ring of long tentacles around a central disc",
+          "octopus": "Eight raised arms around the head"
+        },
+        "posture": {
+          "model": "Column buried in sand",
+          "octopus": "Sitting on a mound, mantle low"
+        },
+        "colour": {
+          "model": "Banded or mottled tentacles",
+          "octopus": "Banded arms; colour during the display was not reported"
+        },
+        "movement": {
+          "model": "Slow swaying",
+          "octopus": "Not reported; shown almost still here"
+        },
+        "anatomy": {
+          "model": "Stinging tentacles, no brain, fixed in place",
+          "octopus": "Muscular arms with suckers and no stinging cells"
+        }
+      },
+      "limitations": "The identification with an anemone is the authors’ suggestion, worded as a possibility. The number of observations is not given.",
+      "referenceCaption": "Sand anemone (illustrative model)"
+    }
+  }
+}

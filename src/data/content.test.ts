@@ -3,10 +3,16 @@ import { ANATOMY_STRUCTURES } from '@/data/anatomy/structures';
 import { MECHANISMS } from '@/data/mechanisms';
 import { MIMICRY_CAVEATS } from '@/data/mimicry';
 import { hasReference, REFERENCES } from '@/data/references';
+import type { MechanismText, StructureText } from '@/i18n/content';
+import en from '@/i18n/locales/en';
 import { SKIN_LAYERS_INFO } from '@/data/skin/layers';
 import { INTERNAL_STRUCTURE_IDS } from '@/stores/appStore';
 import { ANCHOR_IDS } from '@/three/models/anatomy/anchors';
 import { MECHANISM_IDS, SKIN_LAYERS } from '@/types/app';
+
+// Text is checked against the English source; `src/i18n/i18n.test.ts` holds the other locales to it.
+const STRUCTURE_TEXT: Record<string, StructureText> = en.anatomy.structures;
+const MECHANISM_TEXT: Record<string, MechanismText> = en.mechanisms.items;
 
 const REQUIRED = [
   'mantle', 'head', 'eyes', 'arms', 'web', 'suckers', 'funnel', 'skin',
@@ -19,7 +25,8 @@ describe('anatomy content', () => {
   });
 
   it.each(ANATOMY_STRUCTURES.map((s) => [s.id, s] as const))('%s is complete', (_id, s) => {
-    for (const text of [s.summary, s.func, s.relations, s.deeper, s.approximation]) expect(text.length).toBeGreaterThan(15);
+    const t = STRUCTURE_TEXT[s.id];
+    for (const text of [t.summary, t.func, t.relations, t.deeper, t.approximation]) expect(text.length).toBeGreaterThan(15);
     expect(s.references.length).toBeGreaterThan(0);
     for (const r of s.references) expect(hasReference(r), `unknown reference ${r}`).toBe(true);
     expect(ANCHOR_IDS as readonly string[]).toContain(s.anchor);
@@ -40,10 +47,9 @@ describe('mechanism content', () => {
   it('cites known references and never calls an arm a brain', () => {
     for (const m of MECHANISMS) {
       for (const r of m.references) expect(hasReference(r), `unknown reference ${r}`).toBe(true);
-      expect(m.basisNote.length).toBeGreaterThan(10);
+      expect(MECHANISM_TEXT[m.id].basisNote.length).toBeGreaterThan(10);
     }
-    const nervous = MECHANISMS[0];
-    expect(nervous.caution?.correction).toMatch(/not separate brains/);
+    expect(MECHANISM_TEXT.nervous.caution?.correction).toMatch(/not separate brains/);
   });
 
   it('the skin sequence has the five required steps with rising activation', () => {
