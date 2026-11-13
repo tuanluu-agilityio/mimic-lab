@@ -9,26 +9,26 @@ import type { EvidenceLevel, ReferenceModelId } from '@/types/app';
  */
 export type ReconstructionLevel = 'documented' | 'partly-documented' | 'conceptual';
 
-export interface ComparisonRow {
-  aspect: 'Silhouette' | 'Body posture' | 'Colour pattern' | 'Movement' | 'Anatomy';
-  model: string;
-  octopus: string;
-}
+/** Rows of the model-versus-octopus comparison table, in display order. */
+export const COMPARISON_ASPECTS = ['silhouette', 'posture', 'colour', 'movement', 'anatomy'] as const;
+export type ComparisonAspect = (typeof COMPARISON_ASPECTS)[number];
 
+/**
+ * Structure of one identity. All visitor-facing text (name, proposed model species, tagline,
+ * evidence description, reconstruction note, mechanism, context, comparison rows, limitations,
+ * reference caption) lives in `src/i18n/locales/<locale>/mimicry.json` under `targets.<id>`.
+ */
 export interface MimicryTarget {
   id: string;
   /** 1..10 */
   order: number;
-  name: string;
-  /** Only where the literature names a model species or genus. */
+  /**
+   * Latin name of the proposed model, only where the literature names a species or genus.
+   * Never translated; a translatable qualifier may follow it (`modelNote` in mimicry.json).
+   */
   scientificName?: string;
-  /** One-line card text. */
-  tagline: string;
   evidenceLevel: EvidenceLevel;
-  evidenceDescription: string;
   reconstruction: ReconstructionLevel;
-  /** What exactly is and is not taken from the literature in this animation. */
-  reconstructionNote: string;
   references: string[];
 
   /** bodyConfiguration + armConfiguration + skinPattern + movementParameters. */
@@ -38,37 +38,5 @@ export interface MimicryTarget {
   transitionSequence: TransitionSequence;
   camera: { azimuth: number; polar: number; distance: number; targetY: number };
 
-  educationalContent: {
-    /** How the resemblance is produced, in terms of ordinary octopus abilities. */
-    mechanism: string;
-    /** Where and when it has been seen, if reported. */
-    context?: string;
-    comparison: ComparisonRow[];
-  };
-  limitations: string;
   referenceModel: ReferenceModelId;
-  /** Caption for the reference model. */
-  referenceCaption: string;
 }
-
-export const EVIDENCE_LABELS: Record<EvidenceLevel, { word: string; description: string }> = {
-  A: {
-    word: 'Documented',
-    description: 'Directly observed and described in peer-reviewed literature, with the posture and movement recorded.',
-  },
-  B: {
-    word: 'Qualified',
-    description:
-      'Reported in the scientific literature, but with reservations: few observations, cautious wording by the authors, or little descriptive detail.',
-  },
-  C: {
-    word: 'Tentative',
-    description: 'Popular or anecdotal claim. No peer-reviewed description was found during research for this project.',
-  },
-};
-
-export const RECONSTRUCTION_LABELS: Record<ReconstructionLevel, string> = {
-  documented: 'Animation follows published descriptions',
-  'partly-documented': 'Animation partly reconstructed',
-  conceptual: 'Conceptual reconstruction',
-};

@@ -115,8 +115,8 @@ export type ChannelWeights = Record<Channel, number>;
 export type PhaseId = 'rest' | 'prepare' | 'arms' | 'body' | 'skin' | 'movement' | 'final';
 
 export interface TransitionPhase {
+  /** Displayed through `mimicry:phases.<id>` in the active language. */
   id: PhaseId;
-  label: string;
   /** Normalised start and end (0..1) within the sequence. Phases may overlap. */
   start: number;
   end: number;

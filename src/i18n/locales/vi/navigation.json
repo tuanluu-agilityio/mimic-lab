@@ -1,0 +1,29 @@
+{
+  "sections": "Các phần",
+  "brand": "Mimic Lab",
+  "links": {
+    "intro": {
+      "label": "Giới thiệu",
+      "short": "Mở đầu"
+    },
+    "anatomy": {
+      "label": "Giải phẫu",
+      "short": "Giải phẫu"
+    },
+    "mechanisms": {
+      "label": "Cơ chế sinh học",
+      "short": "Cơ chế"
+    },
+    "mimicry": {
+      "label": "Mười danh tính",
+      "short": "Danh tính"
+    },
+    "sources": {
+      "label": "Nguồn tài liệu",
+      "short": "Nguồn"
+    }
+  },
+  "language": {
+    "label": "Ngôn ngữ"
+  }
+}

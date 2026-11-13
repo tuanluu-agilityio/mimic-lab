@@ -1,19 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import { QualityControl } from '@/features/viewer/QualityControl';
 import { scrollToStage } from '@/hooks/useStageObserver';
 import { useAppStore } from '@/stores/appStore';
 import type { Stage } from '@/types/app';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import styles from './Nav.module.css';
 
-const LINKS: { stage: Stage; label: string; short: string }[] = [
-  { stage: 'intro', label: 'Introduction', short: 'Intro' },
-  { stage: 'anatomy', label: 'Anatomy', short: 'Anatomy' },
-  { stage: 'mechanisms', label: 'Mechanism Lab', short: 'Lab' },
-  { stage: 'mimicry', label: 'Ten Identities', short: 'Ten' },
-  { stage: 'sources', label: 'Sources', short: 'Sources' },
-];
+const LINKS: Stage[] = ['intro', 'anatomy', 'mechanisms', 'mimicry', 'sources'];
 
 export function Nav() {
   const stage = useAppStore((s) => s.stage);
+  const { t } = useTranslation('navigation');
   return (
     <header className={styles.nav}>
       <a
@@ -25,30 +22,35 @@ export function Nav() {
         }}
       >
         <span className={styles.brandMark} aria-hidden="true" />
-        Mimic Lab
+        <span className={styles.brandName} lang="en">
+          {t('brand')}
+        </span>
       </a>
-      <nav aria-label="Sections">
+      <nav aria-label={t('sections')}>
         <ul className={styles.links}>
           {LINKS.map((link) => (
-            <li key={link.stage}>
+            <li key={link}>
               <a
-                href={`#stage-${link.stage}`}
+                href={`#stage-${link}`}
                 className={styles.link}
-                aria-current={stage === link.stage ? 'true' : undefined}
-                data-testid={`nav-${link.stage}`}
+                aria-current={stage === link ? 'true' : undefined}
+                data-testid={`nav-${link}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToStage(link.stage);
+                  scrollToStage(link);
                 }}
               >
-                <span className={styles.long}>{link.label}</span>
-                <span className={styles.short}>{link.short}</span>
+                <span className={styles.long}>{t(`links.${link}.label`)}</span>
+                <span className={styles.short}>{t(`links.${link}.short`)}</span>
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      <QualityControl />
+      <div className={styles.tools}>
+        <QualityControl />
+        <LanguageSwitcher />
+      </div>
     </header>
   );
 }

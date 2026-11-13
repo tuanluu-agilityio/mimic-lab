@@ -1,0 +1,249 @@
+{
+  "sectionLabel": "Anatomy explorer",
+  "eyebrow": "01 · Anatomy explorer",
+  "title": "The body of a mimic",
+  "modeGroup": "Visualisation mode",
+  "modes": {
+    "normal": {
+      "label": "Normal",
+      "hint": "The animal as it appears from outside."
+    },
+    "xray": {
+      "label": "X-ray",
+      "hint": "The skin turns translucent so the organs show through."
+    },
+    "exploded": {
+      "label": "Exploded",
+      "hint": "Organs are drawn apart from the body along a slider."
+    },
+    "section": {
+      "label": "Section",
+      "hint": "A cutting plane slices through the body."
+    },
+    "isolated": {
+      "label": "Isolate",
+      "hint": "Only the selected structure stays solid."
+    },
+    "neural": {
+      "label": "Nerves",
+      "hint": "Brain, optic lobes and the eight arm nerve cords."
+    },
+    "skin": {
+      "label": "Skin",
+      "hint": "A magnified, schematic block of skin."
+    }
+  },
+  "groups": {
+    "external": "External structures",
+    "internal": "Internal structures"
+  },
+  "empty": "Select a structure from the lists above, or click a marker on the model, to read what it is, what it does and how it connects to the rest of the body.",
+  "fields": {
+    "function": "Function",
+    "connections": "Connections",
+    "more": "More detail",
+    "control": "Control"
+  },
+  "sliders": {
+    "separation": "Separation",
+    "cuttingPlane": "Cutting plane",
+    "midline": "midline",
+    "left": "left {{percent}}%",
+    "right": "right {{percent}}%",
+    "nerveSignal": "Nerve signal to chromatophores",
+    "relaxed": "relaxed · pale",
+    "contracted": "contracted · dark"
+  },
+  "isolate": {
+    "label": "Isolate",
+    "text": "Choose a structure below. Everything else will fade so it can be seen alone."
+  },
+  "skinLayer": "Skin layer",
+  "allLayers": "All layers",
+  "skinIntro": "Octopus skin is a stack of layers. Colour comes from pigment organs near the surface that the brain opens and closes through nerves and muscles, working over reflective layers beneath. Move the slider to send a nerve signal, or pick a layer to see it alone.",
+  "skinModelNote": "A schematic block, not to scale. Layer order and cell types are generalised from other cephalopods, mainly the common octopus; the skin of the mimic octopus has not been studied at this level.",
+  "systems": {
+    "integument": "Skin",
+    "nervous": "Nervous system",
+    "circulatory": "Circulation",
+    "respiratory": "Respiration",
+    "digestive": "Digestion",
+    "locomotor": "Movement",
+    "sensory": "Senses",
+    "defence": "Defence"
+  },
+  "basis": {
+    "species": "Described for this species",
+    "octopod-general": "Generalised from other octopus species"
+  },
+  "structures": {
+    "mantle": {
+      "name": "Mantle",
+      "summary": "The muscular sac behind the head. It encloses the gills, hearts, gut and reproductive organs, and is what most people take for the “head”.",
+      "func": "Its wall contracts rhythmically to pump water over the gills. A hard contraction forces that water out through the funnel and jets the animal along.",
+      "relations": "Breathing and jet propulsion use the same muscle and the same water, so swimming fast competes with steady respiration and circulation.",
+      "deeper": "Collected specimens of this species have mantle lengths of about 44 to 48 mm, so it is a small octopus. The species description notes a white teardrop-shaped ring in the middle of the upper mantle and a white “U” on the rear of the mantle.",
+      "approximation": "Shape is a smooth procedural ovoid; the white mantle markings of the species are not individually modelled."
+    },
+    "head": {
+      "name": "Head",
+      "summary": "The region between the mantle and the arms. It carries the eyes and contains the brain, which is protected by a capsule of cartilage.",
+      "func": "Houses the central brain and the main sense organs, and joins the arm crown to the rest of the body.",
+      "relations": "The oesophagus runs straight through the middle of the brain on its way from the mouth to the gut, so the brain forms a ring around it.",
+      "deeper": "In octopuses the mouth is not on the head at all: it lies underneath, at the centre of the ring of arms.",
+      "approximation": "Proportions are approximate."
+    },
+    "eyes": {
+      "name": "Eyes",
+      "summary": "Large camera-type eyes with a lens, set on raised mounts on top of the head. The pupil is a horizontal slit.",
+      "func": "Vision is the main sense used for navigating, finding prey and judging threats. The raised position lets the animal look out while the body stays low, or even while it sits in a burrow.",
+      "relations": "Each eye feeds a large optic lobe directly behind it. What the animal sees drives the patterns it produces on its skin.",
+      "deeper": "Experiments on other octopuses indicate that they do not discriminate colours in the usual way, having a single type of visual pigment. How a colour-blind animal matches coloured surroundings is unresolved; proposed explanations, such as using chromatic blur through the oddly shaped pupil or light-sensitive molecules in the skin, are still hypotheses.",
+      "approximation": "The papilla drawn above each eye follows photographs and secondary descriptions; primary measurements were not available."
+    },
+    "arms": {
+      "name": "Eight arms",
+      "summary": "Eight long, slender arms arranged in a ring around the mouth. They are solid muscle with no skeleton, and each has a large nerve cord running along its centre.",
+      "func": "Walking, probing holes for prey, handling food, digging, and forming the postures seen in this animal’s displays.",
+      "relations": "About two thirds of an octopus’s nerve cells lie in the arm nerve cords rather than the brain, so much of the fine control of each arm is handled locally.",
+      "deeper": "This species is classed among octopuses with very long arms, at least about six and a half times the mantle length, and an arm span up to roughly 60 cm has been reported. Like some relatives it can shed an arm at a set point near the base. Arms are numbered in four pairs from front to back: L1 to L4 on the left, R1 to R4 on the right.",
+      "approximation": "Arm length in the model is close to the published ratio but is not measured from a specimen. Each arm is a curve-driven tube, not simulated muscle."
+    },
+    "web": {
+      "name": "Arm web",
+      "summary": "A thin sheet of skin and muscle joining the bases of neighbouring arms.",
+      "func": "Spread like a parachute, the web closes off the space under the arms. Foraging octopuses flare it over a patch of sand or rubble to trap animals flushed out by the arm tips.",
+      "relations": "Works with the arms and suckers during feeding, and adds surface when the animal changes its outline.",
+      "deeper": "Flared webs used to trap fleeing prey are reported for this species on sand flats. No published measurement of web depth was found for this project.",
+      "approximation": "Web depth is an estimate; no primary measurement was available."
+    },
+    "suckers": {
+      "name": "Suckers",
+      "summary": "Muscular cups along the underside of each arm. Each has a flexible outer rim (the infundibulum) and an inner chamber (the acetabulum).",
+      "func": "The rim seals against a surface and the chamber muscles then lower the pressure inside, so the sucker grips. Suckers can also pinch, hold and pass small objects along the arm.",
+      "relations": "The rim is packed with sensory cells that respond to touch and to chemicals, so the animal effectively tastes what it touches. Each sucker has its own small ganglion connected to the arm nerve cord.",
+      "deeper": "The species description notes that there are no enlarged suckers. Suckers are generally arranged in two rows in this family; that arrangement is shown here on the strength of secondary sources.",
+      "approximation": "Two rows of simplified cups; the count per arm is illustrative."
+    },
+    "funnel": {
+      "name": "Funnel (siphon)",
+      "summary": "A muscular tube opening beside the head from the mantle cavity.",
+      "func": "It is the outlet for the water used in breathing and the nozzle for jet propulsion. It also carries away waste and, when released, ink.",
+      "relations": "Because the funnel can be pointed, the animal can jet backward, forward or sideways with the same mantle contraction.",
+      "deeper": "Water enters the mantle cavity around the neck and leaves only through the funnel, so flow is one-way.",
+      "approximation": "Position and size are schematic; no primary data for this species."
+    },
+    "skin": {
+      "name": "Skin",
+      "summary": "A thin, soft skin containing thousands of colour organs under direct nervous control, above layers of reflecting cells.",
+      "func": "Produces the animal’s patterns: drab brown while foraging, or bold dark brown and cream bands. It can also raise small bumps (papillae) to change its texture.",
+      "relations": "Each colour organ is opened by tiny muscles wired to the brain, so the pattern can change in a fraction of a second, guided by what the eyes see.",
+      "deeper": "The banded pattern of this species is changeable, not fixed: it is switched on and off by the nervous system. Its close relative Wunderpus photogenicus, by contrast, is described as having a fixed pattern of white bars and spots. Open the Skin Structure view to see the layers.",
+      "approximation": "The pattern is procedural shading, not a photograph-derived texture."
+    },
+    "brain": {
+      "name": "Brain",
+      "summary": "A compact mass of fused ganglia between the eyes, wrapped around the oesophagus and enclosed in cartilage. It has a part above the oesophagus and a part below it.",
+      "func": "Learning, memory and decision-making, and issuing the high-level commands that start and steer movements.",
+      "relations": "Receives vision through the optic lobes and touch and chemical information from the arms, and sends motor commands down the arm nerve cords and to the skin’s colour organs.",
+      "deeper": "In the common octopus the central brain holds roughly 40 to 50 million neurons out of about 500 million in the whole animal. No counts exist for the mimic octopus itself.",
+      "approximation": "Shown as simplified lobes. Internal lobes are not differentiated."
+    },
+    "optic-lobes": {
+      "name": "Optic lobes",
+      "summary": "Two large lobes, one behind each eye, connected to the central brain by a short stalk.",
+      "func": "Process visual information from the retina. They also take part in controlling body patterning.",
+      "relations": "They sit between the eyes and the central brain: vision in, pattern and movement decisions out.",
+      "deeper": "Together the optic lobes of the common octopus contain more neurons than the central brain itself: estimates range from about 90 to 180 million.",
+      "approximation": "Size and shape are schematic."
+    },
+    "nervous-system": {
+      "name": "Arm nerve cords",
+      "summary": "A thick nerve cord runs down the centre of every arm, with a ganglion for each sucker. The eight cords are linked to one another around the mouth and to the brain.",
+      "func": "Local circuits in the cords generate basic arm movements and sucker actions. Two stellate ganglia in the mantle relay commands to the mantle muscles.",
+      "relations": "The brain decides when and where to move; the arm cords work out much of how. Sensory information from the arms also travels back up to the brain.",
+      "deeper": "In the common octopus, roughly 300 to 350 million of about 500 million neurons are in the arms. An arm cut off from the brain can still perform a reaching movement when stimulated. But experiments also show the brain can guide a single arm using vision, and use touch information coming back from that arm. The arms are semi-independent; they are not separate brains.",
+      "approximation": "Cords, nerve ring and stellate ganglia are drawn as simple tubes and nodes."
+    },
+    "gills": {
+      "name": "Gills",
+      "summary": "A single pair of feathery gills inside the mantle cavity, one on each side.",
+      "func": "Take up oxygen from the water pumped through the mantle cavity and release carbon dioxide.",
+      "relations": "Each gill has its own branchial heart that pushes blood through it before the blood returns to the main heart.",
+      "deeper": "Octopus blood carries oxygen with haemocyanin, a copper-based protein that is blue when oxygenated. It carries less oxygen than haemoglobin, which is one reason the circulation needs extra pumps.",
+      "approximation": "Lamellae are simplified discs."
+    },
+    "hearts": {
+      "name": "Three hearts",
+      "summary": "One systemic heart in the middle of the mantle and two smaller branchial hearts, one at the base of each gill.",
+      "func": "The branchial hearts push oxygen-poor blood through the gills. The systemic heart then pumps the oxygen-rich blood to the rest of the body.",
+      "relations": "The circulation is closed, with blood kept in vessels. The hearts and gills depend on the mantle’s breathing movements, so hard jetting disturbs the flow.",
+      "deeper": "In the model the branchial hearts contract just before the systemic heart, to show the order in which blood moves through them.",
+      "approximation": "Hearts and vessels are schematic; beat timing is illustrative."
+    },
+    "digestive-system": {
+      "name": "Digestive system",
+      "summary": "A U-shaped gut: buccal mass, oesophagus, crop, stomach, caecum and intestine, with a large digestive gland beside it.",
+      "func": "Food is cut up in the buccal mass, stored in the crop, ground in the muscular stomach and sorted in the spiral caecum. The digestive gland supplies enzymes and absorbs nutrients.",
+      "relations": "The oesophagus passes through the brain, which limits the size of each mouthful. The intestine bends forward so the anus opens near the funnel, and waste leaves with the outgoing water.",
+      "deeper": "Salivary glands behind the brain produce secretions used to subdue and begin digesting prey. On the sand flats this species feeds mainly on small crustaceans and fish caught with the arms.",
+      "approximation": "Organs are simplified solids; salivary glands are not shown."
+    },
+    "beak": {
+      "name": "Beak",
+      "summary": "A pair of hard, dark jaws made of chitin and protein, shaped rather like a parrot’s beak, hidden in the buccal mass at the centre of the arms.",
+      "func": "Bites and tears prey into pieces small enough to swallow.",
+      "relations": "It is the only hard part of the animal, so the beak sets the size of the smallest gap an octopus can squeeze through.",
+      "deeper": "The lower jaw overlaps the upper one, the reverse of a parrot’s.",
+      "approximation": "Shown as two simple cones."
+    },
+    "radula": {
+      "name": "Radula",
+      "summary": "A ribbon carrying rows of tiny teeth, inside the buccal mass behind the beak.",
+      "func": "Rasps flesh and moves pieces of food back toward the oesophagus.",
+      "relations": "Works together with the beak and the salivary secretions as the first stage of digestion.",
+      "deeper": "A toothed radula is a feature octopuses share with snails and most other molluscs.",
+      "approximation": "Greatly enlarged for visibility; the real radula is very small."
+    },
+    "ink-sac": {
+      "name": "Ink sac",
+      "summary": "In shallow-water octopuses, a small pear-shaped sac lying against the digestive gland, with a duct that opens into the end of the gut near the anus.",
+      "func": "Stores ink, a suspension of the dark pigment melanin with mucus. Released through the funnel, it forms a cloud or a blob that can distract a predator.",
+      "relations": "Ink leaves by the same route as waste and respiratory water: out of the funnel.",
+      "deeper": "Presence of an ink sac in the mimic octopus could not be confirmed for this project, because the full species description was not accessible. Nothing found says it is absent, and the features that define the genus do not include losing it, so it is shown here as expected but unconfirmed.",
+      "approximation": "Unconfirmed for this species. Position follows general octopus anatomy."
+    }
+  },
+  "skinLayers": {
+    "epidermis": {
+      "name": "Epidermis",
+      "summary": "The thin, transparent outer layer.",
+      "detail": "It protects the tissue beneath and lets light pass to and from the colour layers. It contains mucus-secreting cells.",
+      "control": "Not involved in colour change."
+    },
+    "chromatophores": {
+      "name": "Chromatophores",
+      "summary": "Organs, not single cells: an elastic sac of pigment ringed by radial muscles, each wired to a nerve from the brain.",
+      "detail": "At rest the sac is a tiny dot and the skin looks pale. When the nerve fires, the radial muscles contract and pull the sac out into a flat disc many times wider, spreading the pigment so it shows. When the muscles relax the sac springs back. Octopus chromatophores come in yellow, orange, red, brown and black.",
+      "control": "Direct nerve and muscle control. A change takes a fraction of a second."
+    },
+    "iridophores": {
+      "name": "Iridophores",
+      "summary": "Cells containing stacks of thin reflective platelets.",
+      "detail": "They produce colour by interference of light between the platelets, giving metallic blues, greens and golds that shift with the viewing angle. No pigment is involved.",
+      "control": "In octopuses these are generally regarded as passive reflectors. Actively tunable iridescence has been shown in some squid, not in octopuses."
+    },
+    "leucophores": {
+      "name": "Leucophores",
+      "summary": "Cells that scatter all wavelengths of light equally, so they look white.",
+      "detail": "They form the pale base on which the chromatophores work. Because they reflect whatever light falls on them, white areas take on the general colour of the surrounding light.",
+      "control": "Passive. They are revealed when the chromatophores above them contract."
+    },
+    "dermis": {
+      "name": "Dermis and muscle",
+      "summary": "Connective tissue and muscle beneath the colour layers.",
+      "detail": "Muscles in the dermis raise papillae: bumps and spikes that change the skin’s texture from smooth to rough within a second or two.",
+      "control": "Papillae are under nervous control."
+    }
+  }
+}

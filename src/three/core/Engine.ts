@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { INTERNAL_STRUCTURE_IDS, useAppStore, type AppState } from '@/stores/appStore';
-import type { QualityLevel, ReferenceModelId } from '@/types/app';
+import type { LoadStep, QualityLevel, ReferenceModelId } from '@/types/app';
 import { PoseController } from '../animation/PoseController';
 import { ARM_HOME_YAW, REST_POSE } from '../animation/restPose';
 import { ARM_COUNT, type PoseDefinition } from '../animation/types';
@@ -66,7 +66,8 @@ export interface EngineDebug {
   armHighlights: number[];
 }
 
-type ProgressFn = (progress: number, label: string) => void;
+/** `step` is a key of `common:loading.steps`; the interface translates it. */
+type ProgressFn = (progress: number, step: LoadStep) => void;
 const nextFrame = () => new Promise<void>((r) => requestAnimationFrame(() => r()));
 const damp = (current: number, target: number, k: number) => current + (target - current) * k;
 
@@ -154,21 +155,21 @@ export class Engine {
 
   private async build(onProgress: ProgressFn): Promise<void> {
     const tier = QUALITY_TIERS[this.quality];
-    onProgress(0.2, 'Filling the tank: seabed, water and light');
+    onProgress(0.2, 'environment');
     await nextFrame();
     this.env = new Environment(this.scene, tier);
     this.rig = new CameraRig(this.canvas);
 
-    onProgress(0.4, 'Growing the mantle and eight arms');
+    onProgress(0.4, 'octopus');
     await nextFrame();
     this.octopus = new Octopus(tier);
     this.scene.add(this.octopus.root);
 
-    onProgress(0.6, 'Placing organs and nerve cords');
+    onProgress(0.6, 'organs');
     await nextFrame();
     this.organs = new Organs(this.octopus, tier.armSegments);
 
-    onProgress(0.75, 'Seeding chromatophores');
+    onProgress(0.75, 'skin');
     await nextFrame();
     this.skinPatch = new SkinPatch();
     this.scene.add(this.skinPatch.group);
@@ -179,7 +180,7 @@ export class Engine {
     this.applyDirective(this.directive, null, true);
     this.subscribe();
 
-    onProgress(0.9, 'Compiling shaders');
+    onProgress(0.9, 'shaders');
     await nextFrame();
     this.step(1 / 60);
     this.renderer.compile(this.scene, this.rig.camera);
@@ -188,7 +189,7 @@ export class Engine {
 
     useAppStore.setState({ effectiveQuality: this.quality });
     document.addEventListener('visibilitychange', this.onVisibility);
-    onProgress(1, 'Ready');
+    onProgress(1, 'shaders');
     this.syncRunning();
   }
 
@@ -556,7 +557,7 @@ export class Engine {
       const progress = Math.round(c.progress * 1000) / 1000;
       const phase = c.phase;
       if (progress !== state.playback.progress || phase.id !== state.playback.phaseId) {
-        patch.playback = { ...state.playback, progress, phaseId: phase.id, phaseLabel: phase.label };
+        patch.playback = { ...state.playback, progress, phaseId: phase.id };
       }
     }
     if (Object.keys(patch).length) useAppStore.setState(patch);

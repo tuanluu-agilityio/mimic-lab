@@ -119,6 +119,27 @@ i {
   font-style: italic;
 }
 
+/* ── Per-language typography ─────────────────────────────── */
+
+/*
+ * Japanese: no word spaces, so break by the strict kinsoku rules; no synthesised italics
+ * (Latin names carry their own lang and stay italic); and wide Latin-style tracking is
+ * pulled in, because it tears kana and kanji apart.
+ */
+:lang(ja) {
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+i:lang(ja),
+em:lang(ja) {
+  font-style: normal;
+}
+
+html:lang(ja) {
+  line-height: 1.75;
+}
+
 .skip-link {
   position: fixed;
   z-index: 50;

@@ -1,0 +1,29 @@
+{
+  "sections": "Sections",
+  "brand": "Mimic Lab",
+  "links": {
+    "intro": {
+      "label": "Introduction",
+      "short": "Intro"
+    },
+    "anatomy": {
+      "label": "Anatomy",
+      "short": "Anatomy"
+    },
+    "mechanisms": {
+      "label": "Mechanism Lab",
+      "short": "Lab"
+    },
+    "mimicry": {
+      "label": "Ten Identities",
+      "short": "Ten"
+    },
+    "sources": {
+      "label": "Sources",
+      "short": "Sources"
+    }
+  },
+  "language": {
+    "label": "Language"
+  }
+}

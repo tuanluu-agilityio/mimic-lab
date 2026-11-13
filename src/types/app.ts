@@ -31,6 +31,9 @@ export const REFERENCE_MODEL_IDS = [
 ] as const;
 export type ReferenceModelId = (typeof REFERENCE_MODEL_IDS)[number];
 
+export const LOAD_STEPS = ['prepare', 'engine', 'environment', 'octopus', 'organs', 'skin', 'shaders'] as const;
+export type LoadStep = (typeof LOAD_STEPS)[number];
+
 export type EvidenceLevel = 'A' | 'B' | 'C';
 
 export interface ArmControl {

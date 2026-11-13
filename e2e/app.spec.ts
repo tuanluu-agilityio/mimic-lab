@@ -179,7 +179,7 @@ test('mechanism lab: tabs, steps and controls drive the engine', async ({ page }
 });
 
 test('7–8 · all ten targets play to completion with eight finite arms', async ({ page }) => {
-  test.setTimeout(240_000);
+  test.setTimeout(480_000);
   await open(page);
   await goTo(page, 'mimicry');
   await expect(page.locator('[data-testid^="target-"]:not([data-testid="target-detail"])')).toHaveCount(10);

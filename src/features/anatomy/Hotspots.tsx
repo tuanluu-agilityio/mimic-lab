@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { ANATOMY_STRUCTURES } from '@/data/anatomy/structures';
 import { SKIN_LAYERS_INFO } from '@/data/skin/layers';
 import { useEngine } from '@/hooks/useEngine';
+import { useContent } from '@/i18n/content';
 import { useAppStore } from '@/stores/appStore';
 import type { SkinLayer, ViewMode } from '@/types/app';
 import styles from './Hotspots.module.css';
@@ -43,24 +44,27 @@ export function Hotspots() {
   const selected = useAppStore((s) => s.selectedStructure);
   const skinLayer = useAppStore((s) => s.skinLayer);
   const layerRef = useRef<HTMLDivElement>(null);
+  // Changes identity with the language, which re-labels the markers in place; their anchors,
+  // and so their positions on the model, are unaffected.
+  const content = useContent();
 
   const spots = useMemo<Spot[]>(() => {
     const act = useAppStore.getState();
     if (mode === 'skin') {
       return SKIN_LAYERS_INFO.map((layer) => ({
         anchor: `skin:${layer.id}`,
-        label: layer.name,
+        label: content.skinLayer(layer.id).name,
         selected: skinLayer === layer.id,
         select: () => act.setSkinLayer(skinLayer === layer.id ? 'all' : (layer.id as SkinLayer)),
       }));
     }
     return ANATOMY_STRUCTURES.filter((s) => structureVisible(mode, s.group, s.id, selected)).map((s) => ({
       anchor: s.anchor,
-      label: s.name,
+      label: content.structure(s.id).name,
       selected: selected === s.id,
       select: () => act.selectStructure(selected === s.id ? null : s.id),
     }));
-  }, [mode, selected, skinLayer]);
+  }, [mode, selected, skinLayer, content]);
 
   useEffect(() => {
     const layer = layerRef.current;

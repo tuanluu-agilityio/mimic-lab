@@ -8,4 +8,5 @@ Short version:
 - Do not invent biology. Every content statement cites `src/data/references/`; keep evidence grades and caveats visible.
 - The 3D engine (`src/three/`) and React (`src/features/`, `src/components/`) talk only through the Zustand store.
 - The octopus always has eight arms; poses are data.
+- Three languages (en, vi, ja). No visitor-facing text in components or data: it lives in `src/i18n/locales/`, and all three locales change together. See `docs/i18n/`.
 - No external assets, network calls or LLM/API dependencies at runtime.

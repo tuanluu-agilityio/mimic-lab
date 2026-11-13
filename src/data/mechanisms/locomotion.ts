@@ -2,10 +2,9 @@ import { flatfish } from '@/data/mimicry/targets/01-flatfish';
 import { makeArms, makeBody, makeMovement, makeSkin, REST_POSE } from '@/three/animation/restPose';
 import type { PoseDefinition } from '@/three/animation/types';
 
+/** Text lives in `src/i18n/locales/<locale>/mechanisms.json` under `locomotion.modes.<id>`. */
 export interface LocomotionMode {
   id: string;
-  name: string;
-  summary: string;
   /** Known for this species, or generalised from other octopuses. */
   basis: 'species' | 'octopod-general';
   pose: PoseDefinition;
@@ -16,9 +15,6 @@ export interface LocomotionMode {
 export const LOCOMOTION_MODES: LocomotionMode[] = [
   {
     id: 'crawl',
-    name: 'Crawling',
-    summary:
-      'The usual way of getting around. Arms reach out, suckers grip the bottom, and the arms shorten to pull the body along. Any arm can lead, so the animal can set off in any direction without turning. While foraging, the arm tips probe into holes in the sand.',
     basis: 'octopod-general',
     pose: {
       body: makeBody({ height: 0.3, mantlePitch: 0.2, eyeRaise: 0.75 }),
@@ -43,9 +39,6 @@ export const LOCOMOTION_MODES: LocomotionMode[] = [
   },
   {
     id: 'jet',
-    name: 'Jet propulsion',
-    summary:
-      'The mantle fills with water and then contracts, forcing it out through the funnel. The animal shoots off in the opposite direction, usually mantle first with the arms trailing. Because the funnel can be aimed, the same jet can drive the animal in other directions too. It is fast but tiring: each mantle contraction also interrupts the flow of blood through the gills.',
     basis: 'octopod-general',
     pose: {
       body: makeBody({ height: 1.0, mantlePitch: 0.03, mantleLength: 1.06, mantleWidth: 0.94, eyeRaise: 0.3, webSpread: 0.1 }),
@@ -68,9 +61,6 @@ export const LOCOMOTION_MODES: LocomotionMode[] = [
   },
   {
     id: 'flatfish-swim',
-    name: 'Flatfish swimming',
-    summary:
-      'The swimming style this species is known for. The arms are drawn into a flat, leaf-shaped wedge, the mantle trails behind the head, and the animal jets forward just above the sand while its body undulates. Published accounts describe the posture but give no measured speed.',
     basis: 'species',
     pose: flatfish.pose,
     camera: { azimuth: 0.95, polar: 1.02, distance: 8.6, targetY: 0.4 },

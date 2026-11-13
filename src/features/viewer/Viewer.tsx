@@ -1,8 +1,17 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '@/stores/appStore';
 import { isWebGLAvailable } from '@/three/core/webgl';
 import { setEngine } from './engineHandle';
 import styles from './Viewer.module.css';
+
+/**
+ * One engine at a time may own the canvas's WebGL context. React's StrictMode mounts effects
+ * twice in development; two renderers created on the same canvas share one context but keep
+ * separate state caches, which intermittently rendered the scene black. Each start therefore
+ * waits for the previous one to finish (and, if it was cancelled, to have created nothing).
+ */
+let engineSlot: Promise<void> = Promise.resolve();
 
 /**
  * The persistent WebGL canvas behind every stage. The engine (and Three.js with it) is a
@@ -11,6 +20,7 @@ import styles from './Viewer.module.css';
 export function Viewer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const status = useAppStore((s) => s.engineStatus);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -22,14 +32,14 @@ export function Viewer() {
     }
     let cancelled = false;
     let dispose: (() => void) | undefined;
-    store.setState({ engineStatus: 'loading', loadProgress: 0.05, loadLabel: 'Loading the 3D engine' });
-    import('@/three/core/Engine')
-      .then(({ Engine }) =>
-        Engine.create(canvas, (loadProgress, loadLabel) => {
-          if (!cancelled) store.setState({ loadProgress, loadLabel });
-        }),
-      )
-      .then((engine) => {
+    store.setState({ engineStatus: 'loading', loadProgress: 0.05, loadStep: 'engine' });
+    engineSlot = engineSlot.then(async () => {
+      if (cancelled) return;
+      try {
+        const { Engine } = await import('@/three/core/Engine');
+        const engine = await Engine.create(canvas, (loadProgress, loadStep) => {
+          if (!cancelled) store.setState({ loadProgress, loadStep });
+        });
         if (cancelled) {
           engine.dispose();
           return;
@@ -47,11 +57,11 @@ export function Viewer() {
           store,
         };
         store.setState({ engineStatus: 'ready', loadProgress: 1 });
-      })
-      .catch((error: unknown) => {
+      } catch (error: unknown) {
         console.error('[mimic-lab] engine failed to start', error);
         if (!cancelled) store.setState({ engineStatus: 'error' });
-      });
+      }
+    });
     return () => {
       cancelled = true;
       setEngine(null);
@@ -66,7 +76,7 @@ export function Viewer() {
       data-ready={status === 'ready'}
       tabIndex={0}
       role="img"
-      aria-label="Interactive 3D model of the mimic octopus. Drag to rotate; arrow keys rotate, plus and minus zoom."
+      aria-label={t('canvasLabel')}
     />
   );
 }

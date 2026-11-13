@@ -284,8 +284,9 @@
 .tab {
   flex: 1 0 auto;
   min-height: 46px;
-  padding: 6px 12px;
+  padding: 6px 7px;
   font-size: 12.5px;
+  white-space: nowrap;
   font-weight: 600;
   color: var(--ivory-dim);
   border-bottom: 2px solid transparent;
@@ -294,6 +295,15 @@
   justify-content: center;
   gap: 7px;
   transition: color var(--fast) var(--ease);
+}
+
+/* The narrower docked panel: number above label, so five tabs fit in every language. */
+@media (min-width: 700px) and (max-width: 1099px) {
+  .tab {
+    flex-direction: column;
+    gap: 0;
+    padding: 6px 4px;
+  }
 }
 
 .tab:hover {

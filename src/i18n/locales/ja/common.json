@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "MIMIC LAB — ミミックオクトパス Thaumoctopus mimicus",
+    "description": "MIMIC LAB — ミミックオクトパス（Thaumoctopus mimicus）を3Dで探る体験型サイト。体のつくり、生物学的なしくみ、10種類の擬態行動を、科学的根拠の強さとともに紹介します。",
+    "ogTitle": "MIMIC LAB — ひとつの生きもの、10の姿、無限の可能性。"
+  },
+  "skipToContent": "本文へ移動",
+  "sources": "出典",
+  "listSeparator": "、",
+  "aboutModel": "このモデルについて",
+  "dragHint": "ドラッグで回転 · Ctrl + スクロールで拡大縮小",
+  "canvasLabel": "ミミックオクトパスの操作できる3Dモデル。ドラッグで回転、矢印キーで回転、プラスキーとマイナスキーで拡大縮小できます。",
+  "loading": {
+    "label": "3Dシーンを読み込んでいます",
+    "error": "この端末では3Dシーンを開始できませんでした。解説の文章は以下でそのままお読みいただけます。",
+    "steps": {
+      "prepare": "実験室を準備しています",
+      "engine": "3Dエンジンを読み込んでいます",
+      "environment": "水槽を用意しています：海底、水、光",
+      "octopus": "外套膜と8本の腕を形づくっています",
+      "organs": "内臓と神経索を配置しています",
+      "skin": "色素胞を並べています",
+      "shaders": "シェーダーをコンパイルしています"
+    }
+  },
+  "fallback": {
+    "label": "3D表示は利用できません",
+    "text": "このブラウザまたは端末ではWebGLを開始できなかったため、操作できるモデルは表示されません。このページの解説、根拠の評価、出典は、以下の各セクションですべてご覧いただけます。"
+  },
+  "quality": {
+    "label": "描画品質",
+    "title": "描画品質。現在は{{level}}、毎秒約{{fps}}フレームです。",
+    "fps": "{{fps}} fps",
+    "auto": "自動（{{level}}）",
+    "options": {
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    },
+    "levels": {
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    }
+  },
+  "camera": {
+    "group": "カメラ",
+    "front": "正面から見る",
+    "side": "横から見る",
+    "top": "上から見る",
+    "rear": "後ろから見る",
+    "bottom": "下から見る",
+    "zoomIn": "拡大",
+    "zoomOut": "縮小",
+    "reset": "カメラをリセット",
+    "short": {
+      "front": "前",
+      "side": "横",
+      "top": "上",
+      "rear": "後",
+      "bottom": "下"
+    }
+  },
+  "playback": {
+    "play": "再生",
+    "pause": "一時停止",
+    "replay": "もう一度再生",
+    "restart": "最初から",
+    "previous": "← 前へ",
+    "next": "次へ →",
+    "speed": "再生速度"
+  }
+}

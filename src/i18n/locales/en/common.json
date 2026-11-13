@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "MIMIC LAB — Thaumoctopus mimicus",
+    "description": "MIMIC LAB — an interactive 3D exploration of the mimic octopus, Thaumoctopus mimicus: anatomy, biological mechanisms and ten mimicry behaviours, graded by scientific evidence.",
+    "ogTitle": "MIMIC LAB — One Organism. Ten Identities. Infinite Possibilities."
+  },
+  "skipToContent": "Skip to content",
+  "sources": "Sources",
+  "listSeparator": ", ",
+  "aboutModel": "About this model",
+  "dragHint": "Drag to rotate · Ctrl + scroll to zoom",
+  "canvasLabel": "Interactive 3D model of the mimic octopus. Drag to rotate; arrow keys rotate, plus and minus zoom.",
+  "loading": {
+    "label": "Loading the 3D scene",
+    "error": "The 3D scene could not start on this device. The written content is still available below.",
+    "steps": {
+      "prepare": "Preparing the laboratory",
+      "engine": "Loading the 3D engine",
+      "environment": "Filling the tank: seabed, water and light",
+      "octopus": "Growing the mantle and eight arms",
+      "organs": "Placing organs and nerve cords",
+      "skin": "Seeding chromatophores",
+      "shaders": "Compiling shaders"
+    }
+  },
+  "fallback": {
+    "label": "3D view unavailable",
+    "text": "This browser or device could not start WebGL, so the interactive model is not shown. Every explanation, evidence grade and source on this page is still available in the sections below."
+  },
+  "quality": {
+    "label": "Rendering quality",
+    "title": "Rendering quality. Currently {{level}}, about {{fps}} frames per second.",
+    "fps": "{{fps}} fps",
+    "auto": "Auto ({{level}})",
+    "options": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "levels": {
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
+    }
+  },
+  "camera": {
+    "group": "Camera",
+    "front": "Front view",
+    "side": "Side view",
+    "top": "Top view",
+    "rear": "Rear view",
+    "bottom": "Underside view",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "reset": "Reset camera",
+    "short": {
+      "front": "F",
+      "side": "S",
+      "top": "T",
+      "rear": "R",
+      "bottom": "U"
+    }
+  },
+  "playback": {
+    "play": "Play",
+    "pause": "Pause",
+    "replay": "Replay",
+    "restart": "Restart",
+    "previous": "← Previous",
+    "next": "Next →",
+    "speed": "Playback speed"
+  }
+}

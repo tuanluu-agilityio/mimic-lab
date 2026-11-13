@@ -10,6 +10,7 @@ The binding rules are in `/AGENTS.md`. This page adds recipes and pitfalls. It a
 4. `src/three/core/director.ts` — what each state means on screen
 5. `docs/technical/animation-system.md` if you will touch poses
 6. `docs/research/` if you will touch content
+7. `docs/i18n/` if you will touch any text (four short files)
 
 ## Recipes
 
@@ -21,13 +22,13 @@ Edit `direct()` in `src/three/core/director.ts`. Do not add stage checks inside 
 
 1. Add state and an action to `appStore.ts` (add a store test).
 2. Read it in the engine through a `sub(...)` subscription or in `step()`.
-3. Render the control in the feature folder with a `data-testid`.
+3. Render the control in the feature folder with a `data-testid`; its label goes in the locale files, in all three languages.
 4. Expose what it changes through `engine.debug()` and assert it in `e2e/app.spec.ts`. A test that only checks the button's pressed state does not prove the 3D changed.
 
 ### Add or change scientific content
 
 1. Find the source. Add it to `src/data/references/index.ts` with the true `access` level.
-2. Write the content in `src/data/…` citing the reference id.
+2. Put structure (id, grade, references) in `src/data/…` and the text in `src/i18n/locales/{en,vi,ja}/…`, keyed by the same id.
 3. Mark the basis: this species, or generalised from other octopuses.
 4. If it changes an evidence grade or a caveat, update `docs/research/mimicry-evidence.md` with the reasoning.
 
@@ -40,7 +41,7 @@ STEPS='[{"name":"skin","scrollTo":"stage-anatomy","state":{"viewMode":"skin"},"w
   node scripts/shot.mjs ./shots http://localhost:5173/
 ```
 
-Add `--mobile` for a phone viewport. `?nowebgl=1` forces the no-WebGL fallback.
+Add `--mobile` or `--tablet` for other viewports, and `LOCALE=vi` (or `ja`) to open in that language. `?nowebgl=1` forces the no-WebGL fallback.
 
 ## Pitfalls met while building this
 
@@ -50,6 +51,9 @@ Add `--mobile` for a phone viewport. `?nowebgl=1` forces the no-WebGL fallback.
 - **Only the panel body scrolls.** Headers and tabs are fixed inside the panel, so they are always reachable.
 - **Test ids repeat across stages** (camera buttons). Scope locators to the stage: `page.locator('#stage-anatomy').getByTestId('cam-front')`.
 - **A stage taller than the window** (Sources) is detected by how much of the window it covers, not by its own intersection ratio.
+- **StrictMode mounts the viewer twice in development.** Engine starts are queued in `Viewer.tsx`; creating two renderers on the same canvas rendered the scene black about half the time.
+- **Translated labels are longer.** Vietnamese nav links, tabs and pills are the widest; check them at 1100 px and on a phone before adding a control.
+- **Typed keys need the namespace.** `useTranslation(['anatomy', 'common'])` then `t('common:…')`; a bare `useTranslation('anatomy')` rejects keys from other namespaces.
 - **Thumbnails read pixels back from the GPU** and are rendered once, lazily, the first time the Ten Identities stage is visited.
 
 ## What not to do

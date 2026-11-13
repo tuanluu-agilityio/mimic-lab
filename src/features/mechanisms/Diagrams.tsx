@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { DiagramId } from '@/data/mechanisms';
 import styles from './Diagrams.module.css';
 
@@ -7,32 +8,28 @@ const CYAN = '#62e6e0';
 const AMBER = '#e6a756';
 
 function NeuronShare() {
+  const { t } = useTranslation('mechanisms');
   return (
     <figure className={styles.figure}>
       <svg viewBox="0 0 340 96" role="img" aria-labelledby="dg-neuron-title dg-neuron-desc">
-        <title id="dg-neuron-title">Where an octopus keeps its neurons</title>
-        <desc id="dg-neuron-desc">
-          A bar divided in two. Of roughly 500 million neurons, about two thirds are in the eight arm nerve cords and
-          about one third are in the central brain and optic lobes.
-        </desc>
+        <title id="dg-neuron-title">{t('diagrams.neuron.title')}</title>
+        <desc id="dg-neuron-desc">{t('diagrams.neuron.desc')}</desc>
         <rect x="1" y="30" width="225" height="26" fill={CYAN} opacity="0.85" />
         <rect x="228" y="30" width="111" height="26" fill={AMBER} opacity="0.85" />
-        <text x="1" y="20" fill={INK} fontSize="12">Eight arm nerve cords</text>
-        <text x="339" y="20" fill={INK} fontSize="12" textAnchor="end">Brain + optic lobes</text>
-        <text x="113" y="48" fill="#03202a" fontSize="12.5" fontWeight="700" textAnchor="middle">about 2/3</text>
-        <text x="283" y="48" fill="#03202a" fontSize="12.5" fontWeight="700" textAnchor="middle">about 1/3</text>
-        <text x="1" y="76" fill={DIM} fontSize="11.5">Total about 500 million neurons</text>
-        <text x="1" y="91" fill={DIM} fontSize="11.5">Estimates for the common octopus, Octopus vulgaris</text>
+        <text x="1" y="20" fill={INK} fontSize="12">{t('diagrams.neuron.arms')}</text>
+        <text x="339" y="20" fill={INK} fontSize="12" textAnchor="end">{t('diagrams.neuron.brain')}</text>
+        <text x="113" y="48" fill="#03202a" fontSize="12.5" fontWeight="700" textAnchor="middle">{t('diagrams.neuron.twoThirds')}</text>
+        <text x="283" y="48" fill="#03202a" fontSize="12.5" fontWeight="700" textAnchor="middle">{t('diagrams.neuron.oneThird')}</text>
+        <text x="1" y="76" fill={DIM} fontSize="11.5">{t('diagrams.neuron.total')}</text>
+        <text x="1" y="91" fill={DIM} fontSize="11.5">{t('diagrams.neuron.source')}</text>
       </svg>
-      <figcaption>
-        Roughly two thirds of the neurons lie in the arms and one third in the brain and optic lobes. Figures are for
-        the common octopus; none exist for the mimic octopus.
-      </figcaption>
+      <figcaption>{t('diagrams.neuron.caption')}</figcaption>
     </figure>
   );
 }
 
 function Chromatophore() {
+  const { t } = useTranslation('mechanisms');
   const muscles = (cx: number, r0: number, r1: number) =>
     Array.from({ length: 12 }, (_, i) => {
       const a = (i / 12) * Math.PI * 2;
@@ -52,37 +49,29 @@ function Chromatophore() {
   return (
     <figure className={styles.figure}>
       <svg viewBox="0 0 340 140" role="img" aria-labelledby="dg-chrom-title dg-chrom-desc">
-        <title id="dg-chrom-title">A chromatophore relaxed and expanded</title>
-        <desc id="dg-chrom-desc">
-          Left: radial muscles relaxed, the pigment sac is a small dot. Right: the muscles have contracted and pulled
-          the sac out into a wide flat disc, so the pigment is visible.
-        </desc>
+        <title id="dg-chrom-title">{t('diagrams.chromatophore.title')}</title>
+        <desc id="dg-chrom-desc">{t('diagrams.chromatophore.desc')}</desc>
         {muscles(85, 8, 46)}
         <circle cx="85" cy="62" r="7" fill={AMBER} />
         {muscles(255, 34, 46)}
         <circle cx="255" cy="62" r="33" fill={AMBER} opacity="0.9" />
         <path d="M150 62h36m-8-6 8 6-8 6" stroke={DIM} strokeWidth="1.5" fill="none" />
-        <text x="168" y="50" fill={DIM} fontSize="11.5" textAnchor="middle">nerve fires</text>
-        <text x="85" y="128" fill={INK} fontSize="12" textAnchor="middle">Muscles relaxed · pale</text>
-        <text x="255" y="128" fill={INK} fontSize="12" textAnchor="middle">Muscles contracted · dark</text>
+        <text x="168" y="50" fill={DIM} fontSize="11.5" textAnchor="middle">{t('diagrams.chromatophore.fires')}</text>
+        <text x="85" y="128" fill={INK} fontSize="12" textAnchor="middle">{t('diagrams.chromatophore.relaxed')}</text>
+        <text x="255" y="128" fill={INK} fontSize="12" textAnchor="middle">{t('diagrams.chromatophore.contracted')}</text>
       </svg>
-      <figcaption>
-        Orange: elastic pigment sac. Cyan lines: radial muscles. Contracting the muscles stretches the sac into a disc.
-        Schematic, not to scale.
-      </figcaption>
+      <figcaption>{t('diagrams.chromatophore.caption')}</figcaption>
     </figure>
   );
 }
 
 function ArmSection() {
+  const { t } = useTranslation('mechanisms');
   return (
     <figure className={styles.figure}>
       <svg viewBox="0 0 340 190" role="img" aria-labelledby="dg-arm-title dg-arm-desc">
-        <title id="dg-arm-title">Cross-section of an octopus arm</title>
-        <desc id="dg-arm-desc">
-          From the centre outward: the axial nerve cord, a core of transverse muscle, bundles of longitudinal muscle,
-          thin oblique muscle layers, and skin. A sucker is attached on the lower, oral side.
-        </desc>
+        <title id="dg-arm-title">{t('diagrams.arm.title')}</title>
+        <desc id="dg-arm-desc">{t('diagrams.arm.desc')}</desc>
         <circle cx="110" cy="84" r="70" fill="none" stroke={INK} strokeWidth="2" />
         <circle cx="110" cy="84" r="62" fill="none" stroke={DIM} strokeWidth="5" strokeDasharray="3 4" />
         {Array.from({ length: 14 }, (_, i) => {
@@ -110,17 +99,14 @@ function ArmSection() {
         <path d="M96 156q14 14 28 0" fill="none" stroke={DIM} strokeWidth="1.5" />
         <g fontSize="11.5" fill={INK}>
           <path d="M121 84h82M152 66h51M157 44h46M172 118h31M136 166h67" stroke={DIM} strokeWidth="0.8" />
-          <text x="208" y="88">Axial nerve cord</text>
-          <text x="208" y="70" fill={AMBER}>Transverse muscle</text>
-          <text x="208" y="48" fill={CYAN}>Longitudinal muscle</text>
-          <text x="208" y="122">Oblique muscle, skin</text>
-          <text x="208" y="170">Sucker</text>
+          <text x="208" y="88">{t('diagrams.arm.nerve')}</text>
+          <text x="208" y="70" fill={AMBER}>{t('diagrams.arm.transverse')}</text>
+          <text x="208" y="48" fill={CYAN}>{t('diagrams.arm.longitudinal')}</text>
+          <text x="208" y="122">{t('diagrams.arm.oblique')}</text>
+          <text x="208" y="170">{t('diagrams.arm.sucker')}</text>
         </g>
       </svg>
-      <figcaption>
-        No bone anywhere: muscles running in three directions work against each other. Schematic, generalised from
-        other octopus species.
-      </figcaption>
+      <figcaption>{t('diagrams.arm.caption')}</figcaption>
     </figure>
   );
 }

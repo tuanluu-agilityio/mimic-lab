@@ -1,0 +1,249 @@
+{
+  "sectionLabel": "Khám phá giải phẫu",
+  "eyebrow": "01 · Khám phá giải phẫu",
+  "title": "Cơ thể của kẻ bắt chước",
+  "modeGroup": "Chế độ hiển thị",
+  "modes": {
+    "normal": {
+      "label": "Bình thường",
+      "hint": "Con vật như khi nhìn từ bên ngoài."
+    },
+    "xray": {
+      "label": "X-quang",
+      "hint": "Da trở nên trong mờ để các cơ quan bên trong hiện ra."
+    },
+    "exploded": {
+      "label": "Tách rời",
+      "hint": "Các cơ quan được kéo tách khỏi cơ thể theo thanh trượt."
+    },
+    "section": {
+      "label": "Mặt cắt",
+      "hint": "Một mặt phẳng cắt ngang qua cơ thể."
+    },
+    "isolated": {
+      "label": "Cô lập",
+      "hint": "Chỉ cấu trúc đang chọn được hiển thị đặc."
+    },
+    "neural": {
+      "label": "Thần kinh",
+      "hint": "Não, thùy thị giác và tám dây thần kinh tay."
+    },
+    "skin": {
+      "label": "Da",
+      "hint": "Một khối da phóng đại, dạng sơ đồ."
+    }
+  },
+  "groups": {
+    "external": "Cấu trúc bên ngoài",
+    "internal": "Cấu trúc bên trong"
+  },
+  "empty": "Hãy chọn một cấu trúc trong các danh sách phía trên, hoặc nhấp vào một điểm đánh dấu trên mô hình, để đọc xem đó là gì, làm nhiệm vụ gì và liên hệ với phần còn lại của cơ thể như thế nào.",
+  "fields": {
+    "function": "Chức năng",
+    "connections": "Mối liên hệ",
+    "more": "Chi tiết thêm",
+    "control": "Điều khiển"
+  },
+  "sliders": {
+    "separation": "Độ tách rời",
+    "cuttingPlane": "Mặt phẳng cắt",
+    "midline": "đường giữa",
+    "left": "trái {{percent}}%",
+    "right": "phải {{percent}}%",
+    "nerveSignal": "Tín hiệu thần kinh tới thể sắc tố",
+    "relaxed": "giãn · nhạt",
+    "contracted": "co · sẫm"
+  },
+  "isolate": {
+    "label": "Cô lập",
+    "text": "Hãy chọn một cấu trúc bên dưới. Mọi phần khác sẽ mờ đi để có thể quan sát riêng cấu trúc đó."
+  },
+  "skinLayer": "Lớp da",
+  "allLayers": "Tất cả các lớp",
+  "skinIntro": "Da bạch tuộc gồm nhiều lớp xếp chồng lên nhau. Màu sắc đến từ các cơ quan chứa sắc tố nằm gần bề mặt, được não mở ra và đóng lại thông qua dây thần kinh và cơ, hoạt động bên trên các lớp phản xạ ánh sáng ở phía dưới. Hãy kéo thanh trượt để gửi một tín hiệu thần kinh, hoặc chọn một lớp để xem riêng lớp đó.",
+  "skinModelNote": "Đây là một khối sơ đồ, không đúng tỉ lệ. Thứ tự các lớp và các loại tế bào được khái quát từ những động vật chân đầu khác, chủ yếu là bạch tuộc thường; da của bạch tuộc bắt chước chưa được nghiên cứu ở mức độ này.",
+  "systems": {
+    "integument": "Da",
+    "nervous": "Hệ thần kinh",
+    "circulatory": "Tuần hoàn",
+    "respiratory": "Hô hấp",
+    "digestive": "Tiêu hóa",
+    "locomotor": "Vận động",
+    "sensory": "Giác quan",
+    "defence": "Phòng vệ"
+  },
+  "basis": {
+    "species": "Đã được mô tả ở loài này",
+    "octopod-general": "Khái quát từ các loài bạch tuộc khác"
+  },
+  "structures": {
+    "mantle": {
+      "name": "Màng áo",
+      "summary": "Màng áo (mantle) là chiếc túi cơ nằm phía sau đầu. Nó bao bọc mang, các tim, ống tiêu hóa và cơ quan sinh sản, và là phần mà đa số mọi người tưởng là “cái đầu”.",
+      "func": "Thành màng áo co bóp nhịp nhàng để bơm nước chảy qua mang. Khi co mạnh, lượng nước ấy bị ép ra ngoài qua phễu và đẩy con vật lao đi.",
+      "relations": "Hô hấp và bơi phản lực dùng chung một khối cơ và chung một dòng nước, nên bơi nhanh sẽ cạnh tranh với việc duy trì hô hấp và tuần hoàn ổn định.",
+      "deeper": "Các mẫu vật thu được của loài này có chiều dài màng áo khoảng 44 đến 48 mm, tức đây là một loài bạch tuộc nhỏ. Bản mô tả loài ghi nhận một vòng trắng hình giọt nước ở giữa mặt trên màng áo và một hình chữ “U” màu trắng ở phía sau màng áo.",
+      "approximation": "Hình dạng là một khối bầu dục trơn được tạo bằng thuật toán; các vệt trắng trên màng áo của loài không được dựng riêng từng chi tiết."
+    },
+    "head": {
+      "name": "Đầu",
+      "summary": "Vùng nằm giữa màng áo và các tay. Đầu mang hai mắt và chứa não, được một bao sụn bảo vệ.",
+      "func": "Là nơi chứa não trung ương và các giác quan chính, đồng thời nối vòng tay với phần còn lại của cơ thể.",
+      "relations": "Thực quản chạy xuyên thẳng qua giữa não trên đường từ miệng đến ống tiêu hóa, vì vậy não tạo thành một vòng bao quanh thực quản.",
+      "deeper": "Ở bạch tuộc, miệng hoàn toàn không nằm trên đầu: nó nằm ở mặt dưới, ngay tâm của vòng tay.",
+      "approximation": "Tỉ lệ chỉ mang tính gần đúng."
+    },
+    "eyes": {
+      "name": "Mắt",
+      "summary": "Đôi mắt lớn kiểu buồng tối, có thủy tinh thể, nằm trên các ụ nhô cao ở đỉnh đầu. Con ngươi là một khe nằm ngang.",
+      "func": "Thị giác là giác quan chính để định hướng, tìm mồi và đánh giá mối nguy. Vị trí nhô cao cho phép con vật quan sát xung quanh trong khi cơ thể vẫn nằm thấp, hoặc thậm chí khi đang ở trong hang.",
+      "relations": "Mỗi mắt truyền tín hiệu tới một thùy thị giác lớn nằm ngay phía sau. Những gì con vật nhìn thấy sẽ chi phối các hoa văn mà nó tạo ra trên da.",
+      "deeper": "Các thí nghiệm trên những loài bạch tuộc khác cho thấy chúng không phân biệt màu sắc theo cách thông thường, vì chỉ có một loại sắc tố thị giác. Việc một con vật mù màu làm thế nào để khớp với môi trường có màu vẫn chưa có lời giải; những cách giải thích được đề xuất, như tận dụng hiện tượng sắc sai qua con ngươi có hình dạng khác thường hoặc các phân tử nhạy sáng trong da, hiện vẫn chỉ là giả thuyết.",
+      "approximation": "Gai da vẽ phía trên mỗi mắt dựa theo ảnh chụp và các mô tả thứ cấp; không có số đo từ nguồn sơ cấp."
+    },
+    "arms": {
+      "name": "Tám tay",
+      "summary": "Tám tay dài, mảnh, xếp thành vòng quanh miệng. Chúng là khối cơ đặc, không có bộ xương, và mỗi tay có một dây thần kinh lớn chạy dọc ở trung tâm.",
+      "func": "Bò, thăm dò các lỗ hang để tìm mồi, xử lý thức ăn, đào bới, và tạo nên những tư thế thấy trong các màn phô diễn của loài này.",
+      "relations": "Khoảng hai phần ba số tế bào thần kinh của một con bạch tuộc nằm trong các dây thần kinh tay chứ không nằm trong não, nên phần lớn việc điều khiển tinh vi của mỗi tay được xử lý tại chỗ.",
+      "deeper": "Loài này được xếp vào nhóm bạch tuộc có tay rất dài, ít nhất khoảng sáu lần rưỡi chiều dài màng áo, và sải tay tới khoảng 60 cm đã được ghi nhận. Giống một số loài họ hàng, nó có thể tự rụng một tay tại một điểm xác định gần gốc. Các tay được đánh số thành bốn cặp từ trước ra sau: L1 đến L4 ở bên trái, R1 đến R4 ở bên phải.",
+      "approximation": "Chiều dài tay trong mô hình gần với tỉ lệ đã công bố nhưng không được đo từ mẫu vật. Mỗi tay là một ống uốn theo đường cong, không phải cơ được mô phỏng."
+    },
+    "web": {
+      "name": "Màng gian tay",
+      "summary": "Một tấm da và cơ mỏng nối phần gốc của các tay kề nhau.",
+      "func": "Khi xòe ra như một chiếc dù, màng này bịt kín khoảng không bên dưới các tay. Bạch tuộc đang kiếm ăn thường xòe màng trùm lên một khoảng cát hay sỏi vụn để nhốt những con vật bị các đầu tay xua ra.",
+      "relations": "Phối hợp với tay và giác hút khi bắt mồi, đồng thời tăng thêm diện tích bề mặt khi con vật thay đổi đường nét cơ thể.",
+      "deeper": "Việc xòe màng để nhốt con mồi đang bỏ chạy đã được ghi nhận ở loài này trên các bãi cát. Dự án này không tìm thấy số đo nào đã công bố về độ sâu của màng.",
+      "approximation": "Độ sâu của màng là ước lượng; không có số đo từ nguồn sơ cấp."
+    },
+    "suckers": {
+      "name": "Giác hút",
+      "summary": "Những chiếc cốc bằng cơ nằm dọc mặt dưới của mỗi tay. Mỗi giác hút có một vành ngoài mềm dẻo (infundibulum) và một khoang trong (acetabulum).",
+      "func": "Vành áp kín vào bề mặt, sau đó các cơ của khoang làm giảm áp suất bên trong, nhờ vậy giác hút bám chặt. Giác hút còn có thể kẹp, giữ và chuyền các vật nhỏ dọc theo tay.",
+      "relations": "Vành giác hút dày đặc tế bào cảm giác phản ứng với tiếp xúc và với hóa chất, nên trên thực tế con vật nếm được những gì nó chạm vào. Mỗi giác hút có một hạch thần kinh nhỏ riêng, nối với dây thần kinh tay.",
+      "deeper": "Bản mô tả loài ghi rằng không có giác hút nào phình to. Ở họ này, giác hút nhìn chung xếp thành hai hàng; cách sắp xếp đó được thể hiện ở đây dựa trên các nguồn thứ cấp.",
+      "approximation": "Hai hàng cốc được đơn giản hóa; số lượng trên mỗi tay chỉ mang tính minh họa."
+    },
+    "funnel": {
+      "name": "Phễu (siphon)",
+      "summary": "Một ống cơ mở ra bên cạnh đầu, thông từ khoang áo.",
+      "func": "Đây là lối thoát của dòng nước dùng trong hô hấp và là vòi phun của cơ chế bơi phản lực. Phễu cũng đưa chất thải ra ngoài và, khi được phóng thích, cả mực.",
+      "relations": "Vì có thể xoay hướng phễu, con vật có thể phóng lùi, tiến hoặc sang ngang chỉ với cùng một nhịp co của màng áo.",
+      "deeper": "Nước đi vào khoang áo quanh vùng cổ và chỉ thoát ra qua phễu, nên dòng chảy là một chiều.",
+      "approximation": "Vị trí và kích thước mang tính sơ đồ; không có dữ liệu sơ cấp cho loài này."
+    },
+    "skin": {
+      "name": "Da",
+      "summary": "Lớp da mỏng, mềm, chứa hàng nghìn cơ quan tạo màu chịu sự điều khiển trực tiếp của thần kinh, nằm bên trên các lớp tế bào phản xạ ánh sáng.",
+      "func": "Tạo ra các hoa văn của con vật: nâu xỉn khi kiếm ăn, hoặc những khoang nâu sẫm và trắng kem nổi bật. Da cũng có thể dựng lên những nốt gồ nhỏ (gai da, papillae) để thay đổi kết cấu bề mặt.",
+      "relations": "Mỗi cơ quan tạo màu được mở ra nhờ những sợi cơ tí hon nối thẳng với não, nên hoa văn có thể thay đổi chỉ trong một phần nhỏ của giây, theo sự dẫn dắt của những gì mắt nhìn thấy.",
+      "deeper": "Hoa văn khoang của loài này có thể thay đổi chứ không cố định: nó được hệ thần kinh bật lên và tắt đi. Ngược lại, loài họ hàng gần Wunderpus photogenicus được mô tả là có hoa văn cố định gồm các vạch và đốm trắng. Hãy mở chế độ xem Da để thấy các lớp.",
+      "approximation": "Hoa văn là hiệu ứng tô bóng tạo bằng thuật toán, không phải kết cấu lấy từ ảnh chụp."
+    },
+    "brain": {
+      "name": "Não",
+      "summary": "Một khối hạch thần kinh hợp nhất, gọn chắc, nằm giữa hai mắt, bao quanh thực quản và nằm trong một bao sụn. Não có một phần nằm trên thực quản và một phần nằm dưới.",
+      "func": "Học tập, ghi nhớ và ra quyết định, đồng thời phát ra các mệnh lệnh cấp cao để khởi động và định hướng chuyển động.",
+      "relations": "Nhận thông tin thị giác qua các thùy thị giác, nhận thông tin xúc giác và hóa học từ các tay, rồi gửi lệnh vận động xuống các dây thần kinh tay và tới các cơ quan tạo màu của da.",
+      "deeper": "Ở bạch tuộc thường, não trung ương chứa khoảng 40 đến 50 triệu nơ-ron trong tổng số khoảng 500 triệu của toàn cơ thể. Chưa có số liệu đếm nào cho chính bạch tuộc bắt chước.",
+      "approximation": "Được thể hiện bằng các thùy đơn giản hóa. Các thùy bên trong không được phân biệt."
+    },
+    "optic-lobes": {
+      "name": "Thùy thị giác",
+      "summary": "Hai thùy lớn, mỗi thùy nằm sau một mắt, nối với não trung ương bằng một cuống ngắn.",
+      "func": "Xử lý thông tin thị giác từ võng mạc. Chúng cũng tham gia điều khiển hoa văn cơ thể.",
+      "relations": "Chúng nằm giữa mắt và não trung ương: hình ảnh đi vào, các quyết định về hoa văn và chuyển động đi ra.",
+      "deeper": "Ở bạch tuộc thường, hai thùy thị giác cộng lại chứa nhiều nơ-ron hơn cả não trung ương: các ước tính dao động từ khoảng 90 đến 180 triệu.",
+      "approximation": "Kích thước và hình dạng mang tính sơ đồ."
+    },
+    "nervous-system": {
+      "name": "Dây thần kinh tay",
+      "summary": "Một dây thần kinh dày chạy dọc trung tâm của mỗi tay, với một hạch cho từng giác hút. Tám dây này nối với nhau quanh miệng và nối với não.",
+      "func": "Các mạch thần kinh tại chỗ trong dây tạo ra những cử động cơ bản của tay và hoạt động của giác hút. Hai hạch sao trong màng áo chuyển tiếp mệnh lệnh tới các cơ màng áo.",
+      "relations": "Não quyết định cử động khi nào và về đâu; các dây thần kinh tay tự giải quyết phần lớn việc cử động như thế nào. Thông tin cảm giác từ các tay cũng truyền ngược lên não.",
+      "deeper": "Ở bạch tuộc thường, khoảng 300 đến 350 triệu trong tổng số khoảng 500 triệu nơ-ron nằm ở các tay. Một tay bị cắt rời khỏi não vẫn có thể thực hiện động tác vươn ra khi được kích thích. Nhưng các thí nghiệm cũng cho thấy não có thể dẫn hướng một tay riêng lẻ bằng thị giác, và sử dụng thông tin xúc giác truyền về từ chính tay đó. Các tay bán độc lập; chúng không phải là những bộ não riêng biệt.",
+      "approximation": "Các dây thần kinh, vòng thần kinh và hạch sao được vẽ thành những ống và nút đơn giản."
+    },
+    "gills": {
+      "name": "Mang",
+      "summary": "Một cặp mang duy nhất, dạng lông chim, nằm trong khoang áo, mỗi bên một chiếc.",
+      "func": "Lấy ô-xy từ dòng nước được bơm qua khoang áo và thải khí cacbonic.",
+      "relations": "Mỗi mang có một tim mang riêng, đẩy máu đi qua mang trước khi máu trở về tim chính.",
+      "deeper": "Máu bạch tuộc vận chuyển ô-xy bằng hemocyanin, một protein chứa đồng, có màu xanh lam khi gắn ô-xy. Nó mang được ít ô-xy hơn hemoglobin, và đó là một lý do khiến hệ tuần hoàn cần thêm các bơm phụ.",
+      "approximation": "Các phiến mang được đơn giản hóa thành những đĩa."
+    },
+    "hearts": {
+      "name": "Ba tim",
+      "summary": "Một tim hệ thống nằm ở giữa màng áo và hai tim mang nhỏ hơn, mỗi tim nằm ở gốc một mang.",
+      "func": "Hai tim mang đẩy máu nghèo ô-xy đi qua mang. Sau đó tim hệ thống bơm máu giàu ô-xy đi khắp phần còn lại của cơ thể.",
+      "relations": "Hệ tuần hoàn là hệ kín, máu được giữ trong mạch. Các tim và mang phụ thuộc vào nhịp thở của màng áo, nên việc phóng phản lực mạnh sẽ làm xáo trộn dòng máu.",
+      "deeper": "Trong mô hình, hai tim mang co ngay trước tim hệ thống, để thể hiện thứ tự máu chảy qua chúng.",
+      "approximation": "Các tim và mạch máu mang tính sơ đồ; nhịp đập chỉ để minh họa."
+    },
+    "digestive-system": {
+      "name": "Hệ tiêu hóa",
+      "summary": "Một ống tiêu hóa hình chữ U: khối miệng, thực quản, diều, dạ dày, manh tràng và ruột, với một tuyến tiêu hóa lớn nằm bên cạnh.",
+      "func": "Thức ăn được cắt nhỏ trong khối miệng, trữ trong diều, nghiền trong dạ dày cơ và phân loại trong manh tràng xoắn. Tuyến tiêu hóa cung cấp enzyme và hấp thụ chất dinh dưỡng.",
+      "relations": "Thực quản đi xuyên qua não, điều này giới hạn kích thước mỗi miếng nuốt. Ruột uốn ngược về phía trước nên hậu môn mở ra gần phễu, và chất thải theo dòng nước thoát ra ngoài.",
+      "deeper": "Các tuyến nước bọt nằm sau não tiết ra dịch dùng để khuất phục con mồi và bắt đầu tiêu hóa. Trên các bãi cát, loài này chủ yếu ăn giáp xác nhỏ và cá, bắt bằng các tay.",
+      "approximation": "Các cơ quan là những khối đặc được đơn giản hóa; tuyến nước bọt không được thể hiện."
+    },
+    "beak": {
+      "name": "Mỏ",
+      "summary": "Một cặp hàm cứng, sẫm màu, cấu tạo từ kitin và protein, có hình dạng khá giống mỏ vẹt, ẩn trong khối miệng ở tâm vòng tay.",
+      "func": "Cắn và xé con mồi thành những miếng đủ nhỏ để nuốt.",
+      "relations": "Đây là bộ phận cứng duy nhất của con vật, nên mỏ quyết định kích thước của khe hẹp nhất mà một con bạch tuộc có thể lách qua.",
+      "deeper": "Hàm dưới chờm lên hàm trên, ngược với mỏ vẹt.",
+      "approximation": "Được thể hiện bằng hai hình nón đơn giản."
+    },
+    "radula": {
+      "name": "Lưỡi bào (radula)",
+      "summary": "Một dải mang nhiều hàng răng tí hon, nằm trong khối miệng phía sau mỏ.",
+      "func": "Nạo thịt và đưa các mẩu thức ăn về phía thực quản.",
+      "relations": "Phối hợp với mỏ và dịch nước bọt, tạo thành giai đoạn đầu tiên của quá trình tiêu hóa.",
+      "deeper": "Lưỡi bào có răng là đặc điểm bạch tuộc có chung với ốc và phần lớn các động vật thân mềm khác.",
+      "approximation": "Được phóng to rất nhiều cho dễ thấy; lưỡi bào thật rất nhỏ."
+    },
+    "ink-sac": {
+      "name": "Túi mực",
+      "summary": "Ở các loài bạch tuộc nước nông, đây là một túi nhỏ hình quả lê nằm áp vào tuyến tiêu hóa, có ống dẫn mở vào đoạn cuối ruột gần hậu môn.",
+      "func": "Chứa mực, một huyền phù gồm sắc tố sẫm màu melanin trộn với chất nhầy. Khi được phóng ra qua phễu, mực tạo thành một đám mây hoặc một khối có thể đánh lạc hướng kẻ săn mồi.",
+      "relations": "Mực thoát ra theo cùng một đường với chất thải và nước hô hấp: qua phễu.",
+      "deeper": "Dự án này không thể xác nhận bạch tuộc bắt chước có túi mực, vì không tiếp cận được toàn văn bản mô tả loài. Không có tài liệu nào tìm được nói rằng nó thiếu túi mực, và các đặc điểm định nghĩa chi này không bao gồm việc mất túi mực, nên ở đây nó được thể hiện như một cấu trúc được dự đoán là có nhưng chưa được xác nhận.",
+      "approximation": "Chưa được xác nhận ở loài này. Vị trí dựa theo giải phẫu chung của bạch tuộc."
+    }
+  },
+  "skinLayers": {
+    "epidermis": {
+      "name": "Biểu bì",
+      "summary": "Lớp ngoài cùng, mỏng và trong suốt.",
+      "detail": "Nó bảo vệ mô bên dưới và cho ánh sáng đi tới và đi ra khỏi các lớp tạo màu. Biểu bì có chứa các tế bào tiết chất nhầy.",
+      "control": "Không tham gia vào việc đổi màu."
+    },
+    "chromatophores": {
+      "name": "Thể sắc tố",
+      "summary": "Thể sắc tố (chromatophore) là cơ quan chứ không phải tế bào đơn lẻ: một túi sắc tố đàn hồi được bao quanh bởi các cơ tỏa tia, mỗi cơ nối với một dây thần kinh từ não.",
+      "detail": "Khi nghỉ, túi chỉ là một chấm tí hon và da trông nhạt màu. Khi dây thần kinh phát xung, các cơ tỏa tia co lại và kéo túi dẹt ra thành một đĩa rộng gấp nhiều lần, trải sắc tố ra để nó hiện rõ. Khi cơ giãn, túi đàn hồi trở lại như cũ. Thể sắc tố của bạch tuộc có các màu vàng, cam, đỏ, nâu và đen.",
+      "control": "Được thần kinh và cơ điều khiển trực tiếp. Một lần thay đổi chỉ mất một phần nhỏ của giây."
+    },
+    "iridophores": {
+      "name": "Tế bào ánh kim",
+      "summary": "Tế bào ánh kim (iridophore) là những tế bào chứa các chồng phiến mỏng phản xạ ánh sáng.",
+      "detail": "Chúng tạo màu nhờ hiện tượng giao thoa ánh sáng giữa các phiến, cho ra các sắc xanh lam, xanh lục và vàng ánh kim, biến đổi theo góc nhìn. Không có sắc tố nào tham gia.",
+      "control": "Ở bạch tuộc, chúng nhìn chung được coi là những bộ phản xạ thụ động. Ánh ngũ sắc có thể chủ động điều chỉnh đã được chứng minh ở một số loài mực ống, chưa thấy ở bạch tuộc."
+    },
+    "leucophores": {
+      "name": "Tế bào phản xạ trắng",
+      "summary": "Tế bào phản xạ trắng (leucophore) là những tế bào tán xạ đồng đều mọi bước sóng ánh sáng, nên trông có màu trắng.",
+      "detail": "Chúng tạo thành lớp nền nhạt để các thể sắc tố hoạt động bên trên. Vì phản xạ bất kỳ ánh sáng nào chiếu tới, các vùng trắng sẽ nhuốm màu chung của ánh sáng xung quanh.",
+      "control": "Thụ động. Chúng lộ ra khi các thể sắc tố bên trên thu nhỏ lại."
+    },
+    "dermis": {
+      "name": "Trung bì và cơ",
+      "summary": "Mô liên kết và cơ nằm dưới các lớp tạo màu.",
+      "detail": "Các cơ trong trung bì dựng gai da (papillae) lên: những nốt gồ và gai nhọn làm kết cấu da chuyển từ trơn sang sần sùi chỉ trong một hai giây.",
+      "control": "Gai da chịu sự điều khiển của thần kinh."
+    }
+  }
+}

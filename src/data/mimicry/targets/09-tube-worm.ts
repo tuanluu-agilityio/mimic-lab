@@ -8,14 +8,8 @@ const RAISED = [0, 1];
 export const tubeWorm: MimicryTarget = {
   id: 'tube-worm',
   order: 9,
-  name: 'Tube-worm tube',
-  tagline: 'Motionless, resembling the empty-looking tube of a polychaete worm.',
   evidenceLevel: 'B',
-  evidenceDescription:
-    'The field study from North Sulawesi says motionless animals resembled “tube-worm tubes”. Note the wording: the tube, not the worm with its feathery crown. Only the abstract was available for this project.',
   reconstruction: 'partly-documented',
-  reconstructionNote:
-    'Being motionless and tube-like is reported. Which arms are used and how the rest of the body is hidden are not described; this animation raises two arms from a burrow as one possible arrangement.',
   references: ['hanlon2008'],
   pose: {
     body: makeBody({ height: -0.28, mantlePitch: -0.5, mantleLength: 0.9, eyeRaise: 0.1, webSpread: 0.05, burrow: 1 }),
@@ -59,20 +53,5 @@ export const tubeWorm: MimicryTarget = {
   involvedArms: RAISED,
   transitionSequence: makeSequence(9.5, { arms: [0.18, 0.58], body: [0.3, 0.7] }),
   camera: { azimuth: 0.55, polar: 1.25, distance: 5.2, targetY: 0.6 },
-  educationalContent: {
-    mechanism:
-      'With the body down a burrow, a part of the animal that stays above the sand and keeps still can pass for one of the many worm tubes that stand on a sand flat. The skin is dull and unbanded.',
-    context: 'Reported for stationary animals on the open sand flat.',
-    comparison: [
-      { aspect: 'Silhouette', model: 'A narrow upright tube', octopus: 'Arms held together upright form a narrow column' },
-      { aspect: 'Body posture', model: 'Worm hidden inside its tube', octopus: 'Body hidden in a burrow' },
-      { aspect: 'Colour pattern', model: 'Dull grey-brown, sandy', octopus: 'Dull, unbanded skin' },
-      { aspect: 'Movement', model: 'None', octopus: 'Almost none' },
-      { aspect: 'Anatomy', model: 'A secreted tube built by a segmented worm', octopus: 'Living, muscular arms' },
-    ],
-  },
-  limitations:
-    'The source describes a resemblance to tubes when motionless. It does not describe the octopus imitating a feather-duster crown.',
   referenceModel: 'tube-worm',
-  referenceCaption: 'Polychaete worm tubes (illustrative model)',
 };
